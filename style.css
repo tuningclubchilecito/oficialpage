@@ -148,7 +148,13 @@ body {
   color: #FFFFFF;
 }
 @media (max-width: 600px) {
-  body {
-    font-size: 14px;
+  .contenedor-cabecera {
+    margin-top: -30px;
+  }
+  .menu-opciones a {
+    font-size: 18px;
+    padding: 15px 30px;
+    display: inline-block;
+    margin-bottom: 10px;
   }
 }
