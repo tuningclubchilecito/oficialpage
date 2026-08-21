@@ -144,8 +144,8 @@ h1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 25px;                       /* <--- EDITABLE: Espacio vertical ultra reducido entre cada capa */
-        padding-top: 20px;               /* <--- EDITABLE: Margen superior general de la página en celular */
+        gap: 30px;                       /* <--- EDITABLE: Espacio vertical ultra reducido entre cada capa */
+        padding-top: 25px;               /* <--- EDITABLE: Margen superior general de la página en celular */
         width: 100%;
         box-sizing: border-box;
     }
@@ -183,17 +183,17 @@ h1 {
     .boton-sponsor {
         width: auto;
         height: auto;
-        font-size: 15px;                /* <--- EDITABLE: Tamaño de la letra del sponsor */
+        font-size: 18px;                /* <--- EDITABLE: Tamaño de la letra del sponsor */
         padding: 8px 13px;              /* <--- EDITABLE: Relleno interno (altura y ancho del botón) */
         margin: 0;
-        border-radius: 4px;
+        border-radius: 15px;
     }
 
     /* 4. Capa: Logo central */
     .logo-container img {
-        max-width: 375px;               /* <--- EDITABLE: Ancho máximo del logo para achicarlo o grandarlo */
+        max-width: 380px;               /* <--- EDITABLE: Ancho máximo del logo para achicarlo o grandarlo */
         height: auto;
-        margin: 2px 0;                  /* <--- EDITABLE: Margen superior e inferior para acercar o alejar el logo */
+        margin: 0px 0;                  /* <--- EDITABLE: Margen superior e inferior para acercar o alejar el logo */
         display: block;
     }
 
@@ -202,7 +202,7 @@ h1 {
         display: flex;
         flex-direction: column;         /* Apila los botones del menú uno debajo del otro */
         align-items: center;
-        gap: 20px;                       /* <--- EDITABLE: Espacio vertical entre los botones del menú */
+        gap: 30px;                       /* <--- EDITABLE: Espacio vertical entre los botones del menú */
         margin-top: 0;                  /* Sin margen extra para que no baje la pantalla */
         padding: 0 10px 10px 10px;
         width: 450%;
@@ -211,8 +211,8 @@ h1 {
 
     /* Tamaño y grosor de los botones del menú inferior */
     .menu-opciones a {
-        font-size: 18px;                /* <--- EDITABLE: Tamaño de la letra (ej. "Inscripción como participante") */
-        padding: 5px 10px;              /* <--- EDITABLE: Alto y ancho interno de cada botón del menú */
+        font-size: 20px;                /* <--- EDITABLE: Tamaño de la letra (ej. "Inscripción como participante") */
+        padding: 8px 14px;              /* <--- EDITABLE: Alto y ancho interno de cada botón del menú */
         width: 80%;                     /* <--- EDITABLE: Ancho de los botones respecto al celular */
         max-width: 260px;
         margin: 0;
