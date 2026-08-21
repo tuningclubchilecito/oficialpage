@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Participantes</title>
+    <style>
+        body { 
+            background-color: #000; 
+            color: #fff; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding-top: 50px; 
+        }
+        .barra-busqueda { 
+            padding: 10px; 
+            width: 300px; 
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        .btn-accion {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        .btn-volver {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .btn-volver:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Buscar Participante</h1>
+    
+    <input type="text" class="barra-busqueda" id="inputBusqueda" placeholder="Nombre y Apellido...">
+    <button class="btn-accion" onclick="buscar()">Buscar</button>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <div>
+        <a href="index.html" class="btn-volver">Volver al Inicio</a>
+    </div>
+
+    <script>
+        // PEGA AQUÍ LA URL DE TU APLICACIÓN WEB DE GOOGLE APPS SCRIPT ENTRE LAS COMILLAS
+        const URL_APG = "https://script.google.com/macros/s/AKfycbwzqj7cIlPQcXZA73gHE9YAGWB5ppeK_a13bwTd3fajVNRKSa7d7w5DcFqedxrSqm8Y9g/exec";
+
+        function buscar() {
+            var query = document.getElementById("inputBusqueda").value;
+            var contenedorResultados = document.getElementById("resultado");
+            
+            if (!query) {
+                contenedorResultados.innerHTML = "<p>Por favor ingresa un nombre o apellido.</p>";
+                return;
+            }
+
+            contenedorResultados.innerHTML = "<p>Buscando en la base de datos...</p>";
+
+            fetch(URL_APG + "?q=" + encodeURIComponent(query))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        var html = "<h3>Participantes encontrados:</h3><ul style='list-style:none; padding:0;'>";
+                        
+                        data.forEach(participante => {
+                            // Imagen grande arriba (300px de ancho) o cartel si no hay foto
+                            var imagenHTML = (participante.imagen && (participante.imagen.includes(".") || participante.imagen.includes("/"))) 
+                                ? `<img src="${participante.imagen}" style='width: 300px; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;'>`
+                                : `<div style='width: 300px; height: 180px; background: #333; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #888; border-radius: 8px; margin: 0 auto 15px auto;'>Foto no cargada</div>`;
+
+                            // Tarjeta con diseño vertical (imagen arriba, detalles abajo)
+                            html += `<li style='padding: 20px; background: #1a1a1a; margin: 20px auto; width: 350px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5);'>
+                                        ${imagenHTML}
+                                        <div style='width: 100%; display: flex; flex-direction: column; gap: 8px; text-align: left; padding: 0 10px;'>
+                                            <span><strong>Nombre:</strong> ${participante.nombre}</span>
+                                            <span><strong>Vehículo:</strong> ${participante.vehiculo}</span>
+                                            <span><strong>Modelo:</strong> ${participante.modelo}</span>
+                                            <span><strong>Color:</strong> ${participante.color}</span>
+                                        </div>
+                                     </li>`;
+                        });
+                        
+                        html += "</ul>";
+                        contenedorResultados.innerHTML = html;
+                    } else {
+                        var html = "<p>No se encontró al participante.</p>" +
+                                   "<br><button class='btn-accion' onclick='inscribirNuevo()'>¡Inscribir nuevo participante!</button>";
+                        contenedorResultados.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    contenedorResultados.innerHTML = "<p style='color:red;'>Ocurrió un error al buscar.</p>";
+                });
+        }
+
+        function inscribirNuevo() {
+            alert("Aquí habilitaremos el formulario para cargar los nuevos datos.");
+        }
+    </script>
+</body>
+</html>
