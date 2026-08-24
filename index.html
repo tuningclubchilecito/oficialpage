@@ -6,15 +6,99 @@
     <title>Tuning Club Chilecito</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .btn-admin-panel {
+            background-color: #333 !important;
+            color: #ffcc00 !important;
+            border: 1px solid #ffcc00 !important;
+            cursor: pointer;
+        }
+        .oculto {
+            display: none !important;
+        }
+        .admin-box {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-align: left;
+        }
+        .admin-box input, .admin-box select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 15px;
+            box-sizing: border-box;
+            background: #222;
+            color: #fff;
+        }
+        .admin-box label {
+            font-size: 13px;
+            color: #ccc;
+            margin-top: 5px;
+            display: block;
+        }
+        .btn-accion-admin {
+            text-align: center; 
+            display: block; 
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .tabla-participantes {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #fff;
+        }
+        .tabla-participantes th, .tabla-participantes td {
+            border: 1px solid #444;
+            padding: 6px;
+            text-align: left;
+        }
+        .tabla-participantes th {
+            background-color: #333;
+            color: #ffcc00;
+        }
+        .acciones-tabla {
+            display: flex;
+            gap: 4px;
+        }
+        .btn-editar-tabla {
+            background-color: #ffc107;
+            color: #000;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .btn-eliminar-tabla {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 11px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Todo el contenido va dentro del wrapper para poder controlarlo con CSS -->
     <div class="wrapper"> 
         
-        <!-- 1. Círculo de bienvenida -->
         <div class="circulo-bienvenida">Bienvenido a Tuning Club</div>
         
-        <!-- 2. Redes sociales -->
         <div class="redes-sociales">
             <a href="https://www.facebook.com/share/14rx5rXKAb2/" target="_blank" class="btn-social btn-facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/tuning.club.chilecito?igsh=MTFsaW0zbWNxdWlvZg==" target="_blank" class="btn-social btn-instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -22,19 +106,356 @@
             <a href="https://wa.me/5493825435137" target="_blank" class="btn-social btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
 
-        <!-- 3. Botón de sponsor -->
         <a href="#" class="boton-sponsor">Súmate como sponsor</a>
 
-        <!-- 4. Logo (solo una vez) -->
         <div class="logo-container">
             <img src="logo modificado 2026.png" alt="Logo Tuning Club Chilecito">
         </div>
 
-        <!-- 5. Menú de opciones -->
-        <div class="menu-opciones">
+        <!-- Menú de opciones -->
+        <div class="menu-opciones" id="menuOriginal">
             <a href="registro.html">Registro de participantes</a>
             <a href="#">Tabla de últimos ganadores</a>
             <a href="#">Tabla de record de Limbo </a>
+            <a href="#" onclick="mostrarLogin(event)" class="btn-admin-panel">⚙️ Panel de Control (Admin)</a>
         </div>
+
+        <!-- Sección de Login -->
+        <div id="seccionLogin" class="oculto admin-box">
+            <h3 style="text-align: center; margin-top: 0; color: #ffcc00;">Acceso Administrador</h3>
+            <label>Usuario:</label>
+            <input type="text" id="userAdmin" placeholder="Ingresa tu usuario">
+            <label>Contraseña:</label>
+            <input type="password" id="passAdmin" placeholder="Ingresa tu contraseña">
+            <a href="#" onclick="verificarAdmin(event)" class="boton-sponsor" style="background-color: #ff0000; text-align: center; display: block; margin-top: 10px;">Ingresar</a>
+            <a href="#" onclick="volverMenu(event)" style="text-align: center; display: block; margin-top: 10px; color: #aaa; text-decoration: none; font-size: 14px;">Volver al menú</a>
+        </div>
+
+        <!-- Panel de Registro de Presencia con Buscador -->
+        <div id="panelAdmin" class="oculto admin-box">
+            <h3 id="tituloPanelAdmin" style="text-align: center; margin-top: 0; color: #ffcc00;">Marcar Presencia</h3>
+            
+            <input type="hidden" id="filaEditando" value="">
+
+            <label>Tipo de vehículo:</label>
+            <select id="tipoVehiculoPresencia">
+                <option value="autos">Auto</option>
+                <option value="motos">Moto</option>
+            </select>
+
+            <label>Escribe el Nombre o Apellido a buscar:</label>
+            <div style="display: flex; gap: 5px;">
+                <input type="text" id="nombreBusqueda" placeholder="Ej: Juan Pérez" style="margin: 0;">
+                <a href="#" onclick="buscarParticipante(event)" class="btn-accion-admin" style="background-color: #007bff; margin:0; padding: 10px 15px;"><i class="fa-solid fa-search"></i> Buscar</a>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #444; margin: 15px 0;">
+
+            <label>Nombre y Apellido:</label>
+            <input type="text" id="nombreParticipante" placeholder="Se completará solo">
+
+            <label>Vehículo / Modelo (Seleccionable):</label>
+            <select id="vehiculoParticipante">
+                <option value="">Seleccione vehículo...</option>
+            </select>
+
+            <label>Marca / Modelo (Seleccionable):</label>
+            <select id="marcaParticipante">
+                <option value="">Seleccione marca...</option>
+            </select>
+
+            <label>Color (Seleccionable):</label>
+            <select id="colorParticipante">
+                <option value="">Seleccione color...</option>
+            </select>
+
+            <label>Categoría (Seleccionable):</label>
+            <select id="categoriaParticipante">
+                <option value="">Seleccione categoría...</option>
+            </select>
+
+            <a href="#" id="btnGuardarPresencia" onclick="registrarPresencia(event)" class="btn-accion-admin" style="background-color: #28a745;">Cargar como participante</a>
+            <a href="#" onclick="verParticipantesCargados(event)" class="btn-accion-admin" style="background-color: #17a2b8;">📋 Participantes cargados</a>
+            <a href="#" onclick="cerrarSesion(event)" style="text-align: center; display: block; margin-top: 15px; color: #ff4d4d; text-decoration: none; font-size: 14px;">Cerrar Sesión</a>
+        </div>
+
+        <!-- Sección de Listado de Presentes -->
+        <div id="seccionListado" class="oculto admin-box">
+            <h3 style="text-align: center; margin-top: 0; color: #ffcc00;">Participantes Cargados</h3>
+            <div id="contenidoListado"></div>
+            <a href="#" onclick="volverAlPanel(event)" class="btn-accion-admin" style="background-color: #6c757d; margin-top: 15px;">⬅️ Volver al Panel</a>
+        </div>
+
     </div>
+
+    <script>
+        const URL_ADMIN_APG = "https://script.google.com/macros/s/AKfycbxdh6lJ7F3jJVeGM1gTtwg3RYowZ87KkXDgBZ6ioCDdbuU3NDOO6rlb0gCwdJ6Y4Zkl/exec";
+
+        function mostrarLogin(e) {
+            e.preventDefault();
+            document.getElementById("menuOriginal").classList.add("oculto");
+            document.getElementById("seccionLogin").classList.remove("oculto");
+        }
+
+        function volverMenu(e) {
+            e.preventDefault();
+            document.getElementById("seccionLogin").classList.add("oculto");
+            document.getElementById("panelAdmin").classList.add("oculto");
+            document.getElementById("menuOriginal").classList.remove("oculto");
+        }
+
+        function verificarAdmin(e) {
+            e.preventDefault();
+            var usuario = document.getElementById("userAdmin").value.trim();
+            var pass = document.getElementById("passAdmin").value.trim();
+
+            if (!usuario || !pass) {
+                alert("Por favor completa ambos campos.");
+                return;
+            }
+
+            fetch(`${URL_ADMIN_APG}?accion=login&usuario=${encodeURIComponent(usuario)}&password=${encodeURIComponent(pass)}`)
+            .then(response => response.json())
+            .then(res => {
+                if (res.status === "success") {
+                    document.getElementById("seccionLogin").classList.add("oculto");
+                    document.getElementById("panelAdmin").classList.remove("oculto");
+                    document.getElementById("userAdmin").value = "";
+                    document.getElementById("passAdmin").value = "";
+                    resetearFormularioPanel();
+                } else {
+                    alert("Usuario o contraseña incorrectos.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Ocurrió un error al verificar el acceso.");
+            });
+        }
+
+        function cerrarSesion(e) {
+            e.preventDefault();
+            document.getElementById("panelAdmin").classList.add("oculto");
+            document.getElementById("seccionListado").classList.add("oculto");
+            document.getElementById("menuOriginal").classList.remove("oculto");
+        }
+
+        function buscarParticipante(e) {
+            e.preventDefault();
+            var tipo = document.getElementById("tipoVehiculoPresencia").value;
+            var q = document.getElementById("nombreBusqueda").value.trim();
+
+            if (!q) {
+                alert("Escribe un nombre para buscar.");
+                return;
+            }
+
+            fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tipo}&q=${encodeURIComponent(q)}`)
+            .then(response => response.json())
+            .then(dataObj => {
+                var participantes = dataObj.participantes || [];
+                var vehiculos = dataObj.vehiculos || [];
+                var marcas = dataObj.marcas || [];
+                var colores = dataObj.colores || [];
+                var categorias = dataObj.categorias || [];
+
+                poblarSelect("vehiculoParticipante", vehiculos);
+                poblarSelect("marcaParticipante", marcas);
+                poblarSelect("colorParticipante", colores);
+                poblarSelect("categoriaParticipante", categorias);
+
+                if (participantes.length > 0) {
+                    var participante = participantes[0];
+                    document.getElementById("nombreParticipante").value = participante.nombre;
+                    document.getElementById("vehiculoParticipante").value = participante.vehiculo;
+                    document.getElementById("marcaParticipante").value = participante.marca;
+                    document.getElementById("colorParticipante").value = participante.color;
+                    document.getElementById("categoriaParticipante").value = participante.categoria;
+
+                    alert("¡Participante encontrado!");
+                } else {
+                    alert("No se encontró ningún participante con ese nombre en " + tipo + ", pero se cargaron las opciones disponibles.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Ocurrió un error al realizar la búsqueda.");
+            });
+        }
+
+        function poblarSelect(idSelect, lista) {
+            var select = document.getElementById(idSelect);
+            var html = '<option value="">Seleccione...</option>';
+            lista.forEach(item => {
+                html += `<option value="${item}">${item}</option>`;
+            });
+            select.innerHTML = html;
+        }
+
+        function registrarPresencia(e) {
+            e.preventDefault();
+            var filaEditando = document.getElementById("filaEditando").value;
+            var tipo = document.getElementById("tipoVehiculoPresencia").value;
+            var nombre = document.getElementById("nombreParticipante").value.trim();
+            var vehiculo = document.getElementById("vehiculoParticipante").value.trim();
+            var marca = document.getElementById("marcaParticipante").value.trim();
+            var color = document.getElementById("colorParticipante").value.trim();
+            var categoria = document.getElementById("categoriaParticipante").value.trim();
+
+            if (!nombre) {
+                alert("Por favor completa o selecciona un participante.");
+                return;
+            }
+
+            var accionFinal = filaEditando ? "actualizar_presencia" : "registrar_presencia";
+            var urlExtra = filaEditando ? `&fila=${filaEditando}` : "";
+
+            fetch(`${URL_ADMIN_APG}?accion=${accionFinal}&tipo=${encodeURIComponent(tipo)}&nombre=${encodeURIComponent(nombre)}&vehiculo=${encodeURIComponent(vehiculo)}&marca=${encodeURIComponent(marca)}&color=${encodeURIComponent(color)}&categoria=${encodeURIComponent(categoria)}${urlExtra}`)
+            .then(response => response.json())
+            .then(res => {
+                alert(filaEditando ? "¡Participante actualizado con éxito!" : "¡Participante cargado con éxito!");
+                resetearFormularioPanel();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Ocurrió un error al guardar los datos.");
+            });
+        }
+
+        function resetearFormularioPanel() {
+            document.getElementById("filaEditando").value = "";
+            document.getElementById("tituloPanelAdmin").innerText = "Marcar Presencia";
+            document.getElementById("btnGuardarPresencia").innerText = "Cargar como participante";
+            document.getElementById("nombreBusqueda").value = "";
+            document.getElementById("nombreParticipante").value = "";
+            document.getElementById("vehiculoParticipante").innerHTML = '<option value="">Seleccione vehículo...</option>';
+            document.getElementById("marcaParticipante").innerHTML = '<option value="">Seleccione marca...</option>';
+            document.getElementById("colorParticipante").innerHTML = '<option value="">Seleccione color...</option>';
+            document.getElementById("categoriaParticipante").innerHTML = '<option value="">Seleccione categoría...</option>';
+        }
+
+        function prepararEdicion(fila, tipo, nombre, vehiculo, marca, color, categoria) {
+            document.getElementById("seccionListado").classList.add("oculto");
+            document.getElementById("panelAdmin").classList.remove("oculto");
+
+            document.getElementById("filaEditando").value = fila;
+            document.getElementById("tituloPanelAdmin").innerText = "Editar Participante";
+            document.getElementById("btnGuardarPresencia").innerText = "Guardar Cambios";
+            document.getElementById("tipoVehiculoPresencia").value = tipo.toLowerCase();
+            document.getElementById("nombreParticipante").value = nombre;
+
+            fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tipo.toLowerCase()}&q=${encodeURIComponent(nombre)}`)
+            .then(response => response.json())
+            .then(dataObj => {
+                poblarSelect("vehiculoParticipante", dataObj.vehiculos || []);
+                poblarSelect("marcaParticipante", dataObj.marcas || []);
+                poblarSelect("colorParticipante", dataObj.colores || []);
+                poblarSelect("categoriaParticipante", dataObj.categorias || []);
+
+                document.getElementById("vehiculoParticipante").value = vehiculo;
+                document.getElementById("marcaParticipante").value = marca;
+                document.getElementById("colorParticipante").value = color;
+                document.getElementById("categoriaParticipante").value = categoria;
+            })
+            .catch(err => {
+                console.error("Error cargando opciones para editar:", err);
+            });
+        }
+
+        function eliminarParticipante(fila, nombre) {
+            if (!confirm(`¿Estás seguro de que deseas eliminar a "${nombre}" de los participantes cargados?`)) {
+                return;
+            }
+
+            fetch(`${URL_ADMIN_APG}?accion=eliminar_presencia&fila=${fila}`)
+            .then(response => response.json())
+            .then(res => {
+                if (res.status === "success") {
+                    alert("Participante eliminado con éxito.");
+                    verParticipantesCargados({ preventDefault: function() {} }); // Recargar la lista
+                } else {
+                    alert("No se pudo eliminar: " + (res.detalle || "Error desconocido"));
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Ocurrió un error al intentar eliminar el registro.");
+            });
+        }
+
+        function verParticipantesCargados(e) {
+            e.preventDefault();
+            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("panelAdmin").classList.add("oculto");
+                document.getElementById("seccionListado").classList.remove("oculto");
+
+                var html = '';
+                var autos = data.filter(p => p.tipo && p.tipo.toString().trim().toLowerCase().startsWith("auto"));
+                var motos = data.filter(p => p.tipo && p.tipo.toString().trim().toLowerCase().startsWith("moto"));
+
+                // Sección Autos
+                html += `<h4 style="color: #ffcc00; margin-bottom: 5px;">🚗 Autos Cargados (${autos.length})</h4>`;
+                if(autos.length > 0) {
+                    html += `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo / Marca / Color</th><th>Cat.</th><th>Acción</th></tr>`;
+                    autos.forEach(p => {
+                        html += `<tr>
+                            <td>${p.nombre}</td>
+                            <td>${p.vehiculo} - ${p.marca} (${p.color})</td>
+                            <td>${p.categoria}</td>
+                            <td>
+                                <div class="acciones-tabla">
+                                    <button class="btn-editar-tabla" onclick="prepararEdicion(${p.fila}, '${p.tipo}', '${p.nombre}', '${p.vehiculo}', '${p.marca}', '${p.color}', '${p.categoria}')">✏️</button>
+                                    <button class="btn-eliminar-tabla" onclick="eliminarParticipante(${p.fila}, '${p.nombre}')">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>`;
+                    });
+                    html += `</table>`;
+                } else {
+                    html += `<p style="color: #aaa; font-size: 13px;">No hay autos cargados todavía.</p>`;
+                }
+
+                // Sección Motos
+                html += `<h4 style="color: #ffcc00; margin: 15px 0 5px 0;">🏍️ Motos Cargadas (${motos.length})</h4>`;
+                if(motos.length > 0) {
+                    html += `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo / Marca / Color</th><th>Cat.</th><th>Acción</th></tr>`;
+                    motos.forEach(p => {
+                        html += `<tr>
+                            <td>${p.nombre}</td>
+                            <td>${p.vehiculo} - ${p.marca} (${p.color})</td>
+                            <td>${p.categoria}</td>
+                            <td>
+                                <div class="acciones-tabla">
+                                    <button class="btn-editar-tabla" onclick="prepararEdicion(${p.fila}, '${p.tipo}', '${p.nombre}', '${p.vehiculo}', '${p.marca}', '${p.color}', '${p.categoria}')">✏️</button>
+                                    <button class="btn-eliminar-tabla" onclick="eliminarParticipante(${p.fila}, '${p.nombre}')">🗑️</button>
+                                </div>
+                            </td>
+                        </tr>`;
+                    });
+                    html += `</table>`;
+                } else {
+                    html += `<p style="color: #aaa; font-size: 13px;">No hay motos cargadas todavía.</p>`;
+                }
+
+                html += `<hr style="border:0; border-top:1px solid #444; margin:15px 0;">`;
+                html += `<p style="text-align:center; font-weight:bold; color:#28a745; font-size:15px;">Total general presentes: ${data.length}</p>`;
+
+                document.getElementById("contenidoListado").innerHTML = html;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("No se pudo cargar el listado.");
+            });
+        }
+
+        function volverAlPanel(e) {
+            e.preventDefault();
+            resetearFormularioPanel();
+            document.getElementById("seccionListado").classList.add("oculto");
+            document.getElementById("panelAdmin").classList.remove("oculto");
+        }
+    </script>
 </body>
+</html>
