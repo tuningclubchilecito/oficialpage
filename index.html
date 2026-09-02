@@ -580,11 +580,12 @@
             });
         }
 
-        // Nueva función para quitar solo de la Expo (desvincula sector Expo y vacía categorías Expo)
+        // Función corregida para quitar solo de la Expo de forma definitiva en el listado
         function quitarDeExpo(p) {
             if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" del Sector Expo?`)) return;
 
-            var nuevoSector = (p.participaLimbo === "Si") ? "Limbo" : "";
+            // Si participa en el limbo, su sector pasa a ser "Limbo", de lo contrario se marca como vacío o sin sector activo de expo
+            var nuevoSector = (p.participaLimbo === "Si") ? "Limbo" : "Sin Sector";
 
             var urlFinal = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(nuevoSector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&fila=${p.fila}`;
 
@@ -809,5 +810,6 @@
             return h;
         }
     </script>
+
 </body>
 </html>
