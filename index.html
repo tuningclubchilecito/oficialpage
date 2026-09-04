@@ -7,141 +7,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
     <style>
-        .btn-admin-panel {
-            background-color: #333 !important;
-            color: #ffcc00 !important;
-            border: 1px solid #ffcc00 !important;
-            cursor: pointer;
-        }
-        .oculto {
-            display: none !important;
-        }
-        .admin-box {
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            text-align: left;
-        }
-        .admin-box input, .admin-box select {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: none;
-            font-size: 15px;
-            box-sizing: border-box;
-            background: #222;
-            color: #fff;
-        }
-        .admin-box label {
-            font-size: 13px;
-            color: #ccc;
-            margin-top: 5px;
-            display: block;
-        }
-        .btn-accion-admin {
-            text-align: center; 
-            display: block; 
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .tabla-participantes {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 11px;
-            color: #fff;
-        }
-        .tabla-participantes th, .tabla-participantes td {
-            border: 1px solid #444;
-            padding: 5px;
-            text-align: left;
-        }
-        .tabla-participantes th {
-            background-color: #333;
-            color: #ffcc00;
-        }
-        .acciones-tabla {
-            display: flex;
-            gap: 4px;
-        }
-        .btn-editar-tabla {
-            background-color: #ffc107;
-            color: #000;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 11px;
-        }
-        .btn-eliminar-tabla {
-            background-color: #dc3545;
-            color: #fff;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 11px;
-        }
+        .btn-admin-panel { background-color: #333 !important; color: #ffcc00 !important; border: 1px solid #ffcc00 !important; cursor: pointer; }
+        .oculto { display: none !important; }
+        .admin-box { background: #1a1a1a; padding: 15px; border-radius: 12px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); text-align: left; }
+        .admin-box input, .admin-box select { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: none; font-size: 15px; box-sizing: border-box; background: #222; color: #fff; }
+        .admin-box label { font-size: 13px; color: #ccc; margin-top: 5px; display: block; }
+        .btn-accion-admin { text-align: center; display: block; margin-top: 10px; padding: 10px; border-radius: 5px; color: #fff; text-decoration: none; font-weight: bold; cursor: pointer; }
+        .tabla-participantes { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 11px; color: #fff; }
+        .tabla-participantes th, .tabla-participantes td { border: 1px solid #444; padding: 5px; text-align: left; }
+        .tabla-participantes th { background-color: #333; color: #ffcc00; }
+        .acciones-tabla { display: flex; gap: 4px; }
+        .btn-editar-tabla { background-color: #ffc107; color: #000; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-weight: bold; font-size: 11px; }
+        .btn-eliminar-tabla { background-color: #dc3545; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-weight: bold; font-size: 11px; }
+        .panel-rol-admin { margin-top: 25px; border-top: 2px dashed #444; padding-top: 15px; }
     </style>
 </head>
 <body>
     <div class="wrapper"> 
-        
         <div class="circulo-bienvenida">Bienvenido a Tuning Club</div>
-        
         <div class="redes-sociales">
             <a href="https://www.facebook.com/share/14rx5rXKAb2/" target="_blank" class="btn-social btn-facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/tuning.club.chilecito?igsh=MTFsaW0zbWNxdWlvZg==" target="_blank" class="btn-social btn-instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com/@tuning.club.chilecito?si=z8o5qAYC-QF7mhwD" target="_blank" class="btn-social btn-youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/tuning.club.chilecito" target="_blank" class="btn-social btn-instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@tuning.club.chilecito" target="_blank" class="btn-social btn-youtube"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://wa.me/5493825435137" target="_blank" class="btn-social btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
-
         <a href="#" class="boton-sponsor">Súmate como sponsor</a>
+        <div class="logo-container"><img src="logo modificado 2026.png" alt="Logo Tuning Club Chilecito"></div>
 
-        <div class="logo-container">
-            <img src="logo modificado 2026.png" alt="Logo Tuning Club Chilecito">
-        </div>
-
-        <!-- Menú de opciones -->
         <div class="menu-opciones" id="menuOriginal">
             <a href="registro.html">Registro de participantes</a>
             <a href="#">Tabla de últimos ganadores</a>
-            <a href="#">Tabla de record de Limbo </a>
-            <a href="#" onclick="mostrarLogin(event)" class="btn-admin-panel">⚙️ Panel de Control (Admin)</a>
+            <a href="#">Tabla de record de Limbo</a>
+            <a href="#" onclick="mostrarLogin(event)" class="btn-admin-panel">⚙️ Panel de Control</a>
         </div>
 
-        <!-- Sección de Login -->
+        <!-- SECCIÓN DE LOGIN -->
         <div id="seccionLogin" class="oculto admin-box">
-            <h3 style="text-align: center; margin-top: 0; color: #ffcc00;">Acceso Administrador / Usuario</h3>
-            <label>Usuario:</label>
-            <input type="text" id="userAdmin" placeholder="Ingresa tu usuario">
-            <label>Contraseña:</label>
-            <input type="password" id="passAdmin" placeholder="Ingresa tu contraseña">
-            <a href="#" onclick="verificarAdmin(event)" class="boton-sponsor" style="background-color: #ff0000; text-align: center; display: block; margin-top: 10px;">Ingresar</a>
+            <h3 style="text-align: center; margin-top: 0; color: #ffcc00;">Acceso Sistema</h3>
+            <label>Usuario:</label><input type="text" id="userAdmin" placeholder="Ingresa tu usuario">
+            <label>Contraseña:</label><input type="password" id="passAdmin" placeholder="Ingresa tu contraseña">
+            <button onclick="verificarAdmin(event)" class="btn-accion-admin" style="background-color: #ff0000; width: 100%; border: none;">Ingresar</button>
             <a href="#" onclick="volverMenu(event)" style="text-align: center; display: block; margin-top: 10px; color: #aaa; text-decoration: none; font-size: 14px;">Volver al menú</a>
         </div>
 
-        <!-- Panel de Selección de Sector -->
+        <!-- PANEL DE OPERACIONES PRINCIPAL -->
         <div id="panelMenuOperativo" class="oculto admin-box" style="text-align: center;">
             <h3 style="color: #ffcc00; margin-top: 0;">Panel de Operaciones</h3>
-            <p style="color: #ccc; font-size: 13px;">¿Qué acción deseas realizar?</p>
-            
             <a href="#" onclick="mostrarSelectorSector(event)" class="btn-accion-admin" style="background-color: #007bff; padding: 12px; font-size: 15px;">📥 Inscribir participante</a>
             <a href="#" onclick="verParticipantesCargados(event)" class="btn-accion-admin" style="background-color: #17a2b8; padding: 12px; font-size: 15px;">📋 Ver listados (Expo & Limbo)</a>
+            
+            <!-- CONTROLES EXCLUSIVOS ADMINISTRADOR -->
+            <div id="opcionesAdministrador" class="oculto panel-rol-admin">
+                <h4 style="color:#ffcc00; margin: 0 0 10px 0;">Opciones de Administrador</h4>
+                <a href="#" onclick="abrirPanelDescalificar(event)" class="btn-accion-admin" style="background-color: #d35400;">🚫 Descalificar Participante</a>
+                <a href="#" onclick="guardarRegistroHistorial(event)" class="btn-accion-admin" style="background-color: #8e44ad; margin-top: 8px;">💾 Guardar Registro (Imprimir)</a>
+                <a href="#" onclick="vaciarRegistro(event)" class="btn-accion-admin" style="background-color: #c0392b; margin-top: 8px;">⚠️ Vaciar Registro Presentes</a>
+            </div>
+
             <a href="#" onclick="cerrarSesion(event)" style="display: block; margin-top: 20px; color: #ff4d4d; text-decoration: none; font-size: 14px;">Cerrar Sesión</a>
         </div>
 
-        <!-- Submenú Elegir Sector -->
+        <!-- PANEL: DESCALIFICAR PARTICIPANTE (Solo Admin) -->
+        <div id="panelDescalificar" class="oculto admin-box" style="text-align: center;">
+            <h3 style="color: #ffcc00; margin-top: 0;">Descalificar Participante</h3>
+            <p style="font-size:12px; color:#aaa;">Esto eliminará al participante de todos los sectores de la competencia.</p>
+            <select id="descTipo" onchange="cargarDescalificarSelect()">
+                <option value="">1. Seleccionar categoría...</option>
+                <option value="autos">Autos</option>
+                <option value="motos">Motos</option>
+            </select>
+            <select id="descParticipante">
+                <option value="">2. Seleccionar participante...</option>
+            </select>
+            <a href="#" onclick="ejecutarDescalificacion(event)" class="btn-accion-admin" style="background-color: #dc3545; margin-top: 15px;">🚫 Descalificar participante</a>
+            <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background-color: #6c757d; margin-top: 10px;">⬅️ Cancelar y volver</a>
+        </div>
+
+        <!-- PANEL: SELECCIONAR SECTOR PARA INSCRIPCIÓN -->
         <div id="panelSelectorSector" class="oculto admin-box" style="text-align: center;">
             <h3 style="color: #ffcc00; margin-top: 0;">Selecciona el Sector</h3>
             <a href="#" onclick="iniciarInscripcion('Expo', event)" class="btn-accion-admin" style="background-color: #28a745; padding: 12px; font-size: 15px;">🏁 Sector Expo</a>
@@ -149,159 +91,106 @@
             <a href="#" onclick="volverAlMenuOperativo(event)" style="display: block; margin-top: 15px; color: #aaa; text-decoration: none; font-size: 14px;">⬅️ Volver</a>
         </div>
 
-        <!-- Panel de Formulario / Carga de Presencia -->
+        <!-- PANEL: FORMULARIO DE INSCRIPCIÓN -->
         <div id="panelAdmin" class="oculto admin-box">
             <h3 id="tituloPanelAdmin" style="text-align: center; margin-top: 0; color: #ffcc00;">Marcar Presencia</h3>
-            
             <input type="hidden" id="filaEditando" value="">
             <input type="hidden" id="sectorActual" value="Expo">
 
             <label>Tipo de vehículo:</label>
             <select id="tipoVehiculoPresencia" onchange="cambiarTipoVehiculoFormulario()">
-                <option value="autos">Auto</option>
-                <option value="motos">Moto</option>
+                <option value="autos">Auto</option><option value="motos">Moto</option>
             </select>
 
-            <label>Escribe el Nombre o Apellido a buscar:</label>
+            <label>Buscar Nombre:</label>
             <div style="display: flex; gap: 5px;">
                 <input type="text" id="nombreBusqueda" placeholder="Ej: Juan Pérez" style="margin: 0;">
-                <a href="#" onclick="buscarParticipante(event)" class="btn-accion-admin" style="background-color: #007bff; margin:0; padding: 10px 15px;"><i class="fa-solid fa-search"></i> Buscar</a>
+                <a href="#" onclick="buscarParticipante(event)" class="btn-accion-admin" style="background-color: #007bff; margin:0; padding: 10px 15px;"><i class="fa-solid fa-search"></i></a>
             </div>
 
             <hr style="border: 0; border-top: 1px solid #444; margin: 15px 0;">
+            <label>Nombre y Apellido:</label><input type="text" id="nombreParticipante">
+            <label>Vehículo:</label><select id="vehiculoParticipante"><option value="">Seleccione...</option></select>
+            <label>Marca:</label><select id="marcaParticipante"><option value="">Seleccione...</option></select>
+            <label>Color:</label><select id="colorParticipante"><option value="">Seleccione...</option></select>
 
-            <label>Nombre y Apellido:</label>
-            <input type="text" id="nombreParticipante" placeholder="Se completará solo">
-
-            <label>Vehículo / Modelo:</label>
-            <select id="vehiculoParticipante">
-                <option value="">Seleccione vehículo...</option>
-            </select>
-
-            <label>Marca / Modelo:</label>
-            <select id="marcaParticipante">
-                <option value="">Seleccione marca...</option>
-            </select>
-
-            <label>Color:</label>
-            <select id="colorParticipante">
-                <option value="">Seleccione color...</option>
-            </select>
-
-            <!-- CAMPO CATEGORÍA EXPO (Múltiples opciones) -->
             <div id="bloqueCampoDinamico">
-                <label id="labelCampoDinamico">Categorías de Exposición (Seleccione una o varias):</label>
-                <div id="contenedor-categorias-checkboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; background: #1e1e24; padding: 10px; border: 1px solid #485460; border-radius: 4px; max-height: 150px; overflow-y: auto;">
-                    <!-- Las casillas se cargarán dinámicamente -->
-                </div>
+                <label id="labelCampoDinamico">Categorías Expo:</label>
+                <div id="contenedor-categorias-checkboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; background: #1e1e24; padding: 10px; border: 1px solid #485460; border-radius: 4px; max-height: 150px; overflow-y: auto;"></div>
             </div>
 
-            <!-- PREGUNTA: ¿Participa del Limbo? (Solo visible en Sector Expo) -->
             <div id="bloqueParticipaLimbo">
-                <label>¿Participa del Limbo?</label>
-                <select id="selectParticipaLimbo" onchange="cambiarOpcionParticipaLimbo()">
-                    <option value="No">No</option>
-                    <option value="Si">Sí</option>
-                </select>
+                <label>¿Participa Limbo?</label>
+                <select id="selectParticipaLimbo" onchange="cambiarOpcionParticipaLimbo()"><option value="No">No</option><option value="Si">Sí</option></select>
             </div>
 
-            <!-- BLOQUE CONDICIONAL CATEGORÍA LIMBO -->
             <div id="bloqueCategoriaLimbo" class="oculto">
-                <label id="labelCategoriaLimbo">Categoría Limbo (Fixa / Neumática / 110 / 150):</label>
-                <select id="selectCategoriaLimbo">
-                    <option value="">Seleccione...</option>
-                </select>
+                <label id="labelCategoriaLimbo">Categoría Limbo:</label>
+                <select id="selectCategoriaLimbo"><option value="">Seleccione...</option></select>
             </div>
 
-            <!-- PREGUNTA: ¿Participa en Vale Todo? -->
             <div id="bloqueValeTodo" class="oculto">
-                <label>¿Participa en Vale Todo?</label>
-                <select id="selectValeTodo">
-                    <option value="No">No</option>
-                    <option value="Si">Sí</option>
-                </select>
+                <label>¿Vale Todo?</label>
+                <select id="selectValeTodo"><option value="No">No</option><option value="Si">Sí</option></select>
             </div>
 
             <a href="#" id="btnGuardarPresencia" onclick="registrarPresencia(event)" class="btn-accion-admin" style="background-color: #28a745;">Cargar como participante</a>
-            <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background-color: #6c757d;">⬅️ Volver al menú operativo</a>
+            <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background-color: #6c757d;">⬅️ Volver</a>
         </div>
 
-        <!-- Sección de Listados -->
+        <!-- PANEL: REPORTES Y LISTADOS -->
         <div id="seccionListado" class="oculto admin-box">
             <h3 style="text-align: center; margin-top: 0; color: #ffcc00;">Reporte de Inscriptos</h3>
             <div id="contenidoListado"></div>
             <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background-color: #6c757d; margin-top: 15px;">⬅️ Volver al menú operativo</a>
         </div>
-
     </div>
 
 <script>
-        const URL_ADMIN_APG = "https://script.google.com/macros/s/AKfycbxdh6lJ7F3jJVeGM1gTtwg3RYowZ87KkXDgBZ6ioCDdbuU3NDOO6rlb0gCwdJ6Y4Zkl/exec";
+        const URL_ADMIN_APG = "https://script.google.com/macros/s/AKfycbxdh6lJ7F3jJVeGM1gTtwg3RYowZ87KkXDgBZ6ioCDdbuU3NDOO6rlb0gCwdJ6Y4Zkl/exec"; 
+        
         let listaMaestraCategorias = [];
+        let rolActivo = "";
+        let listaGlobalDescalificar = []; 
 
-        function mostrarLogin(e) {
-            e.preventDefault();
-            document.getElementById("menuOriginal").classList.add("oculto");
-            document.getElementById("seccionLogin").classList.remove("oculto");
-        }
-
-        function volverMenu(e) {
-            e.preventDefault();
-            document.getElementById("seccionLogin").classList.add("oculto");
-            document.getElementById("panelMenuOperativo").classList.add("oculto");
-            document.getElementById("menuOriginal").classList.remove("oculto");
-        }
+        function mostrarLogin(e) { e.preventDefault(); document.getElementById("menuOriginal").classList.add("oculto"); document.getElementById("seccionLogin").classList.remove("oculto"); }
+        function volverMenu(e) { e.preventDefault(); document.getElementById("seccionLogin").classList.add("oculto"); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("menuOriginal").classList.remove("oculto"); }
 
         function verificarAdmin(e) {
             e.preventDefault();
             var usuario = document.getElementById("userAdmin").value.trim();
             var pass = document.getElementById("passAdmin").value.trim();
+            if (!usuario || !pass) return alert("Completa ambos campos.");
 
-            if (!usuario || !pass) {
-                alert("Por favor completa ambos campos.");
-                return;
-            }
+            var btnIngresar = e.target;
+            var txtOrigen = btnIngresar.innerText;
+            btnIngresar.innerText = "Verificando...";
 
             fetch(`${URL_ADMIN_APG}?accion=login&usuario=${encodeURIComponent(usuario)}&password=${encodeURIComponent(pass)}`)
-            .then(response => response.json())
-            .then(res => {
+            .then(r => r.json()).then(res => {
+                btnIngresar.innerText = txtOrigen;
                 if (res.status === "success") {
+                    rolActivo = res.rol;
                     document.getElementById("seccionLogin").classList.add("oculto");
                     document.getElementById("panelMenuOperativo").classList.remove("oculto");
+                    
+                    if (rolActivo === "admin") document.getElementById("opcionesAdministrador").classList.remove("oculto");
+                    else document.getElementById("opcionesAdministrador").classList.add("oculto");
+                    
                     document.getElementById("userAdmin").value = "";
                     document.getElementById("passAdmin").value = "";
-                } else {
-                    alert("Usuario o contraseña incorrectos.");
-                }
+                } else alert("Usuario o contraseña incorrectos.");
             })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Ocurrió un error al verificar el acceso.");
+            .catch(err => {
+                btnIngresar.innerText = txtOrigen;
+                console.error("Error:", err);
+                alert("Error de red al conectar con Google Sheets.");
             });
         }
 
-        function cerrarSesion(e) {
-            e.preventDefault();
-            document.getElementById("panelMenuOperativo").classList.add("oculto");
-            document.getElementById("panelSelectorSector").classList.add("oculto");
-            document.getElementById("panelAdmin").classList.add("oculto");
-            document.getElementById("seccionListado").classList.add("oculto");
-            document.getElementById("menuOriginal").classList.remove("oculto");
-        }
-
-        function mostrarSelectorSector(e) {
-            e.preventDefault();
-            document.getElementById("panelMenuOperativo").classList.add("oculto");
-            document.getElementById("panelSelectorSector").classList.remove("oculto");
-        }
-
-        function volverAlMenuOperativo(e) {
-            if(e) e.preventDefault();
-            document.getElementById("panelSelectorSector").classList.add("oculto");
-            document.getElementById("panelAdmin").classList.add("oculto");
-            document.getElementById("seccionListado").classList.add("oculto");
-            document.getElementById("panelMenuOperativo").classList.remove("oculto");
-        }
+        function cerrarSesion(e) { e.preventDefault(); rolActivo = ""; document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelSelectorSector").classList.add("oculto"); document.getElementById("panelAdmin").classList.add("oculto"); document.getElementById("seccionListado").classList.add("oculto"); document.getElementById("panelDescalificar").classList.add("oculto"); document.getElementById("menuOriginal").classList.remove("oculto"); }
+        function mostrarSelectorSector(e) { e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelSelectorSector").classList.remove("oculto"); }
+        function volverAlMenuOperativo(e) { if(e) e.preventDefault(); document.getElementById("panelSelectorSector").classList.add("oculto"); document.getElementById("panelAdmin").classList.add("oculto"); document.getElementById("seccionListado").classList.add("oculto"); document.getElementById("panelDescalificar").classList.add("oculto"); document.getElementById("panelMenuOperativo").classList.remove("oculto"); }
 
         function iniciarInscripcion(sector, e) {
             e.preventDefault();
@@ -309,7 +198,6 @@
             document.getElementById("panelAdmin").classList.remove("oculto");
             document.getElementById("sectorActual").value = sector;
             resetearFormularioPanel();
-
             document.getElementById("tituloPanelAdmin").innerText = `Marcar Presencia - Sector ${sector}`;
 
             if (sector === "Limbo") {
@@ -320,7 +208,6 @@
                 actualizarOpcionesLimbo();
             } else {
                 document.getElementById("bloqueCampoDinamico").classList.remove("oculto");
-                document.getElementById("labelCampoDinamico").innerText = "Categorías de Exposición (Seleccione una o varias):";
                 document.getElementById("bloqueParticipaLimbo").classList.remove("oculto");
                 document.getElementById("bloqueCategoriaLimbo").classList.add("oculto");
                 document.getElementById("bloqueValeTodo").classList.add("oculto");
@@ -329,177 +216,92 @@
 
         function cambiarTipoVehiculoFormulario() {
             var sector = document.getElementById("sectorActual").value;
-            if (sector === "Limbo") {
-                actualizarOpcionesLimbo();
-            } else if (sector === "Expo" && document.getElementById("selectParticipaLimbo").value === "Si") {
-                actualizarOpcionesLimbo();
-            }
+            if (sector === "Limbo" || (sector === "Expo" && document.getElementById("selectParticipaLimbo").value === "Si")) actualizarOpcionesLimbo();
         }
 
         function cambiarOpcionParticipaLimbo() {
-            var participa = document.getElementById("selectParticipaLimbo").value;
-            if (participa === "Si") {
+            if (document.getElementById("selectParticipaLimbo").value === "Si") {
                 document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto");
                 document.getElementById("bloqueValeTodo").classList.remove("oculto");
                 actualizarOpcionesLimbo();
             } else {
                 document.getElementById("bloqueCategoriaLimbo").classList.add("oculto");
                 document.getElementById("bloqueValeTodo").classList.add("oculto");
-                document.getElementById("selectCategoriaLimbo").innerHTML = '<option value="">Seleccione...</option>';
-                document.getElementById("selectValeTodo").value = "No";
             }
         }
 
         function actualizarOpcionesLimbo() {
             var tipo = document.getElementById("tipoVehiculoPresencia").value;
             var selectLimbo = document.getElementById("selectCategoriaLimbo");
-
-            if (tipo === "autos") {
-                selectLimbo.innerHTML = '<option value="">Seleccione...</option><option value="Fixa">Fixa</option><option value="Neumatica">Neumática</option>';
-            } else {
-                selectLimbo.innerHTML = '<option value="">Seleccione...</option><option value="La mas baja en 110">La mas baja en 110</option><option value="La mas baja en 150">La mas baja en 150</option>';
-            }
+            if (tipo === "autos") selectLimbo.innerHTML = '<option value="">Seleccione...</option><option value="Fixa">Fixa</option><option value="Neumatica">Neumática</option>';
+            else selectLimbo.innerHTML = '<option value="">Seleccione...</option><option value="La mas baja en 110">La mas baja en 110</option><option value="La mas baja en 150">La mas baja en 150</option>';
         }
 
         function buscarParticipante(e) {
             e.preventDefault();
             var tipo = document.getElementById("tipoVehiculoPresencia").value;
             var q = document.getElementById("nombreBusqueda").value.trim();
-            var sector = document.getElementById("sectorActual").value;
-
-            if (!q) {
-                alert("Escribe un nombre para buscar.");
-                return;
-            }
+            if (!q) return alert("Escribe un nombre.");
 
             fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tipo}&q=${encodeURIComponent(q)}`)
-            .then(response => response.json())
-            .then(dataObj => {
-                var participantes = dataObj.participantes || [];
-                var vehiculos = dataObj.vehiculos || [];
-                var marcas = dataObj.marcas || [];
-                var colores = dataObj.colores || [];
+            .then(r => r.json()).then(dataObj => {
+                poblarSelect("vehiculoParticipante", dataObj.vehiculos || []);
+                poblarSelect("marcaParticipante", dataObj.marcas || []);
+                poblarSelect("colorParticipante", dataObj.colores || []);
                 listaMaestraCategorias = dataObj.categorias || [];
 
-                poblarSelect("vehiculoParticipante", vehiculos);
-                poblarSelect("marcaParticipante", marcas);
-                poblarSelect("colorParticipante", colores);
+                if (document.getElementById("sectorActual").value === "Expo") renderizarCheckboxesCategorias(listaMaestraCategorias, []);
 
-                if (sector === "Expo") {
-                    renderizarCheckboxesCategorias(listaMaestraCategorias, []);
-                }
-
-                if (participantes.length > 0) {
-                    var participante = participantes[0];
-                    document.getElementById("nombreParticipante").value = participante.nombre;
-                    document.getElementById("vehiculoParticipante").value = participante.vehiculo;
-                    document.getElementById("marcaParticipante").value = participante.marca;
-                    document.getElementById("colorParticipante").value = participante.color;
-                    
-                    if (sector === "Expo") {
-                        var catsParticipante = participante.categoria ? participante.categoria.split(',').map(c => c.trim()) : [];
-                        renderizarCheckboxesCategorias(listaMaestraCategorias, catsParticipante);
-                    }
-
+                if (dataObj.participantes && dataObj.participantes.length > 0) {
+                    var p = dataObj.participantes[0];
+                    document.getElementById("nombreParticipante").value = p.nombre;
+                    document.getElementById("vehiculoParticipante").value = p.vehiculo;
+                    document.getElementById("marcaParticipante").value = p.marca;
+                    document.getElementById("colorParticipante").value = p.color;
+                    if (document.getElementById("sectorActual").value === "Expo") renderizarCheckboxesCategorias(listaMaestraCategorias, p.categoria ? p.categoria.split(',').map(c => c.trim()) : []);
                     alert("¡Participante encontrado!");
-                } else {
-                    alert("No se encontró ningún participante con ese nombre en " + tipo + ", pero se cargaron las opciones disponibles.");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Ocurrió un error al realizar la búsqueda.");
+                } else alert("No encontrado en la base de datos.");
             });
         }
 
         function poblarSelect(idSelect, lista) {
-            var select = document.getElementById(idSelect);
             var html = '<option value="">Seleccione...</option>';
-            lista.forEach(item => {
-                html += `<option value="${item}">${item}</option>`;
-            });
-            select.innerHTML = html;
+            lista.forEach(item => html += `<option value="${item}">${item}</option>`);
+            document.getElementById(idSelect).innerHTML = html;
         }
 
-        function renderizarCheckboxesCategorias(categoriasDisponibles, categoriasSeleccionadas = []) {
-            const contenedor = document.getElementById('contenedor-categorias-checkboxes');
-            if (!contenedor) return;
-            contenedor.innerHTML = "";
-
-            if (categoriasDisponibles.length === 0) {
-                contenedor.innerHTML = "<span style='font-size:0.85rem; color:#a4b0be;'>No hay categorías disponibles</span>";
-                return;
-            }
-
+        function renderizarCheckboxesCategorias(categoriasDisponibles, seleccionadas = []) {
+            const cont = document.getElementById('contenedor-categorias-checkboxes');
+            cont.innerHTML = categoriasDisponibles.length === 0 ? "<span style='font-size:0.85rem; color:#a4b0be;'>No hay categorías disponibles</span>" : "";
             categoriasDisponibles.forEach(cat => {
-                const isChecked = categoriasSeleccionadas.includes(cat);
-                const label = document.createElement('label');
-                label.style.display = "flex";
-                label.style.alignItems = "center";
-                label.style.gap = "8px";
-                label.style.fontWeight = "normal";
-                label.style.cursor = "pointer";
-                label.innerHTML = `
-                    <input type="checkbox" value="${cat}" ${isChecked ? 'checked' : ''} style="cursor: pointer;">
-                    <span>${cat}</span>
-                `;
-                contenedor.appendChild(label);
+                cont.innerHTML += `<label style="display:flex; align-items:center; gap:8px; cursor:pointer;"><input type="checkbox" value="${cat}" ${seleccionadas.includes(cat) ? 'checked' : ''}><span>${cat}</span></label>`;
             });
         }
 
         function registrarPresencia(e) {
             e.preventDefault();
-            var filaEditando = document.getElementById("filaEditando").value;
-            var sector = document.getElementById("sectorActual").value;
-            var tipo = document.getElementById("tipoVehiculoPresencia").value;
-            var nombre = document.getElementById("nombreParticipante").value.trim();
-            var vehiculo = document.getElementById("vehiculoParticipante").value.trim();
-            var marca = document.getElementById("marcaParticipante").value.trim();
-            var color = document.getElementById("colorParticipante").value.trim();
+            var fila = document.getElementById("filaEditando").value;
+            var sec = document.getElementById("sectorActual").value;
+            var nom = document.getElementById("nombreParticipante").value.trim();
+            if (!nom) return alert("Nombre obligatorio.");
             
-            var categoriaExpo = "";
-            if (sector === "Expo") {
-                const checkboxesMarcados = document.querySelectorAll('#contenedor-categorias-checkboxes input[type="checkbox"]:checked');
-                categoriaExpo = Array.from(checkboxesMarcados).map(cb => cb.value).join(', ');
-            }
+            var catExpo = sec === "Expo" ? Array.from(document.querySelectorAll('#contenedor-categorias-checkboxes input:checked')).map(cb => cb.value).join(', ') : "";
+            var pLimbo = sec === "Expo" ? document.getElementById("selectParticipaLimbo").value : "Si";
+            var cLimbo = (sec === "Limbo" || pLimbo === "Si") ? document.getElementById("selectCategoriaLimbo").value.trim() : "";
+            var vTodo = (sec === "Limbo" || pLimbo === "Si") ? document.getElementById("selectValeTodo").value : "No";
 
-            var participaLimbo = sector === "Expo" ? document.getElementById("selectParticipaLimbo").value : "Si";
-            var categoriaLimbo = (sector === "Limbo" || participaLimbo === "Si") ? document.getElementById("selectCategoriaLimbo").value.trim() : "";
-            var valeTodo = (sector === "Limbo" || participaLimbo === "Si") ? document.getElementById("selectValeTodo").value : "No";
+            var url = `${URL_ADMIN_APG}?accion=${fila ? "actualizar_presencia" : "registrar_presencia"}&sector=${sec}&tipo=${document.getElementById("tipoVehiculoPresencia").value}&nombre=${encodeURIComponent(nom)}&vehiculo=${encodeURIComponent(document.getElementById("vehiculoParticipante").value)}&marca=${encodeURIComponent(document.getElementById("marcaParticipante").value)}&color=${encodeURIComponent(document.getElementById("colorParticipante").value)}&categoriaExpo=${encodeURIComponent(catExpo)}&participaLimbo=${pLimbo}&categoriaLimbo=${encodeURIComponent(cLimbo)}&valeTodo=${vTodo}${fila ? "&fila=" + fila : ""}`;
 
-            if (!nombre) {
-                alert("Por favor completa o selecciona un participante.");
-                return;
-            }
-
-            var accionFinal = filaEditando ? "actualizar_presencia" : "registrar_presencia";
-            var urlExtra = filaEditando ? `&fila=${filaEditando}` : "";
-
-            var urlFinal = `${URL_ADMIN_APG}?accion=${accionFinal}&sector=${encodeURIComponent(sector)}&tipo=${encodeURIComponent(tipo)}&nombre=${encodeURIComponent(nombre)}&vehiculo=${encodeURIComponent(vehiculo)}&marca=${encodeURIComponent(marca)}&color=${encodeURIComponent(color)}&categoriaExpo=${encodeURIComponent(categoriaExpo)}&participaLimbo=${encodeURIComponent(participaLimbo)}&categoriaLimbo=${encodeURIComponent(categoriaLimbo)}&valeTodo=${encodeURIComponent(valeTodo)}${urlExtra}`;
-
-            fetch(urlFinal)
-            .then(response => response.json())
-            .then(res => {
-                alert(filaEditando ? "¡Participante actualizado con éxito!" : "¡Participante cargado con éxito!");
-                volverAlMenuOperativo();
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Ocurrió un error al guardar los datos.");
-            });
+            fetch(url).then(r => r.json()).then(() => { alert("Guardado con éxito."); volverAlMenuOperativo(); });
         }
 
         function resetearFormularioPanel() {
             document.getElementById("filaEditando").value = "";
             document.getElementById("nombreBusqueda").value = "";
             document.getElementById("nombreParticipante").value = "";
-            document.getElementById("vehiculoParticipante").innerHTML = '<option value="">Seleccione vehículo...</option>';
-            document.getElementById("marcaParticipante").innerHTML = '<option value="">Seleccione marca...</option>';
-            document.getElementById("colorParticipante").innerHTML = '<option value="">Seleccione color...</option>';
-            
-            const contenedorCheckboxes = document.getElementById("contenedor-categorias-checkboxes");
-            if (contenedorCheckboxes) contenedorCheckboxes.innerHTML = "";
-
+            document.getElementById("vehiculoParticipante").innerHTML = '<option value="">Seleccione...</option>';
+            document.getElementById("marcaParticipante").innerHTML = '<option value="">Seleccione...</option>';
+            document.getElementById("colorParticipante").innerHTML = '<option value="">Seleccione...</option>';
             document.getElementById("selectParticipaLimbo").value = "No";
             document.getElementById("selectCategoriaLimbo").innerHTML = '<option value="">Seleccione...</option>';
             document.getElementById("selectValeTodo").value = "No";
@@ -514,20 +316,15 @@
 
             document.getElementById("filaEditando").value = p.fila;
             document.getElementById("sectorActual").value = p.sector;
-            document.getElementById("tituloPanelAdmin").innerText = `Editar Participante - Sector ${p.sector}`;
-
-            let tipoDetectado = (p.tipo && p.tipo.toLowerCase().includes("moto")) ? "motos" : "autos";
-            document.getElementById("tipoVehiculoPresencia").value = tipoDetectado;
-
+            let tDet = (p.tipo && p.tipo.toLowerCase().includes("moto")) ? "motos" : "autos";
+            document.getElementById("tipoVehiculoPresencia").value = tDet;
             document.getElementById("nombreParticipante").value = p.nombre;
 
-            fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tipoDetectado}&q=`)
-            .then(res => res.json())
-            .then(dataObj => {
-                poblarSelect("vehiculoParticipante", dataObj.vehiculos || []);
-                poblarSelect("marcaParticipante", dataObj.marcas || []);
-                poblarSelect("colorParticipante", dataObj.colores || []);
-                listaMaestraCategorias = dataObj.categorias || [];
+            fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tDet}&q=`).then(r => r.json()).then(d => {
+                poblarSelect("vehiculoParticipante", d.vehiculos || []);
+                poblarSelect("marcaParticipante", d.marcas || []);
+                poblarSelect("colorParticipante", d.colores || []);
+                listaMaestraCategorias = d.categorias || [];
 
                 document.getElementById("vehiculoParticipante").value = p.vehiculo;
                 document.getElementById("marcaParticipante").value = p.marca;
@@ -535,23 +332,15 @@
 
                 if (p.sector === "Expo") {
                     document.getElementById("bloqueCampoDinamico").classList.remove("oculto");
-                    document.getElementById("labelCampoDinamico").innerText = "Categorías de Exposición (Seleccione una o varias):";
-                    
-                    let catsParticipante = p.categoriaExpo ? p.categoriaExpo.split(',').map(c => c.trim()) : [];
-                    renderizarCheckboxesCategorias(listaMaestraCategorias, catsParticipante);
-
+                    renderizarCheckboxesCategorias(listaMaestraCategorias, p.categoriaExpo ? p.categoriaExpo.split(',').map(c => c.trim()) : []);
                     document.getElementById("bloqueParticipaLimbo").classList.remove("oculto");
                     document.getElementById("selectParticipaLimbo").value = p.participaLimbo;
-
                     if (p.participaLimbo === "Si") {
                         document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto");
                         document.getElementById("bloqueValeTodo").classList.remove("oculto");
                         actualizarOpcionesLimbo();
                         document.getElementById("selectCategoriaLimbo").value = p.categoriaLimbo;
                         document.getElementById("selectValeTodo").value = p.valeTodo;
-                    } else {
-                        document.getElementById("bloqueCategoriaLimbo").classList.add("oculto");
-                        document.getElementById("bloqueValeTodo").classList.add("oculto");
                     }
                 } else {
                     document.getElementById("bloqueCampoDinamico").classList.add("oculto");
@@ -565,251 +354,123 @@
             });
         }
 
-        function eliminarParticipante(fila, nombre) {
-            if (!confirm(`¿Estás seguro de que deseas eliminar permanentemente a "${nombre}"?`)) return;
-
-            fetch(`${URL_ADMIN_APG}?accion=eliminar_presencia&fila=${fila}`)
-            .then(response => response.json())
-            .then(res => {
-                if (res.status === "success") {
-                    alert("Participante eliminado.");
-                    verParticipantesCargados({ preventDefault: function() {} });
-                } else {
-                    alert("Error al eliminar.");
-                }
-            });
-        }
-
-        // Función corregida para quitar solo de la Expo de forma definitiva en el listado
+        // --- SISTEMA DE ELIMINACIÓN PARCIAL (Quitar de la lista sin descalificar del evento) ---
         function quitarDeExpo(p) {
             if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" del Sector Expo?`)) return;
-
-            // Si participa en el limbo, su sector pasa a ser "Limbo", de lo contrario se marca como vacío o sin sector activo de expo
-            var nuevoSector = (p.participaLimbo === "Si") ? "Limbo" : "Sin Sector";
-
-            var urlFinal = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(nuevoSector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&fila=${p.fila}`;
-
-            fetch(urlFinal)
-            .then(response => response.json())
-            .then(res => {
-                alert("Participante removido de la Expo con éxito.");
-                verParticipantesCargados({ preventDefault: function() {} });
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Ocurrió un error al actualizar los datos.");
-            });
+            var nSector = (p.participaLimbo === "Si" || p.valeTodo === "Si") ? "Limbo" : "Sin Sector";
+            var url = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(nSector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&fila=${p.fila}`;
+            fetch(url).then(r => r.json()).then(() => verParticipantesCargados({preventDefault:function(){}}));
         }
 
-        // Función para quitar solo del Limbo
         function quitarDelLimbo(p) {
             if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" del Sector Limbo?`)) return;
+            var url = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(p.sector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=${encodeURIComponent(p.categoriaExpo || '')}&participaLimbo=No&categoriaLimbo=&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&fila=${p.fila}`;
+            fetch(url).then(r => r.json()).then(() => verParticipantesCargados({preventDefault:function(){}}));
+        }
 
-            var urlFinal = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(p.sector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=${encodeURIComponent(p.categoriaExpo || '')}&participaLimbo=No&categoriaLimbo=&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&fila=${p.fila}`;
+        function quitarDelValeTodo(p) {
+            if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" de Vale Todo?`)) return;
+            var url = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(p.sector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=${encodeURIComponent(p.categoriaExpo || '')}&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=No&fila=${p.fila}`;
+            fetch(url).then(r => r.json()).then(() => verParticipantesCargados({preventDefault:function(){}}));
+        }
 
-            fetch(urlFinal)
-            .then(response => response.json())
-            .then(res => {
-                alert("Participante removido del Limbo con éxito.");
-                verParticipantesCargados({ preventDefault: function() {} });
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Ocurrió un error al actualizar los datos.");
+        // --- EXCLUSIVO ADMINISTRADOR: DESCALIFICAR Y RESETEOS ---
+        function abrirPanelDescalificar(e) {
+            e.preventDefault();
+            document.getElementById("panelMenuOperativo").classList.add("oculto");
+            document.getElementById("panelDescalificar").classList.remove("oculto");
+            document.getElementById("descTipo").value = "";
+            document.getElementById("descParticipante").innerHTML = '<option value="">2. Seleccionar participante...</option>';
+            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(data => { listaGlobalDescalificar = data; });
+        }
+
+        function cargarDescalificarSelect() {
+            var tipo = document.getElementById("descTipo").value;
+            var selectP = document.getElementById("descParticipante");
+            selectP.innerHTML = '<option value="">2. Seleccionar participante...</option>';
+            if(!tipo) return;
+            var filtrados = listaGlobalDescalificar.filter(p => p.tipo && p.tipo.toLowerCase().includes(tipo === "autos" ? "auto" : "moto"));
+            filtrados.forEach(p => { selectP.innerHTML += `<option value="${p.fila}">${p.nombre} (${p.vehiculo})</option>`; });
+        }
+
+        function ejecutarDescalificacion(e) {
+            e.preventDefault();
+            var fila = document.getElementById("descParticipante").value;
+            if(!fila) return alert("Selecciona un participante.");
+            var nombre = document.getElementById("descParticipante").options[document.getElementById("descParticipante").selectedIndex].text;
+            if (!confirm(`⚠️ ALERTA: Estás por DESCALIFICAR a "${nombre}" de todos los sectores de la competencia. ¿Continuar?`)) return;
+            
+            fetch(`${URL_ADMIN_APG}?accion=eliminar_presencia&fila=${fila}`).then(r => r.json()).then(res => {
+                if (res.status === "success") { alert("Participante descalificado."); volverAlMenuOperativo(); } 
+                else alert("Error al descalificar.");
             });
         }
 
-        // Función para quitar solo del Vale Todo
-        function quitarDelValeTodo(p) {
-            if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" del Sector Vale Todo?`)) return;
+        function guardarRegistroHistorial(e) {
+            e.preventDefault();
+            if (!confirm("¿Deseas Guardar e Imprimir todos los inscriptos actuales en el Historial General?")) return;
+            fetch(`${URL_ADMIN_APG}?accion=guardar_historial`).then(r => r.json()).then(data => {
+                if(data.status === "success") alert("Historial guardado exitosamente.");
+                else alert("Error al guardar historial.");
+            });
+        }
 
-            var urlFinal = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(p.sector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=${encodeURIComponent(p.categoriaExpo || '')}&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=No&fila=${p.fila}`;
-
-            fetch(urlFinal)
-            .then(response => response.json())
-            .then(res => {
-                alert("Participante removido de Vale Todo con éxito.");
-                verParticipantesCargados({ preventDefault: function() {} });
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Ocurrió un error al actualizar los datos.");
+        function vaciarRegistro(e) {
+            e.preventDefault();
+            if (!confirm("⚠️ ATENCIÓN: Se eliminarán TODOS los registros de presentes para iniciar un evento nuevo. ¿Continuar?")) return;
+            fetch(`${URL_ADMIN_APG}?accion=vaciar_registro`).then(r => r.json()).then(data => {
+                if(data.status === "success") alert("Registros vaciados.");
             });
         }
 
         function verParticipantesCargados(e) {
             e.preventDefault();
-            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`)
-            .then(response => response.json())
-            .then(data => {
+            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(data => {
                 document.getElementById("panelMenuOperativo").classList.add("oculto");
-                document.getElementById("panelSelectorSector").classList.add("oculto");
-                document.getElementById("panelAdmin").classList.add("oculto");
                 document.getElementById("seccionListado").classList.remove("oculto");
 
                 var html = '';
-
                 var expoAutos = data.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("auto") && p.sector === "Expo");
                 var expoMotos = data.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("moto") && p.sector === "Expo");
-                var totalExpo = expoAutos.length + expoMotos.length;
 
-                html += `<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00bcd4; padding-bottom: 5px; margin-top: 10px;">`;
-                html += `<h3 style="color: #00bcd4; margin: 0;">🏁 Sector Expo</h3>`;
-                html += `<span style="background: #00bcd4; color: #000; padding: 4px 12px; border-radius: 15px; font-weight: bold; font-size: 15px;">Total: ${totalExpo}</span>`;
-                html += `</div>`;
-
-                html += `<h4 style="color: #4dd0e1; margin-bottom: 5px; margin-top: 15px;">🚗 Autos en Expo (${expoAutos.length})</h4>`;
-                if(expoAutos.length > 0) {
-                    html += renderTablaListadoExpo(expoAutos);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay autos en Expo.</p>`;
-                }
-
-                html += `<h4 style="color: #4dd0e1; margin: 15px 0 5px 0;">🏍️ Motos en Expo (${expoMotos.length})</h4>`;
-                if(expoMotos.length > 0) {
-                    html += renderTablaListadoExpo(expoMotos);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay motos en Expo.</p>`;
-                }
+                html += `<div style="display:flex; justify-content:space-between; border-bottom:2px solid #00bcd4; margin-top:10px;"><h3 style="color:#00bcd4; margin:0;">🏁 Sector Expo</h3><span style="background:#00bcd4; color:#000; padding:4px 12px; border-radius:15px; font-weight:bold;">Total: ${expoAutos.length + expoMotos.length}</span></div>`;
+                html += `<h4 style="color:#4dd0e1; margin:10px 0 5px 0;">🚗 Autos (${expoAutos.length})</h4>` + (expoAutos.length > 0 ? renderTablaGenerica(expoAutos, "Expo") : "<p style='font-size:12px; color:#aaa;'>Vacío</p>");
+                html += `<h4 style="color:#4dd0e1; margin:10px 0 5px 0;">🏍️ Motos (${expoMotos.length})</h4>` + (expoMotos.length > 0 ? renderTablaGenerica(expoMotos, "Expo") : "<p style='font-size:12px; color:#aaa;'>Vacío</p>");
 
                 var limboInscritos = data.filter(p => p.sector === "Limbo" || p.participaLimbo === "Si");
-                var totalLimbo = limboInscritos.length;
-
-                html += `<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ffc107; padding-bottom: 5px; margin-top: 35px;">`;
-                html += `<h3 style="color: #ffc107; margin: 0;">📏 Sector Limbo</h3>`;
-                html += `<span style="background: #ffc107; color: #000; padding: 4px 12px; border-radius: 15px; font-weight: bold; font-size: 15px;">Total: ${totalLimbo}</span>`;
-                html += `</div>`;
-
                 var limboAutos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("auto"));
-                var limboAutosFixa = limboAutos.filter(p => (p.categoriaLimbo || "").toLowerCase() === "fixa");
-                var limboAutosNeumatica = limboAutos.filter(p => (p.categoriaLimbo || "").toLowerCase().includes("neumat"));
-
-                html += `<h4 style="color: #ffd54f; margin-top: 15px; margin-bottom: 5px;">🚗 Autos en Limbo - Fixa (${limboAutosFixa.length})</h4>`;
-                if(limboAutosFixa.length > 0) {
-                    html += renderTablaListadoLimbo(limboAutosFixa);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay autos inscriptos en Fixa.</p>`;
-                }
-
-                html += `<h4 style="color: #ffd54f; margin-top: 15px; margin-bottom: 5px;">🚗 Autos en Limbo - Neumática (${limboAutosNeumatica.length})</h4>`;
-                if(limboAutosNeumatica.length > 0) {
-                    html += renderTablaListadoLimbo(limboAutosNeumatica);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay autos inscriptos en Neumática.</p>`;
-                }
-
                 var limboMotos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("moto"));
-                var limboMotos110 = limboMotos.filter(p => (p.categoriaLimbo || "").toLowerCase().includes("110"));
-                var limboMotos150 = limboMotos.filter(p => (p.categoriaLimbo || "").toLowerCase().includes("150"));
 
-                html += `<h4 style="color: #ffd54f; margin-top: 15px; margin-bottom: 5px;">🏍️ Motos en Limbo - La mas baja en 110 (${limboMotos110.length})</h4>`;
-                if(limboMotos110.length > 0) {
-                    html += renderTablaListadoLimbo(limboMotos110);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay motos inscriptas en 110.</p>`;
-                }
-
-                html += `<h4 style="color: #ffd54f; margin-top: 15px; margin-bottom: 5px;">🏍️ Motos en Limbo - La mas baja en 150 (${limboMotos150.length})</h4>`;
-                if(limboMotos150.length > 0) {
-                    html += renderTablaListadoLimbo(limboMotos150);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay motos inscriptas en 150.</p>`;
-                }
+                html += `<div style="display:flex; justify-content:space-between; border-bottom:2px solid #ffc107; margin-top:35px;"><h3 style="color:#ffc107; margin:0;">📏 Sector Limbo</h3><span style="background:#ffc107; color:#000; padding:4px 12px; border-radius:15px; font-weight:bold;">Total: ${limboInscritos.length}</span></div>`;
+                html += `<h4 style="color:#ffd54f; margin:10px 0 5px 0;">🚗 Autos (${limboAutos.length})</h4>` + (limboAutos.length > 0 ? renderTablaGenerica(limboAutos, "Limbo") : "<p style='font-size:12px; color:#aaa;'>Vacío</p>");
+                html += `<h4 style="color:#ffd54f; margin:10px 0 5px 0;">🏍️ Motos (${limboMotos.length})</h4>` + (limboMotos.length > 0 ? renderTablaGenerica(limboMotos, "Limbo") : "<p style='font-size:12px; color:#aaa;'>Vacío</p>");
 
                 var valeTodoInscritos = data.filter(p => (p.valeTodo || "").toLowerCase() === "si");
-                var totalValeTodo = valeTodoInscritos.length;
-                var vtAutos = valeTodoInscritos.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("auto"));
-                var vtMotos = valeTodoInscritos.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("moto"));
-
-                html += `<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e040fb; padding-bottom: 5px; margin-top: 35px;">`;
-                html += `<h3 style="color: #e040fb; margin: 0;">🔥 Sector Vale Todo</h3>`;
-                html += `<span style="background: #e040fb; color: #fff; padding: 4px 12px; border-radius: 15px; font-weight: bold; font-size: 15px;">Total: ${totalValeTodo}</span>`;
-                html += `</div>`;
-
-                html += `<h4 style="color: #ea80fc; margin-top: 15px; margin-bottom: 5px;">🚗 Autos en Vale Todo (${vtAutos.length})</h4>`;
-                if(vtAutos.length > 0) {
-                    html += renderTablaListadoValeTodo(vtAutos);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay autos inscriptos en Vale Todo.</p>`;
-                }
-
-                html += `<h4 style="color: #ea80fc; margin-top: 15px; margin-bottom: 5px;">🏍️ Motos en Vale Todo (${vtMotos.length})</h4>`;
-                if(vtMotos.length > 0) {
-                    html += renderTablaListadoValeTodo(vtMotos);
-                } else {
-                    html += `<p style="color: #aaa; font-size: 12px;">No hay motos inscriptas en Vale Todo.</p>`;
-                }
+                html += `<div style="display:flex; justify-content:space-between; border-bottom:2px solid #e040fb; margin-top:35px;"><h3 style="color:#e040fb; margin:0;">🔥 Vale Todo</h3><span style="background:#e040fb; color:#fff; padding:4px 12px; border-radius:15px; font-weight:bold;">Total: ${valeTodoInscritos.length}</span></div>`;
+                html += `<h4 style="color:#ea80fc; margin:10px 0 5px 0;">Competidores (${valeTodoInscritos.length})</h4>` + (valeTodoInscritos.length > 0 ? renderTablaGenerica(valeTodoInscritos, "ValeTodo") : "<p style='font-size:12px; color:#aaa;'>Vacío</p>");
 
                 document.getElementById("contenidoListado").innerHTML = html;
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("No se pudo cargar el listado.");
             });
         }
 
-        function renderTablaListadoExpo(lista) {
-            let h = `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo, Marca y Color</th><th>Categoría Expo</th><th>Acción</th></tr>`;
+        function renderTablaGenerica(lista, contexto) {
+            let h = `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo</th><th>Categoría</th><th>Acción</th></tr>`;
             lista.forEach(p => {
-                let vehiculoCompleto = `${p.vehiculo} (${p.marca}) - ${p.color}`;
-                h += `<tr>
-                    <td>${p.nombre}</td>
-                    <td>${vehiculoCompleto}</td>
-                    <td><b>${p.categoriaExpo || 'N/A'}</b></td>
-                    <td>
-                        <div class="acciones-tabla">
-                            <button class="btn-editar-tabla" onclick='editarParticipante(${JSON.stringify(p)})'>✏️</button>
-                            <button class="btn-eliminar-tabla" onclick='quitarDeExpo(${JSON.stringify(p)})' title="Quitar solo de Expo">🗑️</button>
-                        </div>
-                    </td>
-                </tr>`;
-            });
-            h += `</table>`;
-            return h;
-        }
+                let cat = contexto === "Expo" ? p.categoriaExpo : (contexto === "Limbo" ? p.categoriaLimbo : p.categoriaExpo);
+                
+                let onclickQuitar = "";
+                if (contexto === "Expo") onclickQuitar = `quitarDeExpo(${JSON.stringify(p)})`;
+                else if (contexto === "Limbo") onclickQuitar = `quitarDelLimbo(${JSON.stringify(p)})`;
+                else onclickQuitar = `quitarDelValeTodo(${JSON.stringify(p)})`;
 
-        function renderTablaListadoLimbo(lista) {
-            let h = `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo</th><th>Cat. Limbo</th><th>Acción</th></tr>`;
-            lista.forEach(p => {
-                let catLimboVal = p.categoriaLimbo || (p.sector === "Limbo" ? p.categoriaExpo : "N/A");
-                let vehiculoCompleto = `${p.vehiculo} (${p.marca}) - ${p.color}`;
-                h += `<tr>
-                    <td>${p.nombre}</td>
-                    <td>${vehiculoCompleto}</td>
-                    <td><b style="color:#ffcc00;">${catLimboVal}</b></td>
-                    <td>
-                        <div class="acciones-tabla">
-                            <button class="btn-editar-tabla" onclick='editarParticipante(${JSON.stringify(p)})'>✏️</button>
-                            <button class="btn-eliminar-tabla" onclick='quitarDelLimbo(${JSON.stringify(p)})' title="Quitar solo del Limbo">🗑️</button>
-                        </div>
-                    </td>
-                </tr>`;
+                h += `<tr><td>${p.nombre}</td><td>${p.vehiculo}</td><td><b>${cat || 'N/A'}</b></td>
+                      <td><div class="acciones-tabla">
+                          <button class="btn-editar-tabla" onclick='editarParticipante(${JSON.stringify(p)})'>✏️</button>
+                          <button class="btn-eliminar-tabla" onclick='${onclickQuitar}' title="Quitar de este listado">🗑️</button>
+                      </div></td></tr>`;
             });
-            h += `</table>`;
-            return h;
+            return h + `</table>`;
         }
-
-        function renderTablaListadoValeTodo(lista) {
-            let h = `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo</th><th>Categoría / Detalle</th><th>Acción</th></tr>`;
-            lista.forEach(p => {
-                let detalle = p.categoriaLimbo || p.categoriaExpo || 'Vale Todo';
-                let vehiculoCompleto = `${p.vehiculo} (${p.marca}) - ${p.color}`;
-                h += `<tr>
-                    <td>${p.nombre}</td>
-                    <td>${vehiculoCompleto}</td>
-                    <td><b style="color:#e040fb;">${detalle}</b></td>
-                    <td>
-                        <div class="acciones-tabla">
-                            <button class="btn-editar-tabla" onclick='editarParticipante(${JSON.stringify(p)})'>✏️</button>
-                            <button class="btn-eliminar-tabla" onclick='quitarDelValeTodo(${JSON.stringify(p)})' title="Quitar solo de Vale Todo">🗑️</button>
-                        </div>
-                    </td>
-                </tr>`;
-            });
-            h += `</table>`;
-            return h;
-        }
-    </script>
-
+</script>
 </body>
 </html>
