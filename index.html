@@ -18,7 +18,6 @@
             background: radial-gradient(circle at top center, #1a1a1a 0%, #000 100%);
             color: #fff;
             font-family: 'Inter', sans-serif;
-            font-size: 15px; 
         }
         
         .wrapper {
@@ -26,8 +25,7 @@
             max-width: 600px; 
             height: 100%; 
             margin: 0 auto;
-            /* Padding superior equilibrado para que el cartel baje y no choque con el borde */
-            padding: 12px 20px 5px 20px; 
+            padding: 4px 20px 10px 20px; /* Padding superior reducido al mínimo para subir el cartel de bienvenida */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,34 +38,29 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .circulo-bienvenida {
-            font-size: 20px; 
+            font-size: 20px;
             font-weight: 800;
             color: #ffffff;
-            width: 100%;
-            padding: 8px 12px;
-            background: rgba(255, 0, 0, 0.85); /* Fondo tipo placa para que no quede cortado al aire */
-            border-radius: 8px;
-            margin-bottom: 8px; 
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
         }
 
         .redes-sociales {
             display: flex;
             justify-content: center;
             flex-wrap: wrap; 
-            gap: 8px;
-            margin-bottom: 8px; 
+            gap: 10px;
+            margin-bottom: 14px; /* Espacio añadido para separar de las redes */
             width: 100%;
         }
         .btn-social {
             color: #fff;
-            font-size: 18px; 
+            font-size: 16px;
             background: rgba(255, 255, 255, 0.05);
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -87,13 +80,13 @@
         .boton-sponsor {
             background-color: rgba(255, 255, 255, 0.05);
             color: #ccc;
-            padding: 5px 18px;
+            padding: 6px 20px;
             border-radius: 30px;
             text-decoration: none;
-            font-size: 13px; 
+            font-size: 11px;
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 10px; 
+            margin-bottom: 18px; /* Espacio añadido antes del logo */
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -105,13 +98,13 @@
         }
 
         .logo-container {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             width: 100%;
             display: flex;
             justify-content: center;
         }
         .logo-container img {
-            max-width: 440px; 
+            max-width: 530px; 
             width: 100%;
             height: auto;
             filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5)); 
@@ -121,32 +114,31 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
-        /* Bloques de botones reducidos 1 punto (altura y fuente ajustadas) */
         .menu-opciones a {
             background: rgba(30, 30, 30, 0.6);
             color: #fff;
             padding: 12px 10px;
             text-decoration: none;
             border-radius: 10px;
-            font-weight: 800;
-            font-size: 17px; /* Reducido 1 punto */
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-weight: 600;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 54px; /* Altura reducida 1 punto respecto a los 60px anteriores */
+            height: 44px; 
             box-sizing: border-box;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .btn-admin-panel {
-            background: rgba(20, 20, 20, 0.85) !important;
+            background: rgba(20, 20, 20, 0.8) !important;
             color: #ffcc00 !important;
-            border: 1px solid rgba(255, 204, 0, 0.5) !important;
+            border: 1px solid rgba(255, 204, 0, 0.4) !important;
         }
         
         .menu-opciones a:hover, .menu-opciones a:active {
@@ -174,29 +166,29 @@
         
         .admin-box input, .admin-box select { 
             width: 100%; padding: 10px; margin: 4px 0; border-radius: 6px; 
-            border: 1px solid rgba(255,255,255,0.1); font-size: 15px; 
+            border: 1px solid rgba(255,255,255,0.1); font-size: 13px; 
             background: rgba(0,0,0,0.5); color: #fff; font-family: 'Inter', sans-serif;
         }
         .admin-box input:focus, .admin-box select:focus { 
             border-color: #ffcc00; outline: none; background: rgba(0,0,0,0.8);
         }
-        .admin-box label { font-size: 13px; color: #aaa; margin-top: 6px; display: block; font-weight: 600; letter-spacing: 0.5px;}
+        .admin-box label { font-size: 11px; color: #aaa; margin-top: 6px; display: block; font-weight: 600; letter-spacing: 0.5px;}
         
         .btn-accion-admin { 
             text-align: center; display: block; margin-top: 10px; padding: 10px; border-radius: 6px; 
             color: #fff !important; text-decoration: none; font-weight: 600; cursor: pointer; 
-            transition: all 0.2s ease; border: none; font-size: 15px; 
+            transition: all 0.2s ease; border: none; font-size: 13px;
         }
         .btn-accion-admin:hover, .btn-accion-admin:active { filter: brightness(1.15); }
         
-        .tabla-participantes { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 8px; font-size: 13px; color: #ddd; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);}
+        .tabla-participantes { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 8px; font-size: 11px; color: #ddd; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);}
         .tabla-participantes th, .tabla-participantes td { padding: 6px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .tabla-participantes th { background-color: rgba(0,0,0,0.8); color: #ffcc00; text-transform: uppercase; font-size: 12px;}
+        .tabla-participantes th { background-color: rgba(0,0,0,0.8); color: #ffcc00; text-transform: uppercase; font-size: 10px;}
         .tabla-participantes tr:hover { background-color: rgba(255,255,255,0.03); }
         
         .acciones-tabla { display: flex; gap: 4px; flex-wrap: wrap; }
-        .btn-editar-tabla { background-color: #ffc107; color: #000; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px;}
-        .btn-eliminar-tabla { background-color: #dc3545; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px;}
+        .btn-editar-tabla { background-color: #ffc107; color: #000; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 10px;}
+        .btn-eliminar-tabla { background-color: #dc3545; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 10px;}
         
         .panel-rol-admin { margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; }
         .busqueda-flex { display: flex; gap: 6px; align-items: center;}
@@ -204,10 +196,7 @@
         .busqueda-flex a { margin: 0; padding: 10px 14px; height: auto;}
 
         @media (min-width: 800px) {
-            .wrapper { 
-                max-width: 900px; 
-                padding: 4px 20px 10px 20px; 
-            }
+            .wrapper { max-width: 900px; }
             .menu-opciones {
                 flex-direction: row; 
                 justify-content: center;
@@ -217,18 +206,10 @@
             .menu-opciones a {
                 flex: 1; 
                 min-width: 180px; 
-                font-size: 15px; 
-                height: 46px; 
+                font-size: 13px;
+                height: 46px;
             }
             .admin-box { max-width: 650px; margin: 0 auto; }
-
-            /* REGLA PC: Listado en pantalla completa horizontal, ancho ampliado */
-            #seccionListado.admin-box {
-                max-width: 98% !important;
-                width: 98% !important;
-                max-height: 88vh !important;
-                margin: 0 auto !important;
-            }
         }
     </style>
 </head>
@@ -263,33 +244,33 @@
 
         <!-- SECCIÓN DE LOGIN -->
         <div id="seccionLogin" class="oculto admin-box">
-            <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Acceso Sistema</h3>
+            <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 18px;">Acceso Sistema</h3>
             <label>Usuario</label><input type="text" id="userAdmin" placeholder="Ingresa tu usuario">
             <label>Contraseña</label><input type="password" id="passAdmin" placeholder="Ingresa tu contraseña">
             <button onclick="verificarAdmin(event)" class="btn-accion-admin" style="background-color: #ff0000; width: 100%;">Ingresar</button>
-            <a href="#" onclick="volverMenu(event)" style="text-align: center; display: block; margin-top: 12px; color: #aaa; text-decoration: none; font-size: 15px;">Volver al menú principal</a>
+            <a href="#" onclick="volverMenu(event)" style="text-align: center; display: block; margin-top: 12px; color: #aaa; text-decoration: none; font-size: 13px;">Volver al menú principal</a>
         </div>
 
         <!-- PANEL DE OPERACIONES PRINCIPAL -->
         <div id="panelMenuOperativo" class="oculto admin-box" style="text-align: center;">
-            <h3 style="color: #ffcc00; margin-top: 0; font-size: 20px;">Panel de Operaciones</h3>
+            <h3 style="color: #ffcc00; margin-top: 0; font-size: 18px;">Panel de Operaciones</h3>
             <a href="#" onclick="mostrarSelectorSector(event)" class="btn-accion-admin" style="background-color: #007bff;"><i class="fa-solid fa-pen-to-square" style="margin-right: 8px;"></i>Inscribir participante</a>
             <a href="#" onclick="verParticipantesCargados(event)" class="btn-accion-admin" style="background-color: #17a2b8;"><i class="fa-solid fa-clipboard-list" style="margin-right: 8px;"></i>Ver listados (Expo & Limbo)</a>
             
             <div id="opcionesAdministrador" class="oculto panel-rol-admin">
-                <h4 style="color:#ffcc00; margin: 0 0 8px 0; font-size: 15px;">Opciones de Administrador</h4>
+                <h4 style="color:#ffcc00; margin: 0 0 8px 0; font-size: 13px;">Opciones de Administrador</h4>
                 <a href="#" onclick="abrirPanelDescalificar(event)" class="btn-accion-admin" style="background-color: #d35400;"><i class="fa-solid fa-ban" style="margin-right: 8px;"></i>Descalificar Participante</a>
                 <a href="#" onclick="guardarRegistroHistorial(event)" class="btn-accion-admin" style="background-color: #8e44ad; margin-top: 6px;"><i class="fa-solid fa-print" style="margin-right: 8px;"></i>Guardar Registro (Imprimir)</a>
                 <a href="#" onclick="vaciarRegistro(event)" class="btn-accion-admin" style="background-color: #c0392b; margin-top: 6px;"><i class="fa-solid fa-trash-can" style="margin-right: 8px;"></i>Vaciar Registro Presentes</a>
             </div>
 
-            <a href="#" onclick="cerrarSesion(event)" style="display: block; margin-top: 15px; color: #ff4d4d; text-decoration: none; font-size: 15px; font-weight:600; text-transform: uppercase;">Cerrar Sesión</a>
+            <a href="#" onclick="cerrarSesion(event)" style="display: block; margin-top: 15px; color: #ff4d4d; text-decoration: none; font-size: 13px; font-weight:600; text-transform: uppercase;">Cerrar Sesión</a>
         </div>
 
         <!-- PANEL: DESCALIFICAR PARTICIPANTE -->
         <div id="panelDescalificar" class="oculto admin-box" style="text-align: center;">
-            <h3 style="color: #ffcc00; margin-top: 0; font-size: 20px;">Descalificar Participante</h3>
-            <p style="font-size:14px; color:#aaa; line-height: 1.3;">Esto eliminará al participante de todos los sectores de la competencia.</p>
+            <h3 style="color: #ffcc00; margin-top: 0; font-size: 18px;">Descalificar Participante</h3>
+            <p style="font-size:12px; color:#aaa; line-height: 1.3;">Esto eliminará al participante de todos los sectores de la competencia.</p>
             <label>1. Categoría</label>
             <select id="descTipo" onchange="cargarDescalificarSelect()">
                 <option value="">Seleccionar categoría...</option>
@@ -306,15 +287,15 @@
 
         <!-- PANEL: SELECCIONAR SECTOR PARA INSCRIPCIÓN -->
         <div id="panelSelectorSector" class="oculto admin-box" style="text-align: center;">
-            <h3 style="color: #ffcc00; margin-top: 0; font-size: 20px;">Selecciona el Sector</h3>
+            <h3 style="color: #ffcc00; margin-top: 0; font-size: 18px;">Selecciona el Sector</h3>
             <a href="#" onclick="iniciarInscripcion('Expo', event)" class="btn-accion-admin" style="background-color: #28a745;"><i class="fa-solid fa-flag-checkered" style="margin-right: 8px;"></i>Sector Expo</a>
             <a href="#" onclick="iniciarInscripcion('Limbo', event)" class="btn-accion-admin" style="background-color: #ffc107; color:#000 !important; margin-top: 8px;"><i class="fa-solid fa-ruler-vertical" style="margin-right: 8px;"></i>Sector Limbo</a>
-            <a href="#" onclick="volverAlMenuOperativo(event)" style="display: block; margin-top: 12px; color: #aaa; text-decoration: none; font-size: 15px;">⬅️ Volver al panel</a>
+            <a href="#" onclick="volverAlMenuOperativo(event)" style="display: block; margin-top: 12px; color: #aaa; text-decoration: none; font-size: 13px;">⬅️ Volver al panel</a>
         </div>
 
         <!-- PANEL: FORMULARIO DE INSCRIPCIÓN -->
         <div id="panelAdmin" class="oculto admin-box">
-            <h3 id="tituloPanelAdmin" style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Marcar Presencia</h3>
+            <h3 id="tituloPanelAdmin" style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 18px;">Marcar Presencia</h3>
             <input type="hidden" id="filaEditando" value="">
             <input type="hidden" id="sectorActual" value="Expo">
 
@@ -361,8 +342,8 @@
 
         <!-- PANEL: REPORTES Y LISTADOS -->
         <div id="seccionListado" class="oculto admin-box">
-            <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Reporte de Inscriptos</h3>
-            <div style="overflow-x: auto; width: 100%; border-radius: 6px; margin-top: 8px;">
+            <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 18px;">Reporte de Inscriptos</h3>
+            <div style="overflow-x: auto; width: 100%; border-radius: 6px; margin-top: 8px; max-height: 50vh;">
                 <div id="contenidoListado"></div>
             </div>
             <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 15px;">⬅️ Volver al panel principal</a>
@@ -528,7 +509,7 @@
             const cont = document.getElementById('contenedor-categorias-checkboxes');
             cont.innerHTML = categoriasDisponibles.length === 0 ? "<span style='font-size:0.8rem; color:#888;'>No hay categorías disponibles</span>" : "";
             categoriasDisponibles.forEach(cat => {
-                cont.innerHTML += `<label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-weight:normal; color:#ddd; font-size:15px;"><input type="checkbox" value="${cat}" ${seleccionadas.includes(cat) ? 'checked' : ''}><span>${cat}</span></label>`;
+                cont.innerHTML += `<label style="display:flex; align-items:center; gap:6px; cursor:pointer; font-weight:normal; color:#ddd; font-size:12px;"><input type="checkbox" value="${cat}" ${seleccionadas.includes(cat) ? 'checked' : ''}><span>${cat}</span></label>`;
             });
         }
 
@@ -685,21 +666,21 @@
                 var expoAutos = data.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("auto") && p.sector === "Expo");
                 var expoMotos = data.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("moto") && p.sector === "Expo");
 
-                html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #00bcd4; margin-top:5px; padding-bottom:4px;"><h3 style="color:#00bcd4; margin:0; font-size:18px;"><i class="fa-solid fa-flag-checkered" style="margin-right:6px;"></i>Expo</h3><span style="background:#00bcd4; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${expoAutos.length + expoMotos.length}</span></div>`;
-                html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${expoAutos.length})</h4>` + (expoAutos.length > 0 ? renderTablaGenerica(expoAutos, "Expo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>");
-                html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${expoMotos.length})</h4>` + (expoMotos.length > 0 ? renderTablaGenerica(expoMotos, "Expo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>");
+                html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #00bcd4; margin-top:5px; padding-bottom:4px;"><h3 style="color:#00bcd4; margin:0; font-size:14px;"><i class="fa-solid fa-flag-checkered" style="margin-right:6px;"></i>Expo</h3><span style="background:#00bcd4; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:11px;">Total: ${expoAutos.length + expoMotos.length}</span></div>`;
+                html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:12px;">🚗 Autos (${expoAutos.length})</h4>` + (expoAutos.length > 0 ? renderTablaGenerica(expoAutos, "Expo") : "<p style='font-size:11px; color:#aaa;'>Vacío</p>");
+                html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:12px;">🏍️ Motos (${expoMotos.length})</h4>` + (expoMotos.length > 0 ? renderTablaGenerica(expoMotos, "Expo") : "<p style='font-size:11px; color:#aaa;'>Vacío</p>");
 
                 var limboInscritos = data.filter(p => p.sector === "Limbo" || p.participaLimbo === "Si");
                 var limboAutos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("auto"));
                 var limboMotos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().startsWith("moto"));
 
-                html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #ffc107; margin-top:15px; padding-bottom:4px;"><h3 style="color:#ffc107; margin:0; font-size:18px;"><i class="fa-solid fa-ruler-vertical" style="margin-right:6px;"></i>Limbo</h3><span style="background:#ffc107; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${limboInscritos.length}</span></div>`;
-                html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${limboAutos.length})</h4>` + (limboAutos.length > 0 ? renderTablaGenerica(limboAutos, "Limbo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>");
-                html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${limboMotos.length})</h4>` + (limboMotos.length > 0 ? renderTablaGenerica(limboMotos, "Limbo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>");
+                html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #ffc107; margin-top:15px; padding-bottom:4px;"><h3 style="color:#ffc107; margin:0; font-size:14px;"><i class="fa-solid fa-ruler-vertical" style="margin-right:6px;"></i>Limbo</h3><span style="background:#ffc107; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:11px;">Total: ${limboInscritos.length}</span></div>`;
+                html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:12px;">🚗 Autos (${limboAutos.length})</h4>` + (limboAutos.length > 0 ? renderTablaGenerica(limboAutos, "Limbo") : "<p style='font-size:11px; color:#aaa;'>Vacío</p>");
+                html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:12px;">🏍️ Motos (${limboMotos.length})</h4>` + (limboMotos.length > 0 ? renderTablaGenerica(limboMotos, "Limbo") : "<p style='font-size:11px; color:#aaa;'>Vacío</p>");
 
                 var valeTodoInscritos = data.filter(p => (p.valeTodo || "").toLowerCase() === "si");
-                html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e040fb; margin-top:15px; padding-bottom:4px;"><h3 style="color:#e040fb; margin:0; font-size:18px;"><i class="fa-solid fa-fire" style="margin-right:6px;"></i>Vale Todo</h3><span style="background:#e040fb; color:#fff; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${valeTodoInscritos.length}</span></div>`;
-                html += `<h4 style="color:#ea80fc; margin:8px 0 3px 0; font-size:16px;">Competidores (${valeTodoInscritos.length})</h4>` + (valeTodoInscritos.length > 0 ? renderTablaGenerica(valeTodoInscritos, "ValeTodo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>");
+                html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e040fb; margin-top:15px; padding-bottom:4px;"><h3 style="color:#e040fb; margin:0; font-size:14px;"><i class="fa-solid fa-fire" style="margin-right:6px;"></i>Vale Todo</h3><span style="background:#e040fb; color:#fff; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:11px;">Total: ${valeTodoInscritos.length}</span></div>`;
+                html += `<h4 style="color:#ea80fc; margin:8px 0 3px 0; font-size:12px;">Competidores (${valeTodoInscritos.length})</h4>` + (valeTodoInscritos.length > 0 ? renderTablaGenerica(valeTodoInscritos, "ValeTodo") : "<p style='font-size:11px; color:#aaa;'>Vacío</p>");
 
                 document.getElementById("contenidoListado").innerHTML = html;
             });
@@ -712,7 +693,7 @@
                 
                 let onclickQuitar = "";
                 if (contexto === "Expo") onclickQuitar = `quitarDeExpo(${JSON.stringify(p)})`;
-                else if (contexto === "Limogo" || contexto === "Limbo") onclickQuitar = `quitarDelLimbo(${JSON.stringify(p)})`;
+                else if (contexto === "Limbo") onclickQuitar = `quitarDelLimbo(${JSON.stringify(p)})`;
                 else onclickQuitar = `quitarDelValeTodo(${JSON.stringify(p)})`;
 
                 h += `<tr><td>${p.nombre}</td><td><span style="color:#bbb;">${p.vehiculo}</span></td><td><b>${cat || 'N/A'}</b></td>
