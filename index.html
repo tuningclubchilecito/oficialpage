@@ -26,8 +26,8 @@
             max-width: 600px; 
             height: 100%; 
             margin: 0 auto;
-            /* Espacio superior ajustado al mínimo para que el cartel principal suba y no quede muy abajo */
-            padding: 2px 20px 5px 20px;[cite: 3]
+            /* Padding superior equilibrado para que el cartel baje y no choque con el borde */
+            padding: 12px 20px 5px 20px; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,13 +40,18 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .circulo-bienvenida {
-            font-size: 22px; 
+            font-size: 20px; 
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 4px; 
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(255, 0, 0, 0.85); /* Fondo tipo placa para que no quede cortado al aire */
+            border-radius: 8px;
+            margin-bottom: 8px; 
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
 
         .redes-sociales {
@@ -54,7 +59,7 @@
             justify-content: center;
             flex-wrap: wrap; 
             gap: 8px;
-            margin-bottom: 6px; 
+            margin-bottom: 8px; 
             width: 100%;
         }
         .btn-social {
@@ -82,13 +87,13 @@
         .boton-sponsor {
             background-color: rgba(255, 255, 255, 0.05);
             color: #ccc;
-            padding: 4px 18px;
+            padding: 5px 18px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 13px; 
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 8px; 
+            margin-bottom: 10px; 
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -116,24 +121,24 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
-        /* Botones principales de opciones considerablemente más grandes y visibles */
+        /* Bloques de botones reducidos 1 punto (altura y fuente ajustadas) */
         .menu-opciones a {
             background: rgba(30, 30, 30, 0.6);
             color: #fff;
-            padding: 16px 12px;
+            padding: 12px 10px;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-weight: 800;
-            font-size: 18px; /* Tipografía más grande */
+            font-size: 17px; /* Reducido 1 punto */
             border: 1px solid rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 60px; /* Altura aumentada para hacerlos más grandes */
+            height: 54px; /* Altura reducida 1 punto respecto a los 60px anteriores */
             box-sizing: border-box;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -212,8 +217,8 @@
             .menu-opciones a {
                 flex: 1; 
                 min-width: 180px; 
-                font-size: 16px; 
-                height: 52px; 
+                font-size: 15px; 
+                height: 46px; 
             }
             .admin-box { max-width: 650px; margin: 0 auto; }
 
