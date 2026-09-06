@@ -37,9 +37,9 @@
 
         /* --- ANIMACIONES --- */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6)); }
-            100% { transform: translateY(0px); }
+            0% { transform: translateY(10px); }     /* Punto de partida (posición original) */
+            50% { transform: translateY(-14px); }  /* Cuánto sube (puedes aumentar o disminuir este valor) */
+            100% { transform: translateY(10px); }   /* Punto de regreso */
         }
         @keyframes pulseRed {
             0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
@@ -133,18 +133,19 @@
         }
 
         .logo-container {
-            margin-bottom: 12px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            animation: fadeInUpStagger 0.6s ease-out 0.4s backwards;
+        margin-top: 15px; /* Ajusta este valor para empujar el bloque del logo más abajo */
+        margin-bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        animation: fadeInUpStagger 0.6s ease-out 0.4s backwards;
         }
         .logo-container img {
-            max-width: 420px; 
+            max-width: 520px; 
             width: 100%;
             height: auto;
             filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5)); 
-            animation: float 4s ease-in-out infinite; 
+            animation: float 10s ease-in-out infinite; 
         }
 
         .menu-opciones {
@@ -152,6 +153,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            margin-top: 1px; /* Agrega esta línea para separar los botones hacia abajo y darle más espacio al logo */
         }
         
         /* backwards libera la propiedad transform para que el hover funcione */
@@ -245,30 +247,42 @@
         .busqueda-flex a { margin: 0; padding: 10px 14px; height: auto;}
 
         @media (min-width: 800px) {
-            .wrapper { 
-                max-width: 900px; 
-                padding: 40px 20px 20px 20px; 
-            }
-            .menu-opciones {
-                flex-direction: row; 
-                justify-content: center;
-                flex-wrap: wrap; 
-                gap: 15px; 
-            }
-            .menu-opciones a {
-                flex: 1; 
-                min-width: 180px; 
-                font-size: 15px; 
-                height: 46px; 
-            }
-            .admin-box { max-width: 650px; margin: 0 auto; }
+    .wrapper { 
+        max-width: 900px; 
+        padding: 40px 20px 20px 20px; 
+    }
+    
+    /* REGLA EXCLUSIVA PARA PC: Controla el tamaño y evita que baje de más */
+    .logo-container {
+        margin-top: 0px; /* Evita que baje demasiado desde arriba en PC */
+        margin-bottom: 15px;
+    }
+    .logo-container img {
+        max-width: 500px; /* Un tamaño ideal para que en PC luzca grande pero controlado */
+    }
 
-            #seccionListado.admin-box {
-                max-width: 98% !important;
-                width: 98% !important;
-                max-height: 88vh !important;
-                margin: 0 auto !important;
-            }
+    .menu-opciones {
+        flex-direction: row; 
+        justify-content: center;
+        flex-wrap: wrap; 
+        gap: 15px; 
+        margin-top: 0px; /* Mantiene los botones en su lugar en PC */
+    }
+    .menu-opciones a {
+        flex: 1; 
+        min-width: 180px; 
+        font-size: 15px; 
+        height: 46px; 
+    }
+    .admin-box { max-width: 650px; margin: 0 auto; }
+
+    #seccionListado.admin-box {
+        max-width: 98% !important;
+        width: 98% !important;
+        max-height: 88vh !important;
+        margin: 0 auto !important;
+    }
+}
         }
     </style>
 </head>
