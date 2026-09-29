@@ -39,12 +39,138 @@
         
         .oculto { display: none !important; }
         .admin-box { background: rgba(20, 20, 20, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 18px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.7); border: 1px solid rgba(255, 255, 255, 0.08); text-align: left; width: 100%; max-height: 85vh; overflow-y: auto; animation: popIn 0.4s ease-out; }
-        .admin-box input[type="text"], .admin-box input[type="number"], .admin-box input[type="password"], .admin-box select, .admin-box textarea { width: 100%; padding: 10px; margin: 4px 0; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); font-size: 15px; background: rgba(0,0,0,0.5); color: #fff; font-family: 'Inter', sans-serif; transition: border-color 0.3s; }
-        .admin-box input:focus, .admin-box select:focus, .admin-box textarea:focus { border-color: #ffcc00; outline: none; background: rgba(0,0,0,0.8); }
+        .admin-box input[type="text"], .admin-box input[type="number"], .admin-box input[type="password"], .admin-box select, .admin-box textarea { width: 100%; padding: 10px; margin: 4px 0; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12); font-size: 15px; background: rgba(0,0,0,0.6); color: #fff; font-family: 'Inter', sans-serif; transition: border-color 0.3s; }
+        .admin-box input:focus, .admin-box select:focus, .admin-box textarea:focus { border-color: #ffcc00; outline: none; background: rgba(0,0,0,0.85); }
+        .admin-box select:disabled, .admin-box input:disabled { opacity: 0.55; cursor: not-allowed; background: rgba(40,40,40,0.6); }
         .admin-box label { font-size: 13px; color: #aaa; margin-top: 6px; display: block; font-weight: 600; letter-spacing: 0.5px;}
-        .btn-accion-admin { text-align: center; display: block; margin-top: 10px; padding: 10px; border-radius: 6px; color: #fff !important; text-decoration: none; font-weight: 600; cursor: pointer; transition: all 0.2s ease; border: none; font-size: 15px; }
+        .btn-accion-admin { text-align: center; display: block; margin-top: 10px; padding: 11px; border-radius: 8px; color: #fff !important; text-decoration: none; font-weight: 700; cursor: pointer; transition: all 0.2s ease; border: none; font-size: 15px; }
         .btn-accion-admin:hover, .btn-accion-admin:active { filter: brightness(1.15); transform: translateY(-2px); }
         
+        /* Botones principales de Guardado Global (Inicio y Final) */
+        .btn-guardar-global {
+            background: linear-gradient(135deg, #00b09b, #96c93d);
+            color: #000 !important;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 13px;
+            border-radius: 10px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 6px 20px rgba(0, 176, 155, 0.35);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 10px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-guardar-global:hover, .btn-guardar-global:active {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 25px rgba(150, 201, 61, 0.5);
+        }
+
+        /* Banner de saludo en cada pestaña */
+        .user-greeting-banner {
+            background: linear-gradient(90deg, rgba(255,204,0,0.15) 0%, rgba(0,229,255,0.1) 100%);
+            border: 1px solid rgba(255, 204, 0, 0.4);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .user-greeting-banner b { color: #ffcc00; }
+        .rol-pill { background: #ffcc00; color: #000; padding: 2px 8px; border-radius: 12px; font-weight: 800; font-size: 11px; text-transform: uppercase; }
+
+        .leyenda-juez { font-size: 12px; color: #00e5ff; background: rgba(0, 229, 255, 0.1); border-left: 3px solid #00e5ff; padding: 6px 8px; border-radius: 4px; margin: 6px 0; font-weight: 600; }
+
+        /* ESTÉTICA PERSONALIZADA Y FONDOS DISTINTOS (SIN AMARILLO NI DORADO) */
+        .tarjeta-juez {
+            padding: 15px;
+            border-radius: 14px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+        .tema-part-0 { background: linear-gradient(145deg, rgba(0, 60, 85, 0.65) 0%, rgba(12, 20, 28, 0.95) 100%); border: 1px solid rgba(0, 229, 255, 0.45); border-left: 6px solid #00e5ff; }
+        .tema-part-1 { background: linear-gradient(145deg, rgba(20, 35, 95, 0.65) 0%, rgba(10, 15, 32, 0.95) 100%); border: 1px solid rgba(77, 148, 255, 0.45); border-left: 6px solid #4d94ff; }
+        .tema-part-2 { background: linear-gradient(145deg, rgba(0, 70, 45, 0.65) 0%, rgba(10, 26, 18, 0.95) 100%); border: 1px solid rgba(0, 230, 118, 0.45); border-left: 6px solid #00e676; }
+        .tema-part-3 { background: linear-gradient(145deg, rgba(65, 20, 85, 0.65) 0%, rgba(22, 10, 30, 0.95) 100%); border: 1px solid rgba(213, 128, 255, 0.45); border-left: 6px solid #d580ff; }
+        .tema-part-4 { background: linear-gradient(145deg, rgba(85, 15, 35, 0.65) 0%, rgba(28, 10, 16, 0.95) 100%); border: 1px solid rgba(255, 77, 121, 0.45); border-left: 6px solid #ff4d79; }
+        .tema-part-5 { background: linear-gradient(145deg, rgba(0, 65, 70, 0.65) 0%, rgba(8, 24, 26, 0.95) 100%); border: 1px solid rgba(32, 201, 151, 0.45); border-left: 6px solid #20c997; }
+
+        .header-participante-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .nombre-participante-grande {
+            font-size: 23px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            margin: 4px 0 6px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+        }
+        .badge-orden {
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 4px 10px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 2px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .meta-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .meta-pill {
+            background: rgba(0,0,0,0.45);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #ddd;
+            font-size: 12px;
+            padding: 4px 9px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .meta-pill.cat {
+            background: rgba(0, 229, 255, 0.15);
+            border-color: rgba(0, 229, 255, 0.45);
+            color: #00e5ff;
+            font-weight: 800;
+        }
+        .estado-autoguardado {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .estado-autoguardado.pendiente { background: rgba(255,255,255,0.1); color: #bbb; }
+        .estado-autoguardado.guardando { background: rgba(0, 229, 255, 0.2); color: #00e5ff; border: 1px solid #00e5ff; }
+        .estado-autoguardado.ok { background: rgba(25, 135, 84, 0.35); color: #00e676; border: 1px solid #00e676; }
+        .estado-autoguardado.error { background: rgba(220, 53, 69, 0.3); color: #ff6b6b; border: 1px solid #dc3545; }
+
         .tabla-participantes { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 8px; font-size: 13px; color: #ddd; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);}
         .tabla-participantes th, .tabla-participantes td { padding: 6px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .tabla-participantes th { background-color: rgba(0,0,0,0.8); color: #ffcc00; text-transform: uppercase; font-size: 12px;}
@@ -59,8 +185,7 @@
         .busqueda-flex input { margin: 0; flex-grow: 1; }
         .busqueda-flex a { margin: 0; padding: 10px 14px; height: auto;}
         
-        .tarjeta-juez { background: rgba(0,0,0,0.4); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); text-align: left;}
-        .foto-placeholder { margin: 8px 0; padding: 10px; background: rgba(220,53,69,0.1); border: 1px dashed #dc3545; font-size: 12px; text-align: center; color: #ff6b6b; border-radius: 6px;}
+        .foto-placeholder { margin: 8px 0; padding: 10px; background: rgba(0,0,0,0.35); border: 1px dashed rgba(255,255,255,0.2); font-size: 12px; text-align: center; color: #aaa; border-radius: 8px;}
 
         @media (min-width: 800px) {
             .wrapper { max-width: 900px; padding: 40px 20px 20px 20px; }
@@ -68,7 +193,15 @@
             .menu-opciones { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 0px; }
             .menu-opciones a { flex: 1; min-width: 180px; font-size: 15px; height: 46px; }
             .admin-box { max-width: 650px; margin: 0 auto; }
-            #seccionListado.admin-box { max-width: 98% !important; width: 98% !important; max-height: 88vh !important; margin: 0 auto !important; }
+            #seccionListado.admin-box, #panelAuditoriaPuntajes.admin-box { max-width: 98% !important; width: 98% !important; max-height: 88vh !important; margin: 0 auto !important; }
+        }
+
+        @media print {
+            body { background: #fff !important; color: #000 !important; }
+            .no-print { display: none !important; }
+            .admin-box { max-height: none !important; overflow: visible !important; border: none !important; box-shadow: none !important; background: #fff !important; color: #000 !important; }
+            .tarjeta-juez { border: 1px solid #000 !important; background: #fff !important; color: #000 !important; page-break-inside: avoid; }
+            .nombre-participante-grande { color: #000 !important; text-shadow: none !important; }
         }
     </style>
 </head>
@@ -107,6 +240,7 @@
 
         <!-- PANEL DE OPERACIONES DIVIDIDO POR ROLES -->
         <div id="panelMenuOperativo" class="oculto admin-box" style="text-align: center;">
+            <div class="user-greeting-banner"></div>
             <h3 style="color: #ffcc00; margin-top: 0; font-size: 20px; margin-bottom:15px;">Panel de Operaciones</h3>
             
             <div id="bloqueOperador" class="oculto" style="margin-bottom:15px;">
@@ -125,6 +259,7 @@
             
             <div id="opcionesAdministrador" class="oculto panel-rol-admin">
                 <h4 style="color:#ffcc00; margin: 0 0 8px 0; font-size: 15px;">Opciones de Administrador</h4>
+                <a href="#" onclick="abrirPanelAuditoriaPuntajes(event)" class="btn-accion-admin" style="background-color: #198754; margin-top: 6px;"><i class="fa-solid fa-user-shield" style="margin-right: 8px;"></i>Ver / Modificar Puntajes y Copas</a>
                 <a href="#" onclick="abrirPanelDescalificar(event)" class="btn-accion-admin" style="background-color: #d35400; margin-top: 6px;"><i class="fa-solid fa-ban" style="margin-right: 8px;"></i>Descalificar Participante</a>
                 <a href="#" onclick="guardarRegistroHistorial(event)" class="btn-accion-admin" style="background-color: #8e44ad; margin-top: 6px;"><i class="fa-solid fa-print" style="margin-right: 8px;"></i>Guardar Registro (Imprimir)</a>
                 <a href="#" onclick="vaciarRegistro(event)" class="btn-accion-admin" style="background-color: #c0392b; margin-top: 6px;"><i class="fa-solid fa-trash-can" style="margin-right: 8px;"></i>Vaciar Registro Presentes</a>
@@ -133,39 +268,113 @@
             <a href="#" onclick="cerrarSesion(event)" style="display: block; margin-top: 15px; color: #ff4d4d; text-decoration: none; font-size: 15px; font-weight:600; text-transform: uppercase;">Cerrar Sesión</a>
         </div>
 
+        <!-- PANEL DE CALIFICACIÓN INDIVIDUAL DEL JUEZ -->
         <div id="panelJuez" class="oculto admin-box">
-            <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Panel del Juez</h3>
-            <select id="filtroJuezTipo" onchange="renderizarListaJuez()"><option value="autos">Autos</option><option value="motos">Motos</option></select>
-            <div id="listaJuezContenedor" style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px;"></div>
-            <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 15px;">⬅️ Volver al panel principal</a>
+            <div class="user-greeting-banner"></div>
+            <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Panel de Calificación del Juez</h3>
+            <div class="leyenda-juez" style="text-align:center;">
+                <i class="fa-solid fa-shield-halved"></i> <b>Auto-guardado activo:</b> Tus notas se respaldan solas al escribir. También puedes usar los botones generales de guardado al inicio o al final.
+            </div>
+            <select id="filtroJuezTipo" onchange="renderizarListaJuez()">
+                <option value="autos">Autos</option>
+                <option value="motos">Motos</option>
+            </select>
+
+            <button id="btnGuardarTodoArriba" onclick="guardarTodasLasEvaluacionesJuez()" class="btn-guardar-global">
+                <i class="fa-solid fa-floppy-disk" style="margin-right:6px;"></i> Guardar Todas las Evaluaciones
+            </button>
+
+            <div id="listaJuezContenedor" style="margin-top: 12px; display: flex; flex-direction: column; gap: 18px;"></div>
+
+            <button id="btnGuardarTodoAbajo" onclick="guardarTodasLasEvaluacionesJuez()" class="btn-guardar-global" style="margin-top: 16px;">
+                <i class="fa-solid fa-floppy-disk" style="margin-right:6px;"></i> Guardar Todas las Evaluaciones
+            </button>
+
+            <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 10px;">⬅️ Volver al panel principal</a>
         </div>
 
+        <!-- PANEL DE PUNTAJES GANADORES (PROMEDIO DE TODOS LOS JUECES) -->
         <div id="panelPuntajesGanadores" class="oculto admin-box">
-            <h3 style="text-align: center; margin-top: 0; color: #0dcaf0; font-size: 20px;">Puntajes Ganadores (Recomendaciones)</h3>
-            <p style="font-size:13px; color:#aaa; line-height:1.4;">Evalúa promedios y puntajes generales para recomendar a los ganadores por categoría de Expo.</p>
-            <select id="filtroPuntajesTipo" onchange="renderizarPuntajesGanadores()"><option value="autos">Autos</option><option value="motos">Motos</option></select>
+            <div class="user-greeting-banner"></div>
+            <h3 style="text-align: center; margin-top: 0; color: #0dcaf0; font-size: 20px;">Puntajes Ganadores (Cálculo General)</h3>
+            <p style="font-size:13px; color:#aaa; line-height:1.4;">Reúne las evaluaciones de todos los jueces (Generales, de Autos y de Motos) y calcula los promedios finales por categoría de Expo.</p>
+            <select id="filtroPuntajesTipo" onchange="renderizarPuntajesGanadores()">
+                <option value="autos">Autos</option>
+                <option value="motos">Motos</option>
+            </select>
             <div id="listaPuntajesContenedor" style="margin-top: 15px;"></div>
             <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 15px;">⬅️ Volver al panel principal</a>
         </div>
 
-        <div id="panelCopas" class="oculto admin-box">
-            <h3 style="text-align: center; margin-top: 0; color: #e67e22; font-size: 20px;">Copas del Rey y Destacados</h3>
-            <label style="color:#ffcc00;">👑 Copa del Rey (Auto)</label><select id="copaReyAuto"><option value="">Cargando participantes...</option></select>
-            <label style="color:#ffcc00; margin-top:10px;">👑 Copa del Rey (Moto)</label><select id="copaReyMoto"><option value="">Cargando participantes...</option></select>
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
-            <label>¿Hay trofeos destacados?</label>
-            <select id="hayDestacados" onchange="toggleDestacadosInputs()"><option value="No">No</option><option value="Si">Sí</option></select>
-            <div id="configDestacados" class="oculto" style="margin-top:10px; background:rgba(0,0,0,0.3); padding:10px; border-radius:8px;">
-                <label>Cantidad Destacados (Autos)</label><input type="number" id="numDestAutos" value="0" min="0" placeholder="Ej: 3">
-                <label>Cantidad Destacados (Motos)</label><input type="number" id="numDestMotos" value="0" min="0" placeholder="Ej: 2">
-                <button onclick="generarCamposDestacados()" class="btn-accion-admin" style="background-color:#007bff; margin-top:10px; width:100%;">Generar Listas</button>
+        <!-- PANEL DE AUDITORÍA DE PUNTAJES Y COPAS DEL REY PARA EL ADMINISTRADOR -->
+        <div id="panelAuditoriaPuntajes" class="oculto admin-box">
+            <div class="user-greeting-banner no-print"></div>
+            <h3 style="text-align: center; margin-top: 0; color: #20c997; font-size: 20px;">Control de Puntajes y Copas del Rey por Juez</h3>
+            <p class="no-print" style="font-size:13px; color:#aaa; text-align:center; margin-top:0;">Revisa o modifica a quién eligió cada juez para Copas del Rey / Destacados y todas las calificaciones individuales.</p>
+            
+            <div class="no-print" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+                <select id="filtroAuditTipo" onchange="renderizarAuditoriaPuntajes()" style="flex:1; min-width:130px;">
+                    <option value="todos">Todos (Autos y Motos)</option>
+                    <option value="autos">Solo Autos</option>
+                    <option value="motos">Solo Motos</option>
+                </select>
+                <select id="filtroAuditJuez" onchange="renderizarAuditoriaPuntajes()" style="flex:1; min-width:130px;">
+                    <option value="todos">Todos los Jueces</option>
+                </select>
             </div>
-            <div id="contenedorDestacadosGenerados" style="margin-top:15px;"></div>
-            <a href="#" onclick="guardarCopasYDestacados(event)" class="btn-accion-admin" style="background-color: #28a745; margin-top: 20px;"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Guardar Reyes y Destacados</a>
+
+            <div class="no-print" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
+                <button onclick="guardarAuditoriaEnSheet(event)" class="btn-accion-admin" style="background:#198754; flex:1; margin-top:0;"><i class="fa-solid fa-file-export" style="margin-right:6px;"></i>Guardar Puntajes en Sheet con Fecha</button>
+                <button onclick="window.print()" class="btn-accion-admin" style="background:#8e44ad; flex:1; margin-top:0;"><i class="fa-solid fa-print" style="margin-right:6px;"></i>Imprimir Planilla</button>
+            </div>
+
+            <!-- SECCIÓN 1: COPAS DEL REY Y DESTACADOS ELEGIDOS POR CADA JUEZ -->
+            <div id="contenedorAuditoriaCopas" style="margin-bottom: 18px;"></div>
+
+            <!-- SECCIÓN 2: CALIFICACIONES POR VEHÍCULO DE CADA JUEZ -->
+            <div id="contenedorAuditoria" style="display:flex; flex-direction:column; gap:12px;"></div>
+            <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin no-print" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 15px;">⬅️ Volver al panel principal</a>
+        </div>
+
+        <!-- PANEL DE COPAS DEL REY Y DESTACADOS -->
+        <div id="panelCopas" class="oculto admin-box">
+            <div class="user-greeting-banner"></div>
+            <h3 style="text-align: center; margin-top: 0; color: #e67e22; font-size: 20px;">Copas del Rey y Destacados</h3>
+            <div id="bloqueCopaAuto">
+                <label style="color:#00e5ff;">👑 Copa del Rey (Auto)</label>
+                <select id="copaReyAuto"><option value="">Cargando participantes...</option></select>
+            </div>
+            <div id="bloqueCopaMoto">
+                <label style="color:#00e5ff; margin-top:10px;">👑 Copa del Rey (Moto)</label>
+                <select id="copaReyMoto"><option value="">Cargando participantes...</option></select>
+            </div>
+
+            <!-- BLOQUE EXCLUSIVO PARA JUEZ GENERAL Y ADMIN (OCULTO PARA JUEZ DE MOTOS Y JUEZ DE AUTOS) -->
+            <div id="bloqueSeccionDestacadosCompleta">
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 15px 0;">
+                <label>¿Hay trofeos destacados?</label>
+                <select id="hayDestacados" onchange="toggleDestacadosInputs()">
+                    <option value="No">No</option>
+                    <option value="Si">Sí</option>
+                </select>
+                <div id="configDestacados" class="oculto" style="margin-top:10px; background:rgba(0,0,0,0.3); padding:10px; border-radius:8px;">
+                    <div id="bloqueNumDestAutos">
+                        <label>Cantidad Destacados (Autos)</label><input type="number" id="numDestAutos" value="0" min="0" placeholder="Ej: 3">
+                    </div>
+                    <div id="bloqueNumDestMotos">
+                        <label>Cantidad Destacados (Motos)</label><input type="number" id="numDestMotos" value="0" min="0" placeholder="Ej: 2">
+                    </div>
+                    <button onclick="generarCamposDestacados()" class="btn-accion-admin" style="background-color:#007bff; margin-top:10px; width:100%;">Generar Listas</button>
+                </div>
+                <div id="contenedorDestacadosGenerados" style="margin-top:15px;"></div>
+            </div>
+
+            <a href="#" onclick="guardarCopasYDestacados(event)" class="btn-accion-admin" style="background-color: #28a745; margin-top: 20px;"><i class="fa-solid fa-floppy-disk" style="margin-right: 8px;"></i>Guardar Elección</a>
             <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 8px;">⬅️ Volver al panel</a>
         </div>
 
         <div id="panelGanadores" class="oculto admin-box">
+            <div class="user-greeting-banner"></div>
             <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Selección de Ganadores</h3>
             <div style="display:flex; gap:8px; margin-bottom: 10px;">
                 <select id="filtroGanadoresSector" onchange="renderizarListaGanadores()" style="flex:1;">
@@ -183,6 +392,7 @@
         </div>
 
         <div id="panelDescalificar" class="oculto admin-box" style="text-align: center;">
+            <div class="user-greeting-banner"></div>
             <h3 style="color: #ffcc00; margin-top: 0; font-size: 20px;">Descalificar Participante</h3>
             <label>1. Categoría</label><select id="descTipo" onchange="cargarDescalificarSelect()"><option value="">Seleccionar categoría...</option><option value="autos">Autos</option><option value="motos">Motos</option></select>
             <label>2. Participante</label><select id="descParticipante"><option value="">Seleccionar participante...</option></select>
@@ -191,6 +401,7 @@
         </div>
 
         <div id="panelSelectorSector" class="oculto admin-box" style="text-align: center;">
+            <div class="user-greeting-banner"></div>
             <h3 style="color: #ffcc00; margin-top: 0; font-size: 20px;">Selecciona el Sector</h3>
             <a href="#" onclick="iniciarInscripcion('Expo', event)" class="btn-accion-admin" style="background-color: #28a745;"><i class="fa-solid fa-flag-checkered" style="margin-right: 8px;"></i>Sector Expo</a>
             <a href="#" onclick="iniciarInscripcion('Limbo', event)" class="btn-accion-admin" style="background-color: #ffc107; color:#000 !important; margin-top: 8px;"><i class="fa-solid fa-ruler-vertical" style="margin-right: 8px;"></i>Sector Limbo</a>
@@ -198,6 +409,7 @@
         </div>
 
         <div id="panelAdmin" class="oculto admin-box">
+            <div class="user-greeting-banner"></div>
             <h3 id="tituloPanelAdmin" style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Marcar Presencia</h3>
             <input type="hidden" id="filaEditando" value="">
             <input type="hidden" id="sectorActual" value="Expo">
@@ -218,6 +430,7 @@
         </div>
 
         <div id="seccionListado" class="oculto admin-box">
+            <div class="user-greeting-banner"></div>
             <h3 style="text-align: center; margin-top: 0; color: #ffcc00; font-size: 20px;">Listado de Participantes</h3>
             <div style="overflow-x: auto; width: 100%; border-radius: 6px; margin-top: 8px;"><div id="contenidoListado"></div></div>
             <a href="#" onclick="volverAlMenuOperativo(event)" class="btn-accion-admin" style="background: rgba(255,255,255,0.1); color:#ccc !important; margin-top: 15px;">⬅️ Volver al panel principal</a>
@@ -226,9 +439,51 @@
 
 <script>
         const URL_ADMIN_APG = "https://script.google.com/macros/s/AKfycbxdh6lJ7F3jJVeGM1gTtwg3RYowZ87KkXDgBZ6ioCDdbuU3NDOO6rlb0gCwdJ6Y4Zkl/exec"; 
-        let listaMaestraCategorias = [], rolActivo = "", listaGlobalDescalificar = [], datosPresentesGlobal = [], datosCalificacionesGlobal = [];
+        let listaMaestraCategorias = [], rolActivo = "", usuarioActivo = "", listaGlobalDescalificar = [], datosPresentesGlobal = [], datosCalificacionesGlobal = [], datosCopasGlobal = [];
+        let timersAutoGuardado = {};
 
-        window.addEventListener('DOMContentLoaded', () => { fetch(`${URL_ADMIN_APG}?accion=visitas`).then(r => r.json()).then(data => { if(data.visitas) document.getElementById("numeroVisitas").innerText = Number(data.visitas).toLocaleString('es-ES'); }).catch(() => document.getElementById("numeroVisitas").innerText = "+500"); });
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch(`${URL_ADMIN_APG}?accion=visitas`)
+            .then(r => r.json())
+            .then(data => {
+                if(data.visitas) document.getElementById("numeroVisitas").innerText = Number(data.visitas).toLocaleString('es-ES');
+            }).catch(() => document.getElementById("numeroVisitas").innerText = "+500");
+        });
+
+        function obtenerNombreRolLegible(rol) {
+            switch(rol) {
+                case "admin": return "Administrador General";
+                case "operador": return "Inscriptor / Operador";
+                case "juez": return "Juez General";
+                case "juez_motos": return "Juez Exclusivo Motos";
+                case "juez_autos": return "Juez Exclusivo Autos";
+                default: return rol;
+            }
+        }
+
+        function actualizarBannersSaludo() {
+            const nombreLegible = obtenerNombreRolLegible(rolActivo);
+            document.querySelectorAll('.user-greeting-banner').forEach(banner => {
+                banner.innerHTML = `<span>👋 Hola, <b>${usuarioActivo}</b></span> <span class="rol-pill">${nombreLegible}</span>`;
+            });
+        }
+
+        function aplicarRestriccionesPorRol() {
+            const idsSelectTipo = ["filtroJuezTipo", "filtroPuntajesTipo", "filtroGanadoresTipo"];
+            idsSelectTipo.forEach(id => {
+                let sel = document.getElementById(id);
+                if (!sel) return;
+                if (rolActivo === "juez_motos") {
+                    sel.value = "motos";
+                    sel.disabled = true;
+                } else if (rolActivo === "juez_autos") {
+                    sel.value = "autos";
+                    sel.disabled = true;
+                } else {
+                    sel.disabled = false;
+                }
+            });
+        }
 
         function mostrarLogin(e) { e.preventDefault(); document.getElementById("encabezadoPrincipal").classList.add("oculto"); document.getElementById("menuOriginal").classList.add("oculto"); document.getElementById("seccionLogin").classList.remove("oculto"); }
         function volverMenu(e) { e.preventDefault(); document.getElementById("seccionLogin").classList.add("oculto"); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("encabezadoPrincipal").classList.remove("oculto"); document.getElementById("menuOriginal").classList.remove("oculto"); }
@@ -243,7 +498,11 @@
             .then(r => r.json()).then(res => {
                 btnIngresar.innerText = txtOrigen;
                 if (res.status === "success") {
-                    rolActivo = res.rol; 
+                    rolActivo = res.rol;
+                    usuarioActivo = res.usuario || usuario;
+                    actualizarBannersSaludo();
+                    aplicarRestriccionesPorRol();
+
                     document.getElementById("seccionLogin").classList.add("oculto"); 
                     document.getElementById("panelMenuOperativo").classList.remove("oculto");
                     
@@ -258,7 +517,7 @@
                         document.getElementById("opcionesAdministrador").classList.remove("oculto");
                     } else if (rolActivo === "operador") {
                         document.getElementById("bloqueOperador").classList.remove("oculto");
-                    } else if (rolActivo === "juez") {
+                    } else if (rolActivo === "juez" || rolActivo === "juez_motos" || rolActivo === "juez_autos") {
                         document.getElementById("bloqueJuez").classList.remove("oculto");
                         document.getElementById("bloqueJuez").classList.remove("panel-rol-admin");
                     }
@@ -268,195 +527,697 @@
             }).catch(() => { btnIngresar.innerText = txtOrigen; alert("Error de red."); });
         }
 
-        function cerrarSesion(e) { e.preventDefault(); rolActivo = ""; document.querySelectorAll('.admin-box').forEach(b => b.classList.add('oculto')); document.getElementById("encabezadoPrincipal").classList.remove("oculto"); document.getElementById("menuOriginal").classList.remove("oculto"); }
-        function mostrarSelectorSector(e) { e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelSelectorSector").classList.remove("oculto"); }
-        function volverAlMenuOperativo(e) { if(e) e.preventDefault(); document.querySelectorAll('.admin-box').forEach(b => b.classList.add('oculto')); document.getElementById("panelMenuOperativo").classList.remove("oculto"); document.getElementById("seccionLogin").classList.add("oculto"); }
+        function cerrarSesion(e) { e.preventDefault(); rolActivo = ""; usuarioActivo = ""; document.querySelectorAll('.admin-box').forEach(b => b.classList.add('oculto')); document.getElementById("encabezadoPrincipal").classList.remove("oculto"); document.getElementById("menuOriginal").classList.remove("oculto"); }
+        function mostrarSelectorSector(e) { e.preventDefault(); actualizarBannersSaludo(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelSelectorSector").classList.remove("oculto"); }
+        function volverAlMenuOperativo(e) { if(e) e.preventDefault(); actualizarBannersSaludo(); document.querySelectorAll('.admin-box').forEach(b => b.classList.add('oculto')); document.getElementById("panelMenuOperativo").classList.remove("oculto"); document.getElementById("seccionLogin").classList.add("oculto"); }
 
-        /* --- 1. JUEZ MULTIPUNTAJE Y OPCIONES GENERALES --- */
+        /* --- 1. PANEL DE CALIFICACIÓN DEL JUEZ --- */
         function abrirPanelJuez(e) {
-            e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelJuez").classList.remove("oculto");
-            document.getElementById("listaJuezContenedor").innerHTML = "<p style='color:#ccc;'>Cargando...</p>";
+            e.preventDefault();
+            actualizarBannersSaludo();
+            aplicarRestriccionesPorRol();
+            document.getElementById("panelMenuOperativo").classList.add("oculto");
+            document.getElementById("panelJuez").classList.remove("oculto");
+            document.getElementById("listaJuezContenedor").innerHTML = "<p style='color:#ccc; text-align:center;'>Cargando participantes...</p>";
             fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(presentes => {
                 datosPresentesGlobal = presentes;
-                fetch(`${URL_ADMIN_APG}?accion=ver_calificaciones`).then(r => r.json()).then(calif => { datosCalificacionesGlobal = calif || []; renderizarListaJuez(); }).catch(() => { datosCalificacionesGlobal = []; renderizarListaJuez(); });
+                fetch(`${URL_ADMIN_APG}?accion=ver_calificaciones`).then(r => r.json()).then(calif => {
+                    datosCalificacionesGlobal = calif || [];
+                    renderizarListaJuez();
+                }).catch(() => {
+                    datosCalificacionesGlobal = [];
+                    renderizarListaJuez();
+                });
             });
         }
 
         function renderizarListaJuez() {
-            let tipoFiltro = document.getElementById("filtroJuezTipo").value; let keyword = tipoFiltro === "autos" ? "auto" : "moto"; 
-            let filtrados = datosPresentesGlobal.filter(p => p.tipo && p.tipo.toLowerCase().includes(keyword) && p.sector !== "Sin Sector");
+            aplicarRestriccionesPorRol();
+            let tipoFiltro = document.getElementById("filtroJuezTipo").value;
+            let keyword = tipoFiltro === "autos" ? "auto" : "moto"; 
+            let iconoVehiculo = tipoFiltro === "autos" ? "🚗" : "🏍️";
+            let filtrados = datosPresentesGlobal.filter(p => p.tipo && p.tipo.toLowerCase().includes(keyword) && p.sector === "Expo");
             let html = "";
-            if(filtrados.length === 0) { document.getElementById("listaJuezContenedor").innerHTML = "<p style='color:#ccc;'>Vacío</p>"; return; }
+            if(filtrados.length === 0) {
+                document.getElementById("listaJuezContenedor").innerHTML = "<p style='color:#ccc; text-align:center;'>No hay vehículos registrados en Expo para esta categoría.</p>";
+                return;
+            }
             
-            filtrados.forEach(p => {
-                let calif = datosCalificacionesGlobal.find(c => c.fila == p.fila) || {veredicto: "", puntos: "{}"}; 
-                let savedScores = {}; try { savedScores = JSON.parse(calif.puntos); } catch(e) { savedScores = {}; }
+            filtrados.forEach((p, idx) => {
+                let calif = datosCalificacionesGlobal.find(c => c.fila == p.fila && String(c.juez || "").toLowerCase() === usuarioActivo.toLowerCase()) || {veredicto: "", puntos: "{}"}; 
+                let savedScores = {};
+                try { savedScores = JSON.parse(calif.puntos); } catch(e) { savedScores = {}; }
                 
-                let catRenderInfo = [];
-                if(p.categoriaExpo) catRenderInfo.push(p.categoriaExpo);
-                if(p.categoriaLimbo) catRenderInfo.push(p.categoriaLimbo);
-                let catRender = catRenderInfo.join(" / ") || 'N/A';
-
+                let catRender = p.categoriaExpo || 'N/A';
                 let categoriasParaPuntuar = [];
                 if(p.categoriaExpo) categoriasParaPuntuar = categoriasParaPuntuar.concat(p.categoriaExpo.split(',').map(c=>c.trim()).filter(c=>c));
                 categoriasParaPuntuar = [...new Set(categoriasParaPuntuar)]; 
+                let catList = encodeURIComponent(JSON.stringify(categoriasParaPuntuar)); 
+                let nombreEscapado = p.nombre.replace(/'/g, "\\'");
 
-                let puntajesHtml = `<div style="background:rgba(0,0,0,0.5); padding:10px; border-radius:6px; margin: 10px 0;">`;
+                let puntajesHtml = `<div style="background:rgba(0,0,0,0.45); padding:12px; border-radius:10px; margin: 10px 0; border:1px solid rgba(255,255,255,0.08);">`;
+                puntajesHtml += `<div class="leyenda-juez">⚠️ Debes de ingresar los puntos entre 1 y 10 en cada categoría.</div>`;
+                
                 categoriasParaPuntuar.forEach(cat => {
-                    let pCat = savedScores[cat] || ""; let safeCat = cat.replace(/[^a-zA-Z0-9]/g, "_");
-                    puntajesHtml += `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;"><label style="margin:0;">Puntaje en ${cat}:</label> <input type="number" id="juez_pt_${p.fila}_${safeCat}" step="0.1" value="${pCat}" style="width:80px; text-align:center; padding:4px; margin:0;" data-cat="${cat}"></div>`;
+                    let pCat = savedScores[cat] !== undefined ? savedScores[cat] : "";
+                    let safeCat = cat.replace(/[^a-zA-Z0-9]/g, "_");
+                    puntajesHtml += `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <label style="margin:0; color:#fff;">Puntaje en <b>${cat}</b> (1 a 10):</label>
+                        <input type="number" id="juez_pt_${p.fila}_${safeCat}" min="1" max="10" step="0.1" placeholder="1-10" value="${pCat}" style="width:85px; text-align:center; padding:6px; margin:0; font-weight:800;" data-cat="${cat}" oninput="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')">
+                    </div>`;
                 });
                 
-                let pGen = savedScores['General'] || "";
+                let pGen = savedScores['General'] !== undefined ? savedScores['General'] : "";
                 let pGenTexto = savedScores['General_Texto'] || "";
 
                 let radiosHtml = `
-                    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:5px; margin-bottom:8px; font-size:13px;">
-                        <label style="cursor:pointer; color:#ccc; display:flex; align-items:center; gap:4px;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Bajo" ${pGenTexto.includes('Bajo') ? 'checked' : ''} style="width:auto; margin:0;"> Bajo (0-4)</label>
-                        <label style="cursor:pointer; color:#ccc; display:flex; align-items:center; gap:4px;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Regular" ${pGenTexto.includes('Regular') ? 'checked' : ''} style="width:auto; margin:0;"> Regular (5-6)</label>
-                        <label style="cursor:pointer; color:#ccc; display:flex; align-items:center; gap:4px;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Bueno" ${pGenTexto.includes('Bueno') ? 'checked' : ''} style="width:auto; margin:0;"> Bueno (7-8)</label>
-                        <label style="cursor:pointer; color:#ccc; display:flex; align-items:center; gap:4px;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Muy bueno" ${pGenTexto.includes('Muy') ? 'checked' : ''} style="width:auto; margin:0;"> Muy bueno (9-10)</label>
+                    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:10px; font-size:13px; background:rgba(255,255,255,0.05); padding:8px; border-radius:8px;">
+                        <label style="cursor:pointer; color:#eee; display:flex; align-items:center; gap:5px; margin:0;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Bajo" ${pGenTexto === 'Bajo' ? 'checked' : ''} style="width:auto; margin:0;" onchange="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')"> Bajo</label>
+                        <label style="cursor:pointer; color:#eee; display:flex; align-items:center; gap:5px; margin:0;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Regular" ${pGenTexto === 'Regular' ? 'checked' : ''} style="width:auto; margin:0;" onchange="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')"> Regular</label>
+                        <label style="cursor:pointer; color:#eee; display:flex; align-items:center; gap:5px; margin:0;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Bueno" ${pGenTexto === 'Bueno' ? 'checked' : ''} style="width:auto; margin:0;" onchange="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')"> Bueno</label>
+                        <label style="cursor:pointer; color:#eee; display:flex; align-items:center; gap:5px; margin:0;"><input type="radio" name="juez_pt_texto_${p.fila}" value="Muy bueno" ${pGenTexto === 'Muy bueno' ? 'checked' : ''} style="width:auto; margin:0;" onchange="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')"> Muy bueno</label>
                     </div>
                 `;
 
-                puntajesHtml += `<hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:8px 0;">
-                <label style="margin:0 0 6px 0; color:#0dcaf0; display:block;">Valoración General:</label>
+                puntajesHtml += `<hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:10px 0;">
+                <label style="margin:0 0 6px 0; color:#4dd0e1; display:block; font-size:13px;">📌 Valoración general como proyecto:</label>
                 ${radiosHtml}
-                <div style="display:flex; justify-content:space-between; align-items:center;"><label style="margin:0; color:#0dcaf0;">Puntaje Exacto:</label> <input type="number" id="juez_pt_${p.fila}_General" step="0.1" value="${pGen}" style="width:80px; text-align:center; padding:4px; margin:0;" data-cat="General"></div></div>`;
+                <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:10px 0;">
+                <label style="margin:0 0 4px 0; color:#0dcaf0; display:block; font-size:13px;">⭐ Puntaje general de todo el vehículo:</label>
+                <span style="font-size:11px; color:#aaa; display:block; margin-bottom:6px;">(Este es el puntaje general aparte del puntaje de cada categoría. Ingresa entre 1 y 10)</span>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <label style="margin:0; color:#0dcaf0;">Nota General del Vehículo (1 a 10):</label>
+                    <input type="number" id="juez_pt_${p.fila}_General" min="1" max="10" step="0.1" placeholder="1-10" value="${pGen}" style="width:85px; text-align:center; padding:6px; margin:0; font-weight:800;" data-cat="General" oninput="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')">
+                </div>
+                </div>`;
                 
                 let fotoUrl = "";
-                if (p.foto && p.foto.trim() !== "") { let primerLink = p.foto.trim().split(',')[0].trim(); let matchID = primerLink.match(/id=([a-zA-Z0-9_-]+)/) || primerLink.match(/\/d\/([a-zA-Z0-9_-]+)/); if (matchID && matchID[1]) { fotoUrl = "https://drive.google.com/uc?export=view&id=" + matchID[1]; } else { fotoUrl = primerLink; } }
-                let imgHtml = fotoUrl !== "" ? `<img src="${fotoUrl}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';" style="width:100%; border-radius:6px; margin:8px 0; max-height:250px; object-fit:cover; border: 1px solid rgba(255,204,0,0.3);"><div class="foto-placeholder" style="display:none;"><i class="fa-solid fa-camera"></i> Enlace roto</div>` : `<div class="foto-placeholder"><i class="fa-solid fa-camera"></i> Foto no cargada en base de datos</div>`;
-                let catList = encodeURIComponent(JSON.stringify(categoriasParaPuntuar)); 
+                if (p.foto && p.foto.trim() !== "") {
+                    let primerLink = p.foto.trim().split(',')[0].trim();
+                    let matchID = primerLink.match(/id=([a-zA-Z0-9_-]+)/) || primerLink.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                    if (matchID && matchID[1]) { fotoUrl = "https://drive.google.com/uc?export=view&id=" + matchID[1]; } else { fotoUrl = primerLink; }
+                }
+                let imgHtml = fotoUrl !== "" ? `<img src="${fotoUrl}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';" style="width:100%; border-radius:10px; margin:8px 0; max-height:250px; object-fit:cover; border: 1px solid rgba(255,255,255,0.2);"><div class="foto-placeholder" style="display:none;"><i class="fa-solid fa-camera"></i> Enlace roto</div>` : `<div class="foto-placeholder"><i class="fa-solid fa-camera"></i> Sin foto adjunta</div>`;
+                
+                let yaEvaluado = calif.puntos && calif.puntos !== "{}";
+                let estadoBadgeHtml = yaEvaluado
+                    ? `<span id="estado_auto_${p.fila}" class="estado-autoguardado ok">☁️ Guardado ✔</span>`
+                    : `<span id="estado_auto_${p.fila}" class="estado-autoguardado pendiente">Pendiente</span>`;
 
-                html += `<div class="tarjeta-juez"><div style="display:flex; justify-content:space-between; align-items:flex-start;"><div><b style="color:#00bcd4; font-size:16px;">${p.nombre}</b><br><span style="font-size:13px; color:#ccc;">${p.vehiculo}</span><br><span style="font-size:11px; color:#aaa; font-weight:bold; text-transform:uppercase;">CAT: ${catRender}</span></div></div>${imgHtml}<label>Veredicto o detalles:</label><textarea id="juez_veredicto_${p.fila}" rows="2">${calif.veredicto}</textarea>${puntajesHtml}<button onclick="guardarCalificacionJSON(${p.fila}, '${p.nombre}', '${catList}')" class="btn-accion-admin" style="background:#20c997; padding:6px; margin-top:8px;">Guardar Evaluación</button></div>`;
+                let claseTema = `tema-part-${idx % 6}`;
+                let numOrden = String(idx + 1).padStart(2, '0');
+
+                html += `<div class="tarjeta-juez ${claseTema}" data-fila="${p.fila}" data-nombre="${p.nombre.replace(/"/g, '&quot;')}" data-cats="${catList}">
+                    <div class="header-participante-card">
+                        <div>
+                            <span class="badge-orden">#${numOrden} ${iconoVehiculo}</span>
+                            <div class="nombre-participante-grande">${p.nombre}</div>
+                            <div class="meta-pills">
+                                <span class="meta-pill"><i class="fa-solid fa-car-side"></i> ${p.vehiculo || 'S/D'}</span>
+                                ${p.marca ? `<span class="meta-pill">🏷️ ${p.marca}</span>` : ''}
+                                ${p.color ? `<span class="meta-pill">🎨 ${p.color}</span>` : ''}
+                                <span class="meta-pill cat">🏆 ${catRender}</span>
+                            </div>
+                        </div>
+                        ${estadoBadgeHtml}
+                    </div>
+                    ${imgHtml}
+                    <label style="color:#ddd;">Veredicto o detalles del proyecto:</label>
+                    <textarea id="juez_veredicto_${p.fila}" rows="2" placeholder="Escribe tus observaciones aquí..." oninput="programarAutoGuardado(${p.fila}, '${nombreEscapado}', '${catList}')">${calif.veredicto || ""}</textarea>
+                    ${puntajesHtml}
+                </div>`;
             });
             document.getElementById("listaJuezContenedor").innerHTML = html;
         }
 
-        function guardarCalificacionJSON(fila, nombre, categoriasJSONStr) {
-            let veredicto = document.getElementById(`juez_veredicto_${fila}`).value.trim(); 
-            let categorias = JSON.parse(decodeURIComponent(categoriasJSONStr)); 
+        function recolectarDatosTarjetaJuez(fila, categoriasJSONStr) {
+            let veredictoEl = document.getElementById(`juez_veredicto_${fila}`);
+            let veredicto = veredictoEl ? veredictoEl.value.trim() : "";
+            let categorias = JSON.parse(decodeURIComponent(categoriasJSONStr));
             let puntosObj = {};
-            
-            categorias.forEach(cat => { let safeCat = cat.replace(/[^a-zA-Z0-9]/g, "_"); let pt = document.getElementById(`juez_pt_${fila}_${safeCat}`).value.trim(); if(pt !== "") puntosObj[cat] = parseFloat(pt); });
-            
-            let ptGen = document.getElementById(`juez_pt_${fila}_General`).value.trim(); 
-            if(ptGen !== "") puntosObj["General"] = parseFloat(ptGen);
-            
-            let radioElegido = document.querySelector(`input[name="juez_pt_texto_${fila}"]:checked`);
-            if (radioElegido) puntosObj["General_Texto"] = radioElegido.value;
+            let tieneAlgunDato = (veredicto !== "");
 
-            let jsonString = JSON.stringify(puntosObj);
-            fetch(`${URL_ADMIN_APG}?accion=guardar_calificacion&fila=${fila}&nombre=${encodeURIComponent(nombre)}&veredicto=${encodeURIComponent(veredicto)}&puntos=${encodeURIComponent(jsonString)}`).then(r => r.json()).then(() => alert(`Calificación de ${nombre} guardada.`));
+            for (let i = 0; i < categorias.length; i++) {
+                let cat = categorias[i];
+                let safeCat = cat.replace(/[^a-zA-Z0-9]/g, "_");
+                let inp = document.getElementById(`juez_pt_${fila}_${safeCat}`);
+                if (!inp) continue;
+                let valStr = inp.value.trim();
+                if (valStr !== "") {
+                    let num = parseFloat(valStr);
+                    if (isNaN(num) || num < 1 || num > 10) {
+                        return { ok: false, error: `En "${cat}" debes ingresar puntos entre 1 y 10.` };
+                    }
+                    puntosObj[cat] = num;
+                    tieneAlgunDato = true;
+                }
+            }
+
+            let inpGen = document.getElementById(`juez_pt_${fila}_General`);
+            if (inpGen && inpGen.value.trim() !== "") {
+                let numGen = parseFloat(inpGen.value.trim());
+                if (isNaN(numGen) || numGen < 1 || numGen > 10) {
+                    return { ok: false, error: `El Puntaje General del Vehículo debe ser entre 1 y 10.` };
+                }
+                puntosObj["General"] = numGen;
+                tieneAlgunDato = true;
+            }
+
+            let radioElegido = document.querySelector(`input[name="juez_pt_texto_${fila}"]:checked`);
+            if (radioElegido) {
+                puntosObj["General_Texto"] = radioElegido.value;
+                tieneAlgunDato = true;
+            }
+
+            return { ok: true, tieneAlgunDato, veredicto, puntosObj };
         }
 
-        /* --- 2. PUNTAJES GANADORES CON OPCIONES GENERALES --- */
+        function programarAutoGuardado(fila, nombre, categoriasJSONStr) {
+            let badge = document.getElementById(`estado_auto_${fila}`);
+            let validacion = recolectarDatosTarjetaJuez(fila, categoriasJSONStr);
+
+            if (!validacion.ok) {
+                if (badge) {
+                    badge.className = "estado-autoguardado error";
+                    badge.innerText = "⚠️ Ingresa 1 a 10";
+                }
+                return;
+            }
+
+            if (badge) {
+                badge.className = "estado-autoguardado guardando";
+                badge.innerText = "⏳ Auto-guardando...";
+            }
+
+            if (timersAutoGuardado[fila]) clearTimeout(timersAutoGuardado[fila]);
+            timersAutoGuardado[fila] = setTimeout(() => {
+                ejecutarAutoGuardadoIndividual(fila, nombre, categoriasJSONStr);
+            }, 900);
+        }
+
+        function ejecutarAutoGuardadoIndividual(fila, nombre, categoriasJSONStr) {
+            let validacion = recolectarDatosTarjetaJuez(fila, categoriasJSONStr);
+            let badge = document.getElementById(`estado_auto_${fila}`);
+            if (!validacion.ok || !validacion.tieneAlgunDato) return;
+
+            let jsonString = JSON.stringify(validacion.puntosObj);
+            fetch(`${URL_ADMIN_APG}?accion=guardar_calificacion&fila=${fila}&nombre=${encodeURIComponent(nombre)}&juez=${encodeURIComponent(usuarioActivo)}&rol=${encodeURIComponent(rolActivo)}&veredicto=${encodeURIComponent(validacion.veredicto)}&puntos=${encodeURIComponent(jsonString)}`)
+            .then(r => r.json())
+            .then(res => {
+                if (res.status === "success") {
+                    if (badge) {
+                        badge.className = "estado-autoguardado ok";
+                        badge.innerText = "☁️ Auto-guardado ✔";
+                    }
+                    let existente = datosCalificacionesGlobal.find(c => c.fila == fila && String(c.juez || "").toLowerCase() === usuarioActivo.toLowerCase());
+                    if (existente) {
+                        existente.veredicto = validacion.veredicto;
+                        existente.puntos = jsonString;
+                    } else {
+                        datosCalificacionesGlobal.push({ fila: fila, nombre: nombre, juez: usuarioActivo, rol: rolActivo, veredicto: validacion.veredicto, puntos: jsonString });
+                    }
+                }
+            }).catch(() => {
+                if (badge) {
+                    badge.className = "estado-autoguardado error";
+                    badge.innerText = "⚠️ Sin red";
+                }
+            });
+        }
+
+        function guardarTodasLasEvaluacionesJuez() {
+            let tarjetas = document.querySelectorAll("#listaJuezContenedor .tarjeta-juez");
+            if (tarjetas.length === 0) return alert("No hay participantes en la lista.");
+
+            let loteParaGuardar = [];
+            for (let card of tarjetas) {
+                let fila = parseInt(card.getAttribute("data-fila"));
+                let nombre = card.getAttribute("data-nombre");
+                let catsStr = card.getAttribute("data-cats");
+                let val = recolectarDatosTarjetaJuez(fila, catsStr);
+
+                if (!val.ok) {
+                    return alert(`⚠️ Error en el participante "${nombre}":\n${val.error}`);
+                }
+                if (val.tieneAlgunDato) {
+                    loteParaGuardar.push({
+                        fila: fila,
+                        nombre: nombre,
+                        juez: usuarioActivo,
+                        rol: rolActivo,
+                        veredicto: val.veredicto,
+                        puntos: JSON.stringify(val.puntosObj)
+                    });
+                }
+            }
+
+            if (loteParaGuardar.length === 0) {
+                return alert("Aún no has cargado puntajes en ningún participante.");
+            }
+
+            let btnArriba = document.getElementById("btnGuardarTodoArriba");
+            let btnAbajo = document.getElementById("btnGuardarTodoAbajo");
+            let txtOriginal = btnArriba.innerHTML;
+            btnArriba.innerHTML = "⏳ Guardando todas las evaluaciones...";
+            btnAbajo.innerHTML = "⏳ Guardando todas las evaluaciones...";
+
+            fetch(`${URL_ADMIN_APG}?accion=guardar_calificaciones_lote&lote=${encodeURIComponent(JSON.stringify(loteParaGuardar))}`)
+            .then(r => r.json())
+            .then(res => {
+                btnArriba.innerHTML = txtOriginal;
+                btnAbajo.innerHTML = txtOriginal;
+                if (res.status === "success") {
+                    loteParaGuardar.forEach(item => {
+                        let b = document.getElementById(`estado_auto_${item.fila}`);
+                        if (b) { b.className = "estado-autoguardado ok"; b.innerText = "☁️ Guardado ✔"; }
+                    });
+                    alert(`✅ ¡Excelente! Se guardaron correctamente las evaluaciones de ${loteParaGuardar.length} participante(s).`);
+                } else {
+                    alert("Error al guardar el lote de evaluaciones.");
+                }
+            }).catch(() => {
+                btnArriba.innerHTML = txtOriginal;
+                btnAbajo.innerHTML = txtOriginal;
+                alert("Error de conexión al guardar.");
+            });
+        }
+
+        /* --- 2. CÁLCULO DE PREMIACIÓN MULTIJUEZ (TODOS LOS JUECES COMBINADOS) --- */
         function abrirPanelPuntajesGanadores(e) {
-            e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelPuntajesGanadores").classList.remove("oculto");
-            document.getElementById("listaPuntajesContenedor").innerHTML = "<p style='color:#ccc;'>Analizando puntajes de jueces...</p>";
-            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(presentes => { datosPresentesGlobal = presentes; fetch(`${URL_ADMIN_APG}?accion=ver_calificaciones`).then(r => r.json()).then(calif => { datosCalificacionesGlobal = calif || []; renderizarPuntajesGanadores(); }).catch(() => { datosCalificacionesGlobal = []; renderizarPuntajesGanadores(); }); });
+            e.preventDefault();
+            actualizarBannersSaludo();
+            aplicarRestriccionesPorRol();
+            document.getElementById("panelMenuOperativo").classList.add("oculto");
+            document.getElementById("panelPuntajesGanadores").classList.remove("oculto");
+            document.getElementById("listaPuntajesContenedor").innerHTML = "<p style='color:#ccc;'>Calculando promedios de todos los jueces...</p>";
+            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(presentes => {
+                datosPresentesGlobal = presentes;
+                fetch(`${URL_ADMIN_APG}?accion=ver_calificaciones`).then(r => r.json()).then(calif => {
+                    datosCalificacionesGlobal = calif || [];
+                    renderizarPuntajesGanadores();
+                }).catch(() => {
+                    datosCalificacionesGlobal = [];
+                    renderizarPuntajesGanadores();
+                });
+            });
         }
 
         function renderizarPuntajesGanadores() {
-            let tipoFiltro = document.getElementById("filtroPuntajesTipo").value; let keyword = tipoFiltro === "autos" ? "auto" : "moto"; let filtrados = datosPresentesGlobal.filter(p => p.tipo && p.tipo.toLowerCase().includes(keyword) && p.sector !== "Sin Sector");
+            aplicarRestriccionesPorRol();
+            let tipoFiltro = document.getElementById("filtroPuntajesTipo").value;
+            let keyword = tipoFiltro === "autos" ? "auto" : "moto";
+            let filtrados = datosPresentesGlobal.filter(p => p.tipo && p.tipo.toLowerCase().includes(keyword) && p.sector === "Expo");
             let categoriasMap = {};
+
             filtrados.forEach(p => {
-                let calif = datosCalificacionesGlobal.find(c => c.fila == p.fila); if(!calif || !calif.puntos) return;
-                let scores = {}; try { scores = JSON.parse(calif.puntos); } catch(e) { return; }
-                let pGen = scores["General"] || 0; 
-                let pGenTexto = scores["General_Texto"] || "Sin evaluar";
-                
-                let sumaTotal = 0;
-                for (let key in scores) { 
-                    if(key !== "General_Texto") sumaTotal += parseFloat(scores[key]) || 0; 
-                }
-                
+                let califsParticipante = datosCalificacionesGlobal.filter(c => c.fila == p.fila && c.puntos);
+                if (califsParticipante.length === 0) return;
+
                 let categorias = [];
                 if(p.categoriaExpo) categorias = categorias.concat(p.categoriaExpo.split(',').map(c=>c.trim()).filter(c=>c));
                 categorias = [...new Set(categorias)];
 
-                categorias.forEach(cat => { if(scores[cat] !== undefined) { if(!categoriasMap[cat]) categoriasMap[cat] = []; categoriasMap[cat].push({ nombre: p.nombre, pt: scores[cat], gen: pGen, genTxt: pGenTexto, sumaTotal: sumaTotal, v: p.vehiculo }); } });
+                let sumaGen = 0, cantGen = 0;
+                let valoracionesProyecto = [];
+                let sumaTotalGlobalJueces = 0;
+
+                califsParticipante.forEach(c => {
+                    try {
+                        let sc = JSON.parse(c.puntos);
+                        if (sc["General"] !== undefined && !isNaN(sc["General"])) {
+                            sumaGen += parseFloat(sc["General"]);
+                            cantGen++;
+                        }
+                        if (sc["General_Texto"]) valoracionesProyecto.push(sc["General_Texto"]);
+                        for (let k in sc) {
+                            if (k !== "General_Texto" && !isNaN(sc[k])) sumaTotalGlobalJueces += parseFloat(sc[k]);
+                        }
+                    } catch(e) {}
+                });
+
+                let promGeneralVehiculo = cantGen > 0 ? (sumaGen / cantGen) : 0;
+                let textoValoraciones = valoracionesProyecto.length > 0 ? valoracionesProyecto.join(" / ") : "Sin valoración";
+
+                categorias.forEach(cat => {
+                    let sumaCat = 0, cantCat = 0;
+                    califsParticipante.forEach(c => {
+                        try {
+                            let sc = JSON.parse(c.puntos);
+                            if (sc[cat] !== undefined && !isNaN(sc[cat])) {
+                                sumaCat += parseFloat(sc[cat]);
+                                cantCat++;
+                            }
+                        } catch(e) {}
+                    });
+
+                    if (cantCat > 0) {
+                        let promCat = sumaCat / cantCat;
+                        if(!categoriasMap[cat]) categoriasMap[cat] = [];
+                        categoriasMap[cat].push({
+                            nombre: p.nombre,
+                            v: p.vehiculo,
+                            ptCat: promCat,
+                            gen: promGeneralVehiculo,
+                            genTxt: textoValoraciones,
+                            sumaTotal: sumaTotalGlobalJueces,
+                            cantJueces: cantCat
+                        });
+                    }
+                });
             });
             
-            let html = ""; let catKeys = Object.keys(categoriasMap).sort();
-            if(catKeys.length === 0) { html = "<p style='color:#ccc;'>No hay puntajes cargados para analizar.</p>"; } 
-            else {
-                catKeys.forEach(cat => {
+            let html = "";
+            let catKeys = Object.keys(categoriasMap).sort();
+            if(catKeys.length === 0) {
+                html = "<p style='color:#ccc; text-align:center;'>Aún no hay puntajes cargados por los jueces para esta categoría.</p>";
+            } else {
+                catKeys.forEach((cat, idx) => {
                     let competidores = categoriasMap[cat].sort((a,b) => { 
-                        if (b.pt !== a.pt) return b.pt - a.pt; 
-                        let promA = (a.pt + a.gen) / 2;
-                        let promB = (b.pt + b.gen) / 2;
+                        if (b.ptCat !== a.ptCat) return b.ptCat - a.ptCat; 
+                        let promA = (a.ptCat + a.gen) / 2;
+                        let promB = (b.ptCat + b.gen) / 2;
                         if (promB !== promA) return promB - promA;
                         return b.sumaTotal - a.sumaTotal;
                     });
                     
                     let rowsHtml = "";
                     for(let i=0; i<Math.min(competidores.length, 3); i++) {
-                        let c = competidores[i]; let medalla = i===0 ? "🥇 1°" : (i===1 ? "🥈 2°" : "🥉 3°");
-                        let prom = ((c.pt + c.gen) / 2).toFixed(2);
-                        rowsHtml += `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; font-size:14px; background:rgba(255,255,255,0.05); padding:6px; border-radius:4px;">
-                            <span>${medalla} <b>${c.nombre}</b></span>
+                        let c = competidores[i];
+                        let medalla = i===0 ? "🥇 1°" : (i===1 ? "🥈 2°" : "🥉 3°");
+                        let promFinal = ((c.ptCat + c.gen) / 2).toFixed(2);
+                        rowsHtml += `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; font-size:14px; background:rgba(0,0,0,0.4); padding:8px; border-radius:8px;">
+                            <div>
+                                <span style="font-size:16px;">${medalla} <b style="color:#fff;">${c.nombre}</b></span> <span style="color:#ccc;">(${c.v})</span><br>
+                                <span style="font-size:11px; color:#4dd0e1;">Evaluado por ${c.cantJueces} juez(ces) | Proyecto: ${c.genTxt}</span>
+                            </div>
                             <span style="color:#0dcaf0; text-align:right;">
-                                Cat: <b>${c.pt}</b> | Prom: <b>${prom}</b> <br>
-                                <span style="font-size:11px; color:#ddd; font-weight:normal;">Gen: ${c.gen} (${c.genTxt}) | Pts Tot: ${c.sumaTotal}</span>
+                                Prom. Cat: <b>${c.ptCat.toFixed(2)}</b> | Prom. Final: <b>${promFinal}</b><br>
+                                <span style="font-size:11px; color:#ddd;">Nota Gral. Vehículo: ${c.gen.toFixed(2)} | Suma Pts: ${c.sumaTotal.toFixed(1)}</span>
                             </span>
                         </div>`;
                     }
-                    html += `<div class="tarjeta-juez" style="margin-bottom:12px; border-color:#0dcaf0;"><h4 style="color:#0dcaf0; margin:0 0 10px 0; text-transform:uppercase;">🏆 Recomendación: ${cat}</h4>${rowsHtml}</div>`;
+                    html += `<div class="tarjeta-juez tema-part-${idx % 6}" style="margin-bottom:12px;"><h4 style="color:#0dcaf0; margin:0 0 10px 0; text-transform:uppercase;">🏆 Categoría: ${cat}</h4>${rowsHtml}</div>`;
                 });
             }
             document.getElementById("listaPuntajesContenedor").innerHTML = html;
         }
 
-        /* --- 3. COPAS DEL REY Y DESTACADOS --- */
-        function abrirPanelCopas(e) {
-            e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelCopas").classList.remove("oculto");
-            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(presentes => {
-                datosPresentesGlobal = presentes;
-                let optAutos = '<option value="">Seleccionar participante...</option>'; let optMotos = '<option value="">Seleccionar participante...</option>';
-                presentes.filter(p => p.sector !== "Sin Sector").forEach(p => { if(p.tipo && p.tipo.toLowerCase().includes("auto")) optAutos += `<option value="${p.nombre}">${p.nombre} (${p.vehiculo})</option>`; if(p.tipo && p.tipo.toLowerCase().includes("moto")) optMotos += `<option value="${p.nombre}">${p.nombre} (${p.vehiculo})</option>`; });
-                document.getElementById("copaReyAuto").innerHTML = optAutos; document.getElementById("copaReyMoto").innerHTML = optMotos;
-                document.getElementById("hayDestacados").value = "No"; document.getElementById("configDestacados").classList.add("oculto"); document.getElementById("contenedorDestacadosGenerados").innerHTML = "";
+        /* --- 3. PANEL DE AUDITORÍA Y MODIFICACIÓN DE PUNTAJES Y COPAS DEL REY (SOLO ADMIN) --- */
+        function abrirPanelAuditoriaPuntajes(e) {
+            e.preventDefault();
+            if (rolActivo !== "admin") return alert("Acceso exclusivo para Administrador.");
+            actualizarBannersSaludo();
+            document.getElementById("panelMenuOperativo").classList.add("oculto");
+            document.getElementById("panelAuditoriaPuntajes").classList.remove("oculto");
+            document.getElementById("contenedorAuditoriaCopas").innerHTML = "<p style='color:#ccc;'>Cargando elecciones de Copas del Rey...</p>";
+            document.getElementById("contenedorAuditoria").innerHTML = "<p style='color:#ccc;'>Cargando planillas de los jueces...</p>";
+
+            Promise.all([
+                fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()),
+                fetch(`${URL_ADMIN_APG}?accion=ver_calificaciones`).then(r => r.json()),
+                fetch(`${URL_ADMIN_APG}?accion=ver_copas`).then(r => r.json()).catch(() => [])
+            ]).then(([presentes, califs, copas]) => {
+                datosPresentesGlobal = presentes || [];
+                datosCalificacionesGlobal = califs || [];
+                datosCopasGlobal = copas || [];
+                
+                let juecesSet = new Set();
+                datosCalificacionesGlobal.forEach(c => { if(c.juez) juecesSet.add(c.juez); });
+                datosCopasGlobal.forEach(cp => { if(cp.usuario) juecesSet.add(cp.usuario); });
+
+                let selJuez = document.getElementById("filtroAuditJuez");
+                selJuez.innerHTML = '<option value="todos">Todos los Jueces</option>';
+                Array.from(juecesSet).sort().forEach(j => {
+                    selJuez.innerHTML += `<option value="${j}">Juez: ${j}</option>`;
+                });
+
+                renderizarAuditoriaPuntajes();
             });
         }
 
-        function toggleDestacadosInputs() { if(document.getElementById("hayDestacados").value === "Si") { document.getElementById("configDestacados").classList.remove("oculto"); } else { document.getElementById("configDestacados").classList.add("oculto"); document.getElementById("contenedorDestacadosGenerados").innerHTML = ""; } }
+        function renderizarAuditoriaPuntajes() {
+            let fTipo = document.getElementById("filtroAuditTipo").value;
+            let fJuez = document.getElementById("filtroAuditJuez").value;
+            let contCopas = document.getElementById("contenedorAuditoriaCopas");
+            let cont = document.getElementById("contenedorAuditoria");
+
+            // 1. Renderizar las elecciones de Copas del Rey y Destacados de cada juez
+            let copasFiltradas = datosCopasGlobal.filter(cp => fJuez === "todos" || cp.usuario === fJuez);
+            if (copasFiltradas.length === 0) {
+                contCopas.innerHTML = `<div class="tarjeta-juez tema-part-3" style="margin-bottom:12px;">
+                    <h4 style="color:#00e5ff; margin:0 0 6px 0;">👑 Elecciones de Copas del Rey y Destacados</h4>
+                    <p style="color:#ccc; font-size:13px; margin:0;">Ningún juez ha guardado aún su elección de Copa del Rey.</p>
+                </div>`;
+            } else {
+                let htmlCopas = `<h4 style="color:#00e5ff; margin: 4px 0 10px 0; text-transform:uppercase; font-size:15px;">👑 Elecciones de Copas del Rey y Destacados por Juez</h4>`;
+                copasFiltradas.forEach((cp, cIdx) => {
+                    htmlCopas += `<div class="tarjeta-juez tema-part-${(cIdx + 3) % 6}" style="margin-bottom:10px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:6px; margin-bottom:8px; flex-wrap:wrap;">
+                            <span style="background:#00e5ff; color:#000; font-weight:800; font-size:12px; padding:3px 9px; border-radius:8px;">👨‍⚖️ Juez: ${cp.usuario || 'General'}</span>
+                            <span style="font-size:11px; color:#ccc;">📅 ${cp.fecha || 'Reciente'}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:8px;">
+                            <div>
+                                <label style="color:#4dd0e1; margin-top:0;">🚗 Copa del Rey (Auto):</label>
+                                <input type="text" id="audit_copa_auto_${cp.filaHoja}" value="${(cp.copaAuto || 'Sin elegir').replace(/"/g, '&quot;')}">
+                            </div>
+                            <div>
+                                <label style="color:#4dd0e1; margin-top:0;">🏍️ Copa del Rey (Moto):</label>
+                                <input type="text" id="audit_copa_moto_${cp.filaHoja}" value="${(cp.copaMoto || 'Sin elegir').replace(/"/g, '&quot;')}">
+                            </div>
+                        </div>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:8px; margin-top:6px;">
+                            <div>
+                                <label style="color:#aaa; margin-top:0;">🏆 Destacados Autos:</label>
+                                <input type="text" id="audit_dest_autos_${cp.filaHoja}" value="${(cp.destAutos || '').replace(/"/g, '&quot;')}" placeholder="Sin destacados">
+                            </div>
+                            <div>
+                                <label style="color:#aaa; margin-top:0;">🏆 Destacados Motos:</label>
+                                <input type="text" id="audit_dest_motos_${cp.filaHoja}" value="${(cp.destMotos || '').replace(/"/g, '&quot;')}" placeholder="Sin destacados">
+                            </div>
+                        </div>
+                        <button onclick="guardarModificacionCopaAdmin(${cp.filaHoja}, '${(cp.usuario || '').replace(/'/g, "\\'")}')" class="btn-accion-admin no-print" style="background:#20c997; color:#000 !important; padding:8px; margin-top:8px; width:100%;"><i class="fa-solid fa-floppy-disk"></i> Actualizar Elección de Copa de este Juez</button>
+                    </div>`;
+                });
+                contCopas.innerHTML = htmlCopas;
+            }
+
+            // 2. Renderizar las calificaciones individuales de cada vehículo
+            if (datosCalificacionesGlobal.length === 0) {
+                cont.innerHTML = "<p style='color:#ccc; text-align:center;'>No hay calificaciones de vehículos registradas todavía.</p>";
+                return;
+            }
+
+            let html = `<h4 style="color:#20c997; margin: 8px 0 6px 0; text-transform:uppercase; font-size:15px;">📋 Planillas de Puntuación por Vehículo</h4>`;
+            datosCalificacionesGlobal.forEach((c, idx) => {
+                if (fJuez !== "todos" && c.juez !== fJuez) return;
+                let part = datosPresentesGlobal.find(p => p.fila == c.fila) || {nombre: c.nombre, vehiculo: "Vehículo", tipo: "", categoriaExpo: ""};
+                if (fTipo !== "todos") {
+                    let kw = fTipo === "autos" ? "auto" : "moto";
+                    if (!part.tipo || !part.tipo.toLowerCase().includes(kw)) return;
+                }
+
+                let scores = {};
+                try { scores = JSON.parse(c.puntos); } catch(e) { scores = {}; }
+
+                let inputsCats = "";
+                for (let k in scores) {
+                    if (k === "General" || k === "General_Texto") continue;
+                    let safeK = k.replace(/[^a-zA-Z0-9]/g, "_");
+                    inputsCats += `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                        <span style="font-size:13px; color:#ddd;">Categoría <b>${k}</b> (1-10):</span>
+                        <input type="number" id="audit_${idx}_cat_${safeK}" data-catname="${k}" class="audit-cat-input-${idx}" min="1" max="10" step="0.1" value="${scores[k]}" style="width:80px; padding:4px; text-align:center; margin:0;">
+                    </div>`;
+                }
+
+                let valProy = scores["General_Texto"] || "Bueno";
+                let notaGen = scores["General"] !== undefined ? scores["General"] : "";
+
+                html += `<div class="tarjeta-juez tema-part-${idx % 6}">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:6px; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+                        <div>
+                            <span style="background:#00e5ff; color:#000; font-weight:800; font-size:12px; padding:2px 8px; border-radius:8px;">👨‍⚖️ Juez: ${c.juez || 'General'} (${obtenerNombreRolLegible(c.rol || 'juez')})</span>
+                            <div class="nombre-participante-grande" style="font-size:20px; margin-top:6px;">${c.nombre} <span style="color:#aaa; font-size:13px; font-weight:600; text-transform:none;">(${part.vehiculo})</span></div>
+                        </div>
+                        <span style="font-size:11px; color:#ccc;">📅 ${c.fecha || 'Reciente'}</span>
+                    </div>
+                    <label>Veredicto del Juez:</label>
+                    <input type="text" id="audit_veredicto_${idx}" value="${(c.veredicto || '').replace(/"/g, '&quot;')}">
+                    <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:6px; margin-top:6px;">
+                        ${inputsCats}
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
+                            <span style="font-size:13px; color:#4dd0e1;">Valoración como proyecto:</span>
+                            <select id="audit_val_${idx}" style="width:140px; padding:4px; margin:0;">
+                                <option value="Bajo" ${valProy==='Bajo'?'selected':''}>Bajo</option>
+                                <option value="Regular" ${valProy==='Regular'?'selected':''}>Regular</option>
+                                <option value="Bueno" ${valProy==='Bueno'?'selected':''}>Bueno</option>
+                                <option value="Muy bueno" ${valProy==='Muy bueno'?'selected':''}>Muy bueno</option>
+                            </select>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
+                            <span style="font-size:13px; color:#0dcaf0;">Puntaje general del vehículo (1-10):</span>
+                            <input type="number" id="audit_gen_${idx}" min="1" max="10" step="0.1" value="${notaGen}" style="width:80px; padding:4px; text-align:center; margin:0;">
+                        </div>
+                    </div>
+                    <button onclick="guardarModificacionAdmin(${idx}, ${c.fila}, '${(c.nombre || '').replace(/'/g, "\\'")}', '${(c.juez || 'admin').replace(/'/g, "\\'")}', '${c.rol || 'juez'}')" class="btn-accion-admin no-print" style="background:#20c997; color:#000 !important; padding:8px; margin-top:8px; width:100%;"><i class="fa-solid fa-pen-to-square"></i> Guardar Modificación de este Juez</button>
+                </div>`;
+            });
+
+            cont.innerHTML = html;
+        }
+
+        function guardarModificacionCopaAdmin(filaHoja, usuarioJuez) {
+            let cAuto = document.getElementById(`audit_copa_auto_${filaHoja}`).value.trim();
+            let cMoto = document.getElementById(`audit_copa_moto_${filaHoja}`).value.trim();
+            let dAutos = document.getElementById(`audit_dest_autos_${filaHoja}`).value.trim();
+            let dMotos = document.getElementById(`audit_dest_motos_${filaHoja}`).value.trim();
+
+            fetch(`${URL_ADMIN_APG}?accion=guardar_copas&juez=${encodeURIComponent(usuarioJuez)}&copaAuto=${encodeURIComponent(cAuto)}&copaMoto=${encodeURIComponent(cMoto)}&destAutos=${encodeURIComponent(dAutos)}&destMotos=${encodeURIComponent(dMotos)}`)
+            .then(r => r.json())
+            .then(res => {
+                if (res.status === "success") {
+                    alert(`✅ Elección de Copa del Rey del juez ${usuarioJuez} actualizada.`);
+                    abrirPanelAuditoriaPuntajes({preventDefault:()=>{}});
+                }
+            });
+        }
+
+        function guardarModificacionAdmin(idx, fila, nombre, juez, rol) {
+            let veredicto = document.getElementById(`audit_veredicto_${idx}`).value.trim();
+            let valProy = document.getElementById(`audit_val_${idx}`).value;
+            let notaGenStr = document.getElementById(`audit_gen_${idx}`).value.trim();
+            let nuevoObj = {};
+
+            let inputsCat = document.querySelectorAll(`.audit-cat-input-${idx}`);
+            for (let inp of inputsCat) {
+                let cName = inp.getAttribute("data-catname");
+                let v = parseFloat(inp.value);
+                if (isNaN(v) || v < 1 || v > 10) return alert(`⚠️ El puntaje en "${cName}" debe estar entre 1 y 10.`);
+                nuevoObj[cName] = v;
+            }
+
+            if (notaGenStr !== "") {
+                let vg = parseFloat(notaGenStr);
+                if (isNaN(vg) || vg < 1 || vg > 10) return alert("⚠️ El puntaje general del vehículo debe estar entre 1 y 10.");
+                nuevoObj["General"] = vg;
+            }
+            nuevoObj["General_Texto"] = valProy;
+
+            fetch(`${URL_ADMIN_APG}?accion=guardar_calificacion&fila=${fila}&nombre=${encodeURIComponent(nombre)}&juez=${encodeURIComponent(juez)}&rol=${encodeURIComponent(rol)}&veredicto=${encodeURIComponent(veredicto)}&puntos=${encodeURIComponent(JSON.stringify(nuevoObj))}`)
+            .then(r => r.json())
+            .then(res => {
+                if(res.status === "success") {
+                    alert(`✅ Puntaje del juez ${juez} modificado con éxito.`);
+                    abrirPanelAuditoriaPuntajes({preventDefault:()=>{}});
+                }
+            });
+        }
+
+        function guardarAuditoriaEnSheet(e) {
+            e.preventDefault();
+            if (!confirm("¿Deseas guardar una copia histórica con fecha y hora de todos los puntajes y elecciones de Copas del Rey actuales en el Google Sheet?")) return;
+            fetch(`${URL_ADMIN_APG}?accion=guardar_auditoria_puntajes`)
+            .then(r => r.json())
+            .then(res => {
+                if (res.status === "success") alert("✅ Todos los puntajes y elecciones de los jueces fueron respaldados con fecha en la hoja 'Historial_Puntajes_Jueces'.");
+                else alert("Error al respaldar puntajes.");
+            });
+        }
+
+        /* --- 4. COPAS DEL REY Y DESTACADOS (DESTACADOS OCULTO PARA JUEZ DE MOTOS Y JUEZ DE AUTOS) --- */
+        function abrirPanelCopas(e) {
+            e.preventDefault();
+            actualizarBannersSaludo();
+            document.getElementById("panelMenuOperativo").classList.add("oculto");
+            document.getElementById("panelCopas").classList.remove("oculto");
+            fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(presentes => {
+                datosPresentesGlobal = presentes;
+                let optAutos = '<option value="">Seleccionar participante...</option>';
+                let optMotos = '<option value="">Seleccionar participante...</option>';
+                presentes.filter(p => p.sector !== "Sin Sector").forEach(p => {
+                    if(p.tipo && p.tipo.toLowerCase().includes("auto")) optAutos += `<option value="${p.nombre} (${p.vehiculo})">${p.nombre} (${p.vehiculo})</option>`;
+                    if(p.tipo && p.tipo.toLowerCase().includes("moto")) optMotos += `<option value="${p.nombre} (${p.vehiculo})">${p.nombre} (${p.vehiculo})</option>`;
+                });
+                document.getElementById("copaReyAuto").innerHTML = optAutos;
+                document.getElementById("copaReyMoto").innerHTML = optMotos;
+
+                // Visibilidad de Copa del Rey según rol
+                document.getElementById("bloqueCopaAuto").style.display = (rolActivo === "juez_motos") ? "none" : "block";
+                document.getElementById("bloqueCopaMoto").style.display = (rolActivo === "juez_autos") ? "none" : "block";
+
+                // Trofeos Destacados: SOLO visible para Juez General ("juez") y Administrador ("admin")
+                let esJuezGeneralOAdmin = (rolActivo === "admin" || rolActivo === "juez");
+                document.getElementById("bloqueSeccionDestacadosCompleta").style.display = esJuezGeneralOAdmin ? "block" : "none";
+
+                document.getElementById("hayDestacados").value = "No";
+                document.getElementById("configDestacados").classList.add("oculto");
+                document.getElementById("contenedorDestacadosGenerados").innerHTML = "";
+            });
+        }
+
+        function toggleDestacadosInputs() {
+            if(document.getElementById("hayDestacados").value === "Si") {
+                document.getElementById("configDestacados").classList.remove("oculto");
+            } else {
+                document.getElementById("configDestacados").classList.add("oculto");
+                document.getElementById("contenedorDestacadosGenerados").innerHTML = "";
+            }
+        }
         
         function generarCamposDestacados() {
-            let nAutos = parseInt(document.getElementById("numDestAutos").value) || 0; let nMotos = parseInt(document.getElementById("numDestMotos").value) || 0; let html = "";
-            let optAutos = document.getElementById("copaReyAuto").innerHTML; let optMotos = document.getElementById("copaReyMoto").innerHTML;
+            if (rolActivo !== "admin" && rolActivo !== "juez") return;
+            let nAutos = parseInt(document.getElementById("numDestAutos").value) || 0;
+            let nMotos = parseInt(document.getElementById("numDestMotos").value) || 0;
+            let html = "";
+            let optAutos = document.getElementById("copaReyAuto").innerHTML;
+            let optMotos = document.getElementById("copaReyMoto").innerHTML;
             if(nAutos > 0) {
-                html += `<div class="tarjeta-juez" style="margin-bottom: 12px; border-color:#e67e22;"><h4 style="color:#e67e22; margin:0 0 10px 0; text-transform:uppercase; font-size:16px;">🏆 Destacados Autos</h4>`;
-                for(let i=1; i<=nAutos; i++) { html += `<div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-weight:bold; color:#ffcc00; width:20px;"><i class="fa-solid fa-award"></i></span><select class="destacado-auto-select" style="flex:1; margin:0; padding:6px; font-size:14px;">${optAutos}</select></div>`; }
+                html += `<div class="tarjeta-juez tema-part-1" style="margin-bottom: 12px;"><h4 style="color:#00e5ff; margin:0 0 10px 0; text-transform:uppercase; font-size:16px;">🏆 Destacados Autos</h4>`;
+                for(let i=1; i<=nAutos; i++) { html += `<div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-weight:bold; color:#00e5ff; width:20px;"><i class="fa-solid fa-award"></i></span><select class="destacado-auto-select" style="flex:1; margin:0; padding:6px; font-size:14px;">${optAutos}</select></div>`; }
                 html += `</div>`;
             }
             if(nMotos > 0) {
-                html += `<div class="tarjeta-juez" style="margin-bottom: 12px; border-color:#e67e22;"><h4 style="color:#e67e22; margin:0 0 10px 0; text-transform:uppercase; font-size:16px;">🏆 Destacados Motos</h4>`;
-                for(let i=1; i<=nMotos; i++) { html += `<div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-weight:bold; color:#ffcc00; width:20px;"><i class="fa-solid fa-award"></i></span><select class="destacado-moto-select" style="flex:1; margin:0; padding:6px; font-size:14px;">${optMotos}</select></div>`; }
+                html += `<div class="tarjeta-juez tema-part-0" style="margin-bottom: 12px;"><h4 style="color:#00e5ff; margin:0 0 10px 0; text-transform:uppercase; font-size:16px;">🏆 Destacados Motos</h4>`;
+                for(let i=1; i<=nMotos; i++) { html += `<div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-weight:bold; color:#00e5ff; width:20px;"><i class="fa-solid fa-award"></i></span><select class="destacado-moto-select" style="flex:1; margin:0; padding:6px; font-size:14px;">${optMotos}</select></div>`; }
                 html += `</div>`;
             }
             document.getElementById("contenedorDestacadosGenerados").innerHTML = html;
         }
 
         function guardarCopasYDestacados(e) {
-            e.preventDefault(); let cAuto = document.getElementById("copaReyAuto").value; let cMoto = document.getElementById("copaReyMoto").value;
-            let arrAutos = []; document.querySelectorAll(".destacado-auto-select").forEach(s => { if(s.value) arrAutos.push(s.value); });
-            let arrMotos = []; document.querySelectorAll(".destacado-moto-select").forEach(s => { if(s.value) arrMotos.push(s.value); });
-            fetch(`${URL_ADMIN_APG}?accion=guardar_copas&copaAuto=${encodeURIComponent(cAuto)}&copaMoto=${encodeURIComponent(cMoto)}&destAutos=${encodeURIComponent(arrAutos.join(', '))}&destMotos=${encodeURIComponent(arrMotos.join(', '))}`).then(r => r.json()).then(res => { alert("Guardados correctamente."); volverAlMenuOperativo(); });
+            e.preventDefault();
+            let cAuto = (rolActivo === "juez_motos") ? "" : document.getElementById("copaReyAuto").value;
+            let cMoto = (rolActivo === "juez_autos") ? "" : document.getElementById("copaReyMoto").value;
+            let arrAutos = [];
+            let arrMotos = [];
+            if (rolActivo === "admin" || rolActivo === "juez") {
+                document.querySelectorAll(".destacado-auto-select").forEach(s => { if(s.value) arrAutos.push(s.value); });
+                document.querySelectorAll(".destacado-moto-select").forEach(s => { if(s.value) arrMotos.push(s.value); });
+            }
+            fetch(`${URL_ADMIN_APG}?accion=guardar_copas&juez=${encodeURIComponent(usuarioActivo)}&copaAuto=${encodeURIComponent(cAuto)}&copaMoto=${encodeURIComponent(cMoto)}&destAutos=${encodeURIComponent(arrAutos.join(', '))}&destMotos=${encodeURIComponent(arrMotos.join(', '))}`)
+            .then(r => r.json()).then(() => { alert("✅ Elección guardada correctamente."); volverAlMenuOperativo(); });
         }
 
-        /* --- GANADORES EXPO/LIMBO --- */
+        /* --- 5. GANADORES EXPO/LIMBO --- */
         function abrirPanelGanadores(e) {
-            e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelGanadores").classList.remove("oculto");
+            e.preventDefault();
+            actualizarBannersSaludo();
+            aplicarRestriccionesPorRol();
+            document.getElementById("panelMenuOperativo").classList.add("oculto");
+            document.getElementById("panelGanadores").classList.remove("oculto");
             
             let selectSector = document.getElementById("filtroGanadoresSector");
-            if(rolActivo === "juez") { 
-                selectSector.value = "Expo"; selectSector.disabled = true;
-                for (let i=0; i<selectSector.options.length; i++) { if(selectSector.options[i].value === "Limbo") selectSector.options[i].style.display = "none"; }
+            if(rolActivo.startsWith("juez")) { 
+                selectSector.value = "Expo";
+                selectSector.disabled = true;
+                for (let i=0; i<selectSector.options.length; i++) {
+                    if(selectSector.options[i].value === "Limbo") selectSector.options[i].style.display = "none";
+                }
             } else { 
                 selectSector.disabled = false;
-                for (let i=0; i<selectSector.options.length; i++) { selectSector.options[i].style.display = "block"; }
+                for (let i=0; i<selectSector.options.length; i++) {
+                    selectSector.options[i].style.display = "block";
+                }
             }
 
             document.getElementById("listaGanadoresContenedor").innerHTML = "<p style='color:#ccc;'>Cargando datos...</p>";
@@ -464,7 +1225,9 @@
         }
 
         async function renderizarListaGanadores() {
-            let tipoFiltro = document.getElementById("filtroGanadoresTipo").value; let keyword = tipoFiltro === "autos" ? "auto" : "moto";
+            aplicarRestriccionesPorRol();
+            let tipoFiltro = document.getElementById("filtroGanadoresTipo").value;
+            let keyword = tipoFiltro === "autos" ? "auto" : "moto";
             let sectorFiltro = document.getElementById("filtroGanadoresSector").value; 
             document.getElementById("listaGanadoresContenedor").innerHTML = "<p style='color:#ccc;'>Buscando categorías maestras...</p>";
 
@@ -473,15 +1236,16 @@
 
             if (sectorFiltro === "Expo") {
                 try {
-                    let res = await fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tipoFiltro}&q=`); let data = await res.json();
+                    let res = await fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tipoFiltro}&q=`);
+                    let data = await res.json();
                     let categoriasMaestras = data.categorias || [];
                     if (categoriasMaestras.length === 0) { html = "<p style='color:#ccc;'>No se encontraron categorías.</p>"; } 
                     else {
-                        categoriasMaestras.forEach(cat => {
+                        categoriasMaestras.forEach((cat, idx) => {
                             let participantesCat = filtrados.filter(p => { let s = p.sector?p.sector.toLowerCase().trim():""; if (p.categoriaExpo && s === "expo") { return p.categoriaExpo.split(',').map(x=>x.trim()).includes(cat); } return false; });
                             let count = participantesCat.length; let options = `<option value="">Seleccionar participante...</option>`; let nombresVistos = new Set();
                             participantesCat.forEach(p => { let n = p.nombre.trim().toLowerCase(); if(!nombresVistos.has(n)) { nombresVistos.add(n); options += `<option value="${p.nombre}">${p.nombre} (${p.vehiculo})</option>`; } });
-                            html += buildGanadorCard(cat, options, '#f1c40f', count);
+                            html += buildGanadorCard(cat, options, '#00e5ff', count, idx);
                         });
                     }
                 } catch (error) { html = "<p style='color:#ff4d4d;'>Error de red.</p>"; }
@@ -490,24 +1254,24 @@
                 filtrados.forEach(p => { let s = p.sector?p.sector.toLowerCase().trim():""; let pL = p.participaLimbo?p.participaLimbo.toLowerCase().trim():""; if((s === "limbo" || pL === "si") && p.categoriaLimbo) { p.categoriaLimbo.split(',').forEach(c => { if(c.trim()) categoriasSet.add(c.trim()) }); } });
                 
                 let categoriasArr = Array.from(categoriasSet).sort();
-                categoriasArr.forEach(cat => {
+                categoriasArr.forEach((cat, idx) => {
                     let participantesCat = filtrados.filter(p => { let s = p.sector?p.sector.toLowerCase().trim():""; let pL = p.participaLimbo?p.participaLimbo.toLowerCase().trim():""; if ((s === "limbo" || pL === "si") && p.categoriaLimbo) { return p.categoriaLimbo.split(',').map(x=>x.trim()).includes(cat); } return false; });
                     let count = participantesCat.length; let options = `<option value="">Seleccionar participante...</option>`; let nombresVistos = new Set(); 
                     participantesCat.forEach(p => { let n = p.nombre.trim().toLowerCase(); if(!nombresVistos.has(n)) { nombresVistos.add(n); options += `<option value="${p.nombre}">${p.nombre} (${p.vehiculo})</option>`; } });
-                    html += buildGanadorCard(`LIMBO - ${cat}`, options, '#ffc107', count); 
+                    html += buildGanadorCard(`LIMBO - ${cat}`, options, '#20c997', count, idx); 
                 });
 
                 let valeTodoInscritos = filtrados.filter(p => (p.valeTodo || "").toLowerCase().trim() === "si");
                 let countVT = valeTodoInscritos.length; let optionsVT = `<option value="">Seleccionar participante...</option>`; let nombresVistosVT = new Set();
                 valeTodoInscritos.forEach(p => { let n = p.nombre.trim().toLowerCase(); if(!nombresVistosVT.has(n)) { nombresVistosVT.add(n); optionsVT += `<option value="${p.nombre}">${p.nombre} (${p.vehiculo})</option>`; } });
-                html += buildGanadorCard("VALE TODO", optionsVT, '#e040fb', countVT); 
+                html += buildGanadorCard("VALE TODO", optionsVT, '#e040fb', countVT, 3); 
             }
             document.getElementById("listaGanadoresContenedor").innerHTML = html;
         }
 
-        function buildGanadorCard(titulo, options, color, count) {
-            let safeId = titulo.replace(/[^a-zA-Z0-9]/g, "_"); let badgeColor = count > 0 ? color : '#555'; let txtColor = count > 0 ? (color === '#f1c40f' || color === '#ffc107' ? '#000' : '#fff') : '#ccc'; let opacidad = count === 0 ? 'opacity: 0.6;' : '';
-            return `<div class="tarjeta-juez" style="margin-bottom: 12px; border-color:${color}; ${opacidad}">
+        function buildGanadorCard(titulo, options, color, count, idx) {
+            let safeId = titulo.replace(/[^a-zA-Z0-9]/g, "_"); let badgeColor = count > 0 ? color : '#555'; let txtColor = count > 0 ? '#000' : '#ccc'; let opacidad = count === 0 ? 'opacity: 0.6;' : '';
+            return `<div class="tarjeta-juez tema-part-${(idx || 0) % 6}" data-categoria-ganador="${titulo}" data-safe-id="${safeId}" style="margin-bottom: 12px; ${opacidad}">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;"><h4 style="color:${color}; margin:0; text-transform:uppercase; font-size:15px;">🏆 ${titulo}</h4><span style="background:${badgeColor}; color:${txtColor}; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:12px;">Total: ${count}</span></div>
                 <div style="display:flex; align-items:center; gap:8px;"><span style="font-weight:bold; color:#ffd700; width:20px;">1°</span><select id="ganador_${safeId}_1" style="flex:1; margin:0; padding:6px; font-size:14px;">${options}</select></div>
                 <div style="display:flex; align-items:center; gap:8px; margin-top:8px;"><span style="font-weight:bold; color:#c0c0c0; width:20px;">2°</span><select id="ganador_${safeId}_2" style="flex:1; margin:0; padding:6px; font-size:14px;">${options}</select></div>
@@ -515,11 +1279,39 @@
             </div>`;
         }
 
-        function guardarTodosLosGanadores(e) { e.preventDefault(); alert("Listo para backend."); }
+        function guardarTodosLosGanadores(e) {
+            e.preventDefault();
+            let sector = document.getElementById("filtroGanadoresSector").value;
+            let tipo = document.getElementById("filtroGanadoresTipo").value;
+            let tarjetas = document.querySelectorAll("#listaGanadoresContenedor .tarjeta-juez");
+            let resultados = [];
 
-        /* REGISTRO Y PRESENCIAS Y OTROS */
+            tarjetas.forEach(card => {
+                let cat = card.getAttribute("data-categoria-ganador");
+                let sId = card.getAttribute("data-safe-id");
+                if (!cat || !sId) return;
+                let p1 = document.getElementById(`ganador_${sId}_1`)?.value || "";
+                let p2 = document.getElementById(`ganador_${sId}_2`)?.value || "";
+                let p3 = document.getElementById(`ganador_${sId}_3`)?.value || "";
+                if (p1 || p2 || p3) {
+                    resultados.push({ categoria: cat, primero: p1, segundo: p2, tercero: p3 });
+                }
+            });
+
+            if (resultados.length === 0) return alert("Selecciona al menos un ganador antes de guardar.");
+            fetch(`${URL_ADMIN_APG}?accion=guardar_ganadores&usuario=${encodeURIComponent(usuarioActivo)}&sector=${encodeURIComponent(sector)}&tipo=${encodeURIComponent(tipo)}&datos=${encodeURIComponent(JSON.stringify(resultados))}`)
+            .then(r => r.json())
+            .then(res => {
+                if (res.status === "success") {
+                    alert("✅ Ganadores guardados correctamente en la hoja 'Ganadores'.");
+                    volverAlMenuOperativo();
+                } else alert("Error al guardar ganadores.");
+            });
+        }
+
+        /* --- 6. REGISTRO, PRESENCIAS Y ADMINISTRACIÓN --- */
         function iniciarInscripcion(sector, e) {
-            e.preventDefault(); document.getElementById("panelSelectorSector").classList.add("oculto"); document.getElementById("panelAdmin").classList.remove("oculto");
+            e.preventDefault(); actualizarBannersSaludo(); document.getElementById("panelSelectorSector").classList.add("oculto"); document.getElementById("panelAdmin").classList.remove("oculto");
             document.getElementById("sectorActual").value = sector; resetearFormularioPanel(); document.getElementById("tituloPanelAdmin").innerText = `Marcar Presencia - ${sector}`;
             if (sector === "Limbo") { document.getElementById("bloqueCampoDinamico").classList.add("oculto"); document.getElementById("bloqueParticipaLimbo").classList.add("oculto"); document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto"); document.getElementById("bloqueValeTodo").classList.remove("oculto"); actualizarOpcionesLimbo(); } 
             else { document.getElementById("bloqueCampoDinamico").classList.remove("oculto"); document.getElementById("bloqueParticipaLimbo").classList.remove("oculto"); document.getElementById("bloqueCategoriaLimbo").classList.add("oculto"); document.getElementById("bloqueValeTodo").classList.add("oculto"); }
@@ -554,16 +1346,16 @@
         }
         function resetearFormularioPanel() { document.getElementById("filaEditando").value = ""; document.getElementById("nombreBusqueda").value = ""; document.getElementById("nombreParticipante").value = ""; document.getElementById("vehiculoParticipante").innerHTML = '<option value="">Seleccione...</option>'; document.getElementById("marcaParticipante").innerHTML = '<option value="">Seleccione...</option>'; document.getElementById("colorParticipante").innerHTML = '<option value="">Seleccione...</option>'; document.getElementById("selectParticipaLimbo").value = "No"; document.getElementById("selectCategoriaLimbo").innerHTML = '<option value="">Seleccione...</option>'; document.getElementById("selectValeTodo").value = "No"; document.getElementById("bloqueCategoriaLimbo").classList.add("oculto"); document.getElementById("bloqueValeTodo").classList.add("oculto"); document.getElementById("fotoParticipante").value = ""; }
         
-        function abrirPanelDescalificar(e) { e.preventDefault(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelDescalificar").classList.remove("oculto"); document.getElementById("descTipo").value = ""; document.getElementById("descParticipante").innerHTML = '<option value="">2. Seleccionar participante...</option>'; fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(data => { listaGlobalDescalificar = data; }); }
+        function abrirPanelDescalificar(e) { e.preventDefault(); actualizarBannersSaludo(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("panelDescalificar").classList.remove("oculto"); document.getElementById("descTipo").value = ""; document.getElementById("descParticipante").innerHTML = '<option value="">2. Seleccionar participante...</option>'; fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(data => { listaGlobalDescalificar = data; }); }
         function cargarDescalificarSelect() { var tipo = document.getElementById("descTipo").value, selectP = document.getElementById("descParticipante"); selectP.innerHTML = '<option value="">2. Seleccionar participante...</option>'; if(!tipo) return; var filtrados = listaGlobalDescalificar.filter(p => p.tipo && p.tipo.toLowerCase().includes(tipo === "autos" ? "auto" : "moto")); filtrados.forEach(p => { selectP.innerHTML += `<option value="${p.fila}">${p.nombre} (${p.vehiculo})</option>`; }); }
         function ejecutarDescalificacion(e) { e.preventDefault(); var fila = document.getElementById("descParticipante").value; if(!fila) return alert("Selecciona un participante."); var nombre = document.getElementById("descParticipante").options[document.getElementById("descParticipante").selectedIndex].text; if (!confirm(`⚠️ Vas a descalificar a "${nombre}". ¿Continuar?`)) return; fetch(`${URL_ADMIN_APG}?accion=eliminar_presencia&fila=${fila}`).then(r => r.json()).then(res => { if (res.status === "success") { alert("Participante descalificado."); volverAlMenuOperativo(); } else alert("Error."); }); }
         
-        function guardarRegistroHistorial(e) { e.preventDefault(); if (!confirm("¿Guardar e Imprimir Historial?")) return; fetch(`${URL_ADMIN_APG}?accion=guardar_historial`).then(r => r.json()).then(data => { if(data.status === "success") alert("Historial guardado."); else alert("Error."); }); }
-        function vaciarRegistro(e) { e.preventDefault(); if (!confirm("⚠️ Se eliminarán TODOS los registros. ¿Continuar?")) return; fetch(`${URL_ADMIN_APG}?accion=vaciar_registro`).then(r => r.json()).then(data => { if(data.status === "success") alert("Registros vaciados."); }); }
+        function guardarRegistroHistorial(e) { e.preventDefault(); if (!confirm("¿Guardar copia de Presentes en Historial e Imprimir?")) return; fetch(`${URL_ADMIN_APG}?accion=guardar_historial`).then(r => r.json()).then(data => { if(data.status === "success") { alert("Historial guardado en Google Sheets."); window.print(); } else alert("Error."); }); }
+        function vaciarRegistro(e) { e.preventDefault(); if (!confirm("⚠️ Se eliminarán TODOS los registros de Presentes y Calificaciones actuales. ¿Continuar?")) return; fetch(`${URL_ADMIN_APG}?accion=vaciar_registro`).then(r => r.json()).then(data => { if(data.status === "success") alert("Registros vaciados correctamente."); }); }
         
-        function verParticipantesCargados(e) { e.preventDefault(); fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(data => { document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("seccionListado").classList.remove("oculto"); var html = ''; var expoAutos = data.filter(p => p.sector === "Expo" && p.tipo && p.tipo.toLowerCase().includes("auto")), expoMotos = data.filter(p => p.sector === "Expo" && p.tipo && p.tipo.toLowerCase().includes("moto")); html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #00bcd4; margin-top:5px; padding-bottom:4px;"><h3 style="color:#00bcd4; margin:0; font-size:18px;"><i class="fa-solid fa-flag-checkered" style="margin-right:6px;"></i>Expo</h3><span style="background:#00bcd4; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${expoAutos.length + expoMotos.length}</span></div>`; html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${expoAutos.length})</h4>` + (expoAutos.length > 0 ? renderTablaGenerica(expoAutos, "Expo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${expoMotos.length})</h4>` + (expoMotos.length > 0 ? renderTablaGenerica(expoMotos, "Expo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); var limboInscritos = data.filter(p => p.sector === "Limbo" || p.participaLimbo === "Si"); var limboAutos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("auto")), limboMotos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("moto")); html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #ffc107; margin-top:15px; padding-bottom:4px;"><h3 style="color:#ffc107; margin:0; font-size:18px;"><i class="fa-solid fa-ruler-vertical" style="margin-right:6px;"></i>Limbo</h3><span style="background:#ffc107; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${limboInscritos.length}</span></div>`; html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${limboAutos.length})</h4>` + (limboAutos.length > 0 ? renderTablaGenerica(limboAutos, "Limbo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${limboMotos.length})</h4>` + (limboMotos.length > 0 ? renderTablaGenerica(limboMotos, "Limbo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); var valeTodoInscritos = data.filter(p => (p.valeTodo || "").toLowerCase() === "si"); var valeTodoAutos = valeTodoInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("auto")), valeTodoMotos = valeTodoInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("moto")); html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e040fb; margin-top:15px; padding-bottom:4px;"><h3 style="color:#e040fb; margin:0; font-size:18px;"><i class="fa-solid fa-fire" style="margin-right:6px;"></i>Vale Todo</h3><span style="background:#e040fb; color:#fff; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${valeTodoInscritos.length}</span></div>`; html += `<h4 style="color:#ea80fc; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${valeTodoAutos.length})</h4>` + (valeTodoAutos.length > 0 ? renderTablaGenerica(valeTodoAutos, "ValeTodo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); html += `<h4 style="color:#ea80fc; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${valeTodoMotos.length})</h4>` + (valeTodoMotos.length > 0 ? renderTablaGenerica(valeTodoMotos, "ValeTodo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); document.getElementById("contenidoListado").innerHTML = html; }); }
+        function verParticipantesCargados(e) { e.preventDefault(); actualizarBannersSaludo(); fetch(`${URL_ADMIN_APG}?accion=ver_presentes`).then(r => r.json()).then(data => { document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("seccionListado").classList.remove("oculto"); var html = ''; var expoAutos = data.filter(p => p.sector === "Expo" && p.tipo && p.tipo.toLowerCase().includes("auto")), expoMotos = data.filter(p => p.sector === "Expo" && p.tipo && p.tipo.toLowerCase().includes("moto")); html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #00bcd4; margin-top:5px; padding-bottom:4px;"><h3 style="color:#00bcd4; margin:0; font-size:18px;"><i class="fa-solid fa-flag-checkered" style="margin-right:6px;"></i>Expo</h3><span style="background:#00bcd4; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${expoAutos.length + expoMotos.length}</span></div>`; html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${expoAutos.length})</h4>` + (expoAutos.length > 0 ? renderTablaGenerica(expoAutos, "Expo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); html += `<h4 style="color:#4dd0e1; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${expoMotos.length})</h4>` + (expoMotos.length > 0 ? renderTablaGenerica(expoMotos, "Expo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); var limboInscritos = data.filter(p => p.sector === "Limbo" || p.participaLimbo === "Si"); var limboAutos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("auto")), limboMotos = limboInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("moto")); html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #ffc107; margin-top:15px; padding-bottom:4px;"><h3 style="color:#ffc107; margin:0; font-size:18px;"><i class="fa-solid fa-ruler-vertical" style="margin-right:6px;"></i>Limbo</h3><span style="background:#ffc107; color:#000; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${limboInscritos.length}</span></div>`; html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${limboAutos.length})</h4>` + (limboAutos.length > 0 ? renderTablaGenerica(limboAutos, "Limbo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); html += `<h4 style="color:#ffd54f; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${limboMotos.length})</h4>` + (limboMotos.length > 0 ? renderTablaGenerica(limboMotos, "Limbo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); var valeTodoInscritos = data.filter(p => (p.valeTodo || "").toLowerCase() === "si"); var valeTodoAutos = valeTodoInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("auto")), valeTodoMotos = valeTodoInscritos.filter(p => p.tipo && p.tipo.toLowerCase().includes("moto")); html += `<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e040fb; margin-top:15px; padding-bottom:4px;"><h3 style="color:#e040fb; margin:0; font-size:18px;"><i class="fa-solid fa-fire" style="margin-right:6px;"></i>Vale Todo</h3><span style="background:#e040fb; color:#fff; padding:2px 8px; border-radius:10px; font-weight:bold; font-size:14px;">Total: ${valeTodoInscritos.length}</span></div>`; html += `<h4 style="color:#ea80fc; margin:8px 0 3px 0; font-size:16px;">🚗 Autos (${valeTodoAutos.length})</h4>` + (valeTodoAutos.length > 0 ? renderTablaGenerica(valeTodoAutos, "ValeTodo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); html += `<h4 style="color:#ea80fc; margin:8px 0 3px 0; font-size:16px;">🏍️ Motos (${valeTodoMotos.length})</h4>` + (valeTodoMotos.length > 0 ? renderTablaGenerica(valeTodoMotos, "ValeTodo") : "<p style='font-size:15px; color:#aaa;'>Vacío</p>"); document.getElementById("contenidoListado").innerHTML = html; }); }
         function renderTablaGenerica(lista, contexto) { let h = `<table class="tabla-participantes"><tr><th>Nombre</th><th>Vehículo</th><th>Cat.</th><th>Acción</th></tr>`; lista.forEach(p => { let cat = (contexto === "Limbo" || contexto === "ValeTodo") ? p.categoriaLimbo : p.categoriaExpo; let onclickQuitar = ""; if (contexto === "Expo") onclickQuitar = `quitarDeExpo(${JSON.stringify(p)})`; else if (contexto === "Limbo") onclickQuitar = `quitarDelLimbo(${JSON.stringify(p)})`; else onclickQuitar = `quitarDelValeTodo(${JSON.stringify(p)})`; h += `<tr><td>${p.nombre}</td><td><span style="color:#bbb;">${p.vehiculo}</span></td><td><b>${cat || 'N/A'}</b></td> <td><div class="acciones-tabla"> <button class="btn-editar-tabla" onclick='editarParticipante(${JSON.stringify(p)})' title="Editar"><i class="fa-solid fa-pen"></i></button> <button class="btn-eliminar-tabla" onclick='${onclickQuitar}' title="Quitar"><i class="fa-solid fa-xmark"></i></button> </div></td></tr>`; }); return h + `</table>`; }
-        function editarParticipante(p) { document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("seccionListado").classList.add("oculto"); document.getElementById("panelAdmin").classList.remove("oculto"); document.getElementById("filaEditando").value = p.fila; document.getElementById("sectorActual").value = p.sector; document.getElementById("fotoParticipante").value = p.foto || ""; let tDet = (p.tipo && p.tipo.toLowerCase().includes("moto")) ? "motos" : "autos"; document.getElementById("tipoVehiculoPresencia").value = tDet; document.getElementById("nombreParticipante").value = p.nombre; fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tDet}&q=`).then(r => r.json()).then(d => { poblarSelect("vehiculoParticipante", d.vehiculos || []); poblarSelect("marcaParticipante", d.marcas || []); poblarSelect("colorParticipante", d.colores || []); listaMaestraCategorias = d.categorias || []; document.getElementById("vehiculoParticipante").value = p.vehiculo; document.getElementById("marcaParticipante").value = p.marca; document.getElementById("colorParticipante").value = p.color; if (p.sector === "Expo") { document.getElementById("bloqueCampoDinamico").classList.remove("oculto"); renderizarCheckboxesCategorias(listaMaestraCategorias, p.categoriaExpo ? p.categoriaExpo.split(',').map(c => c.trim()) : []); document.getElementById("bloqueParticipaLimbo").classList.remove("oculto"); document.getElementById("selectParticipaLimbo").value = p.participaLimbo; if (p.participaLimbo === "Si") { document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto"); document.getElementById("bloqueValeTodo").classList.remove("oculto"); actualizarOpcionesLimbo(); document.getElementById("selectCategoriaLimbo").value = p.categoriaLimbo; document.getElementById("selectValeTodo").value = p.valeTodo; } } else { document.getElementById("bloqueCampoDinamico").classList.add("oculto"); document.getElementById("bloqueParticipaLimbo").classList.add("oculto"); document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto"); document.getElementById("bloqueValeTodo").classList.remove("oculto"); actualizarOpcionesLimbo(); document.getElementById("selectCategoriaLimbo").value = p.categoriaLimbo || p.categoriaExpo; document.getElementById("selectValeTodo").value = p.valeTodo; } }); }
+        function editarParticipante(p) { actualizarBannersSaludo(); document.getElementById("panelMenuOperativo").classList.add("oculto"); document.getElementById("seccionListado").classList.add("oculto"); document.getElementById("panelAdmin").classList.remove("oculto"); document.getElementById("filaEditando").value = p.fila; document.getElementById("sectorActual").value = p.sector; document.getElementById("fotoParticipante").value = p.foto || ""; let tDet = (p.tipo && p.tipo.toLowerCase().includes("moto")) ? "motos" : "autos"; document.getElementById("tipoVehiculoPresencia").value = tDet; document.getElementById("nombreParticipante").value = p.nombre; fetch(`${URL_ADMIN_APG}?accion=buscar&tipo=${tDet}&q=`).then(r => r.json()).then(d => { poblarSelect("vehiculoParticipante", d.vehiculos || []); poblarSelect("marcaParticipante", d.marcas || []); poblarSelect("colorParticipante", d.colores || []); listaMaestraCategorias = d.categorias || []; document.getElementById("vehiculoParticipante").value = p.vehiculo; document.getElementById("marcaParticipante").value = p.marca; document.getElementById("colorParticipante").value = p.color; if (p.sector === "Expo") { document.getElementById("bloqueCampoDinamico").classList.remove("oculto"); renderizarCheckboxesCategorias(listaMaestraCategorias, p.categoriaExpo ? p.categoriaExpo.split(',').map(c => c.trim()) : []); document.getElementById("bloqueParticipaLimbo").classList.remove("oculto"); document.getElementById("selectParticipaLimbo").value = p.participaLimbo; if (p.participaLimbo === "Si") { document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto"); document.getElementById("bloqueValeTodo").classList.remove("oculto"); actualizarOpcionesLimbo(); document.getElementById("selectCategoriaLimbo").value = p.categoriaLimbo; document.getElementById("selectValeTodo").value = p.valeTodo; } } else { document.getElementById("bloqueCampoDinamico").classList.add("oculto"); document.getElementById("bloqueParticipaLimbo").classList.add("oculto"); document.getElementById("bloqueCategoriaLimbo").classList.remove("oculto"); document.getElementById("bloqueValeTodo").classList.remove("oculto"); actualizarOpcionesLimbo(); document.getElementById("selectCategoriaLimbo").value = p.categoriaLimbo || p.categoriaExpo; document.getElementById("selectValeTodo").value = p.valeTodo; } }); }
         function quitarDeExpo(p) { if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" del Sector Expo?`)) return; var nSector = (p.participaLimbo === "Si" || p.valeTodo === "Si") ? "Limbo" : "Sin Sector"; var url = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(nSector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&foto=${encodeURIComponent(p.foto||'')}&fila=${p.fila}`; fetch(url).then(r => r.json()).then(() => verParticipantesCargados({preventDefault:function(){}})); }
         function quitarDelLimbo(p) { if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" del Sector Limbo?`)) return; var url = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(p.sector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=${encodeURIComponent(p.categoriaExpo || '')}&participaLimbo=No&categoriaLimbo=&valeTodo=${encodeURIComponent(p.valeTodo || 'No')}&foto=${encodeURIComponent(p.foto||'')}&fila=${p.fila}`; fetch(url).then(r => r.json()).then(() => verParticipantesCargados({preventDefault:function(){}})); }
         function quitarDelValeTodo(p) { if (!confirm(`¿Estás seguro de quitar a "${p.nombre}" de Vale Todo?`)) return; var url = `${URL_ADMIN_APG}?accion=actualizar_presencia&sector=${encodeURIComponent(p.sector)}&tipo=${encodeURIComponent(p.tipo)}&nombre=${encodeURIComponent(p.nombre)}&vehiculo=${encodeURIComponent(p.vehiculo)}&marca=${encodeURIComponent(p.marca)}&color=${encodeURIComponent(p.color)}&categoriaExpo=${encodeURIComponent(p.categoriaExpo || '')}&participaLimbo=${encodeURIComponent(p.participaLimbo || 'No')}&categoriaLimbo=${encodeURIComponent(p.categoriaLimbo || '')}&valeTodo=No&foto=${encodeURIComponent(p.foto||'')}&fila=${p.fila}`; fetch(url).then(r => r.json()).then(() => verParticipantesCargados({preventDefault:function(){}})); }
